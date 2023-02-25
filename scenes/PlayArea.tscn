@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/art/icon.png" type="Texture" id=1]
+[ext_resource path="res://assets/text/Minecraft.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.65098, 0.654902, 0.658824, 1 )
+
+[node name="BlackBar2" type="ColorRect" parent="."]
+margin_left = 480.0
+margin_top = 232.0
+margin_right = 544.0
+margin_bottom = 248.0
+color = Color( 1, 0.823529, 0.215686, 1 )
+
+[node name="desc2" type="Label" parent="."]
+margin_left = 560.0
+margin_top = 232.0
+margin_right = 656.0
+margin_bottom = 248.0
+custom_fonts/font = SubResource( 1 )
+text = "Energy Bar"
+align = 1
+autowrap = true
+
+[node name="desc" type="Label" parent="."]
+margin_left = 552.0
+margin_top = 272.0
+margin_right = 648.0
+margin_bottom = 307.0
+custom_fonts/font = SubResource( 1 )
+text = "Player Character"
+align = 1
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 288 )
+texture = ExtResource( 1 )
