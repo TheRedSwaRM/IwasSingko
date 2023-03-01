@@ -1,4 +1,4 @@
-extends Button
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -10,7 +10,12 @@ extends Button
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _input(event):
+	#print(event.as_text())
+	if event.is_pressed():
+		get_tree().change_scene("res://scenes/MainMenuUI.tscn")
+		pass
+	

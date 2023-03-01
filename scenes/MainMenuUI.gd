@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_goToPlay_button_down():
-	get_tree().change_scene("res://scenes/PlayArea.tscn")
+	get_tree().change_scene("res://scenes/SelectDifficultyUI.tscn")
 	pass # Replace with function body.
 
 func _on_goToShop_button_down():
