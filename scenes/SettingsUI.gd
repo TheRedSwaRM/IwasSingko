@@ -15,6 +15,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_goToMainMenu_button_down():
-	get_tree().change_scene("res://scenes/MainMenuUI.tscn")
+
+func _on_Button_button_down():
+	queue_free()
 	pass # Replace with function body.

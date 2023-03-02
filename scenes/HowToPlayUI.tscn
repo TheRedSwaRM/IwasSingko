@@ -82,14 +82,13 @@ text = "Back"
 align = 1
 valign = 1
 
-[node name="goToMainMenu" type="Label" parent="."]
+[node name="goToMainMenu" type="Button" parent="."]
 margin_left = 832.0
 margin_top = 9.0
 margin_right = 1017.0
 margin_bottom = 39.0
 custom_fonts/font = SubResource( 2 )
 text = "Go Back to Main Menu"
-align = 1
-valign = 1
 
+[connection signal="button_down" from="goToMainMenu" to="." method="_on_goToMainMenu_button_down"]
 [connection signal="mouse_entered" from="goToMainMenu" to="." method="_on_goToMainMenu_mouse_entered"]

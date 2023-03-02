@@ -19,7 +19,8 @@ func _on_goToShop_button_down():
 	pass # Replace with function body.
 
 func _on_goToSettings_button_down():
-	get_tree().change_scene("res://scenes/SettingsUI.tscn")
+	var settingsScene = preload("res://scenes/SettingsUI.tscn")
+	get_parent().add_child(settingsScene.instance())
 	pass # Replace with function body.
 
 func _on_goToGuide_button_down():
