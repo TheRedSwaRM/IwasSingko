@@ -17,13 +17,13 @@ func _ready():
 
 
 func _on_easy_button_down():
-	get_tree().change_scene("res://scenes/PlayArea.tscn")
+	get_tree().change_scene_to_file("res://scenes/PlayArea.tscn")
 	pass # Replace with function body.
 
 func _on_normal_button_down():
-	get_tree().change_scene("res://scenes/PlayArea.tscn")
+	get_tree().change_scene_to_file("res://scenes/PlayArea.tscn")
 	pass # Replace with function body.
 
 func _on_hard_button_down():
-	get_tree().change_scene("res://scenes/PlayArea.tscn")
+	get_tree().change_scene_to_file("res://scenes/PlayArea.tscn")
 	pass # Replace with function body.

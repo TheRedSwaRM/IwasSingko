@@ -16,6 +16,6 @@ func _ready():
 func _input(event):
 	#print(event.as_text())
 	if event.is_pressed():
-		get_tree().change_scene("res://scenes/MainMenuUI.tscn")
+		get_tree().change_scene_to_file("res://scenes/MainMenuUI.tscn")
 		pass
 	

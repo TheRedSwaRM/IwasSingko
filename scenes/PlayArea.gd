@@ -18,5 +18,5 @@ func _ready():
 
 
 func _on_TextureButton_button_down():
-	get_parent().add_child(pause_scene.instance())
+	get_parent().add_child(pause_scene.instantiate())
 	pass # Replace with function body.

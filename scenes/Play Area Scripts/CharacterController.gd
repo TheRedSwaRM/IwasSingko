@@ -1,6 +1,6 @@
 extends Area2D
 
-export (int) var speed  # How fast the player will move (pixels/sec).
+@export (int) var speed  # How fast the player will move (pixels/sec).
 var screensize  # Size of the game window.
 # Declare member variables here. Examples:
 # var a = 2
