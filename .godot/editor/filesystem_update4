@@ -1,9 +1,2 @@
 res://default_env.tres
-res://scenes/OpenSessionUI.tscn
-res://scenes/GameOverUI.tscn
-res://scenes/PauseUI.tscn
-res://scenes/MainMenuUI.tscn
-res://scenes/HowToPlayUI.tscn
-res://scenes/SelectDifficultyUI.tscn
-res://scenes/PlayArea.tscn
 res://scenes/SettingsUI.tscn
