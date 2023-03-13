@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_goToMainMenu_button_down():
-	get_tree().change_scene_to_file("res://scenes/MainMenuUI.tscn")
+	get_tree().change_scene("res://scenes/MainMenuUI.tscn")
 	pass # Replace with function body.

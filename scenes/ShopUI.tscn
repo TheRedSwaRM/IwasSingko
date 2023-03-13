@@ -1,54 +1,54 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/text/Minecraft.ttf" type="FontFile" id=1]
+[ext_resource path="res://assets/text/Minecraft.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/ShopUI.gd" type="Script" id=2]
 
-[sub_resource type="FontFile" id=1]
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
 
 [node name="ShopUI" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Control" type="Control" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="background" type="ColorRect" parent="Control"]
-offset_right = 1024.0
-offset_bottom = 600.0
+margin_right = 1024.0
+margin_bottom = 600.0
 color = Color( 0.65098, 0.654902, 0.658824, 1 )
 
 [node name="ShopItemDescription" type="ColorRect" parent="Control"]
-offset_left = 512.0
-offset_top = 48.0
-offset_right = 768.0
-offset_bottom = 552.0
+margin_left = 512.0
+margin_top = 48.0
+margin_right = 768.0
+margin_bottom = 552.0
 color = Color( 0.721569, 0.721569, 0.721569, 1 )
 
 [node name="PlayerStats" type="ColorRect" parent="Control"]
-offset_left = 768.0
-offset_top = 48.0
-offset_right = 1024.0
-offset_bottom = 552.0
+margin_left = 768.0
+margin_top = 48.0
+margin_right = 1024.0
+margin_bottom = 552.0
 color = Color( 0.494118, 0.494118, 0.494118, 1 )
 
 [node name="BlackBar1" type="ColorRect" parent="Control"]
-offset_right = 1024.0
-offset_bottom = 48.0
+margin_right = 1024.0
+margin_bottom = 48.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="BlackBar2" type="ColorRect" parent="Control"]
-offset_top = 552.0
-offset_right = 1024.0
-offset_bottom = 600.0
+margin_top = 552.0
+margin_right = 1024.0
+margin_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="PlayerStatsWindow" type="Label" parent="Control"]
-offset_left = 768.0
-offset_top = 64.0
-offset_right = 896.0
-offset_bottom = 118.0
-scale = Vector2( 2, 2 )
+margin_left = 768.0
+margin_top = 64.0
+margin_right = 896.0
+margin_bottom = 118.0
+rect_scale = Vector2( 2, 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Player Stats Window"
 align = 1
@@ -56,11 +56,11 @@ valign = 1
 autowrap = true
 
 [node name="SelectedShopItemDescription" type="Label" parent="Control"]
-offset_left = 512.0
-offset_top = 64.0
-offset_right = 640.0
-offset_bottom = 118.0
-scale = Vector2( 2, 2 )
+margin_left = 512.0
+margin_top = 64.0
+margin_right = 640.0
+margin_bottom = 118.0
+rect_scale = Vector2( 2, 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Selected ShopItem Description"
 align = 1
@@ -68,64 +68,64 @@ valign = 1
 autowrap = true
 
 [node name="TindahanBackgroundPlaceHolder" type="Label" parent="Control"]
-offset_top = 128.0
-offset_right = 256.0
-offset_bottom = 144.0
-scale = Vector2( 2, 2 )
+margin_top = 128.0
+margin_right = 256.0
+margin_bottom = 144.0
+rect_scale = Vector2( 2, 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Tindahan Background"
 align = 1
 
 [node name="shopItemPlaceholder" type="Label" parent="Control"]
-offset_left = 56.0
-offset_top = 320.0
-offset_right = 136.0
-offset_bottom = 336.0
+margin_left = 56.0
+margin_top = 320.0
+margin_right = 136.0
+margin_bottom = 336.0
 custom_fonts/font = SubResource( 1 )
 text = "ShopItem"
 align = 1
 
 [node name="shopItemPlaceholder 2" type="Label" parent="Control"]
-offset_left = 136.0
-offset_top = 336.0
-offset_right = 216.0
-offset_bottom = 352.0
+margin_left = 136.0
+margin_top = 336.0
+margin_right = 216.0
+margin_bottom = 352.0
 custom_fonts/font = SubResource( 1 )
 text = "ShopItem"
 align = 1
 
 [node name="shopItemPlaceholder 3" type="Label" parent="Control"]
-offset_left = 216.0
-offset_top = 352.0
-offset_right = 296.0
-offset_bottom = 368.0
+margin_left = 216.0
+margin_top = 352.0
+margin_right = 296.0
+margin_bottom = 368.0
 custom_fonts/font = SubResource( 1 )
 text = "ShopItem"
 align = 1
 
 [node name="shopItemPlaceholder 4" type="Label" parent="Control"]
-offset_left = 296.0
-offset_top = 336.0
-offset_right = 376.0
-offset_bottom = 352.0
+margin_left = 296.0
+margin_top = 336.0
+margin_right = 376.0
+margin_bottom = 352.0
 custom_fonts/font = SubResource( 1 )
 text = "ShopItem"
 align = 1
 
 [node name="shopItemPlaceholder 5" type="Label" parent="Control"]
-offset_left = 376.0
-offset_top = 320.0
-offset_right = 456.0
-offset_bottom = 336.0
+margin_left = 376.0
+margin_top = 320.0
+margin_right = 456.0
+margin_bottom = 336.0
 custom_fonts/font = SubResource( 1 )
 text = "ShopItem"
 align = 1
 
 [node name="goToMainMenu" type="Button" parent="Control"]
-offset_left = 824.0
-offset_top = 8.0
-offset_right = 1013.0
-offset_bottom = 40.0
+margin_left = 824.0
+margin_top = 8.0
+margin_right = 1013.0
+margin_bottom = 40.0
 custom_fonts/font = SubResource( 1 )
 text = "Go Back to Main Menu"
 

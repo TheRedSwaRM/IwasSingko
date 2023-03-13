@@ -6,20 +6,13 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=5
+config_version=4
 
 [application]
 
 config/name="Iwas Singko!"
 run/main_scene="res://scenes/OpenSessionUI.tscn"
-config/features=PackedStringArray("4.0")
 config/icon="res://assets/art/icon.png"
-
-[display]
-
-window/size/viewport_width=1024
-window/size/viewport_height=600
-window/stretch/mode="viewport"
 
 [gui]
 
@@ -31,4 +24,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/defaults/default_environment="res://default_env.tres"
+environment/default_environment="res://default_env.tres"

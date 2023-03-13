@@ -17,10 +17,10 @@ func _ready():
 
 
 func _on_playAgain_button_down():
-	get_tree().change_scene_to_file("res://scenes/PlayArea.tscn")
+	get_tree().change_scene("res://scenes/PlayArea.tscn")
 	pass # Replace with function body.
 
 
 func _on_backToMainMenu_button_down():
-	get_tree().change_scene_to_file("res://scenes/MainMenuUI.tscn")
+	get_tree().change_scene("res://scenes/MainMenuUI.tscn")
 	pass # Replace with function body.
