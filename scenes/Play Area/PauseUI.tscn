@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://62non8ugrutq"]
+[gd_scene load_steps=3 format=3 uid="uid://dovft48d5oin6"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
-[ext_resource type="Script" path="res://scenes/PauseUI.gd" id="2"]
+[ext_resource type="Script" path="res://scenes/Play Area/PauseUI.gd" id="2"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

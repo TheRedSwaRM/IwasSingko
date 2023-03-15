@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsxnes5gdw4sf"]
+
+[ext_resource type="Script" path="res://scenes/Play Area/CharacterController.gd" id="1_lochm"]
+[ext_resource type="Texture2D" uid="uid://bxf2t1v3iej6d" path="res://assets/art/playerCharacter/playerCharacter_down1.png" id="2_mtkh8"]
+
+[sub_resource type="GDScript" id="GDScript_sm6bh"]
+script/source = "extends Camera2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+"
+
+[node name="Character" type="Area2D"]
+script = ExtResource("1_lochm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 3.8147e-06)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("2_mtkh8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-525, -298)
+polygon = PackedVector2Array(546, 320, 503, 320, 503, 276, 546, 276)
+
+[node name="desc" type="Label" parent="."]
+offset_left = 44.0
+offset_top = -13.0
+offset_right = 140.0
+offset_bottom = 22.0
+text = "Player Character"
+
+[node name="desc2" type="Label" parent="."]
+offset_left = 52.0
+offset_top = -53.0
+offset_right = 148.0
+offset_bottom = -37.0
+text = "Energy Bar"
+
+[node name="BlackBar2" type="ColorRect" parent="."]
+offset_left = -32.0
+offset_top = -51.0
+offset_right = 32.0
+offset_bottom = -35.0
+color = Color(1, 0.823529, 0.215686, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -1)
+script = SubResource("GDScript_sm6bh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

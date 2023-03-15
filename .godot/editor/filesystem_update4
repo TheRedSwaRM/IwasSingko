@@ -1,2 +1,9 @@
 res://default_env.tres
-res://scenes/SettingsUI.tscn
+res://scenes/Play Area/PlayArea.tscn
+res://scenes/GameOverUI.gd
+res://scenes/SelectDifficultyUI.gd
+res://scenes/Play Area/Character.tscn
+res://scenes/Play Area/CharacterController.gd
+res://scenes/Play Area/PauseUI.tscn
+res://scenes/Play Area/PlayArea.gd
+res://scenes/Play Area/Projectile.tscn

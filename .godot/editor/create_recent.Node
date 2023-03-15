@@ -1,1 +1,7 @@
+PathFollow2D
+Path2D
+Marker2D
+Timer
+RigidBody2D
+Area2D
 VideoStreamPlayer

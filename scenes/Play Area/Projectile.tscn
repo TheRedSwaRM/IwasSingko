@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://du7ydb14agavx"]
+
+[ext_resource type="Texture2D" uid="uid://b52hr6m6xiido" path="res://assets/art/icon.png" id="1_84for"]
+
+[node name="Projectile" type="RigidBody2D"]
+collision_layer = 2
+gravity_scale = 0.0
+
+[node name="enemy sprite" type="Sprite2D" parent="."]
+position = Vector2(33, 33)
+texture = ExtResource("1_84for")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-473, -32)
+polygon = PackedVector2Array(474, 32, 538, 32, 538, 95, 474, 95)
