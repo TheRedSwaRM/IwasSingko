@@ -1,3 +1,6 @@
+TextEdit
+CollisionShape2D
+Sprite2D
 PathFollow2D
 Path2D
 Marker2D

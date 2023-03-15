@@ -2,6 +2,10 @@ extends Node2D
 
 
 @export var projectile: PackedScene
+@export var food: PackedScene
+@export var coin: PackedScene
+@export var req: PackedScene
+
 var score
 
 var pause_scene = load("res://scenes/Play Area/PauseUI.tscn")
@@ -10,10 +14,10 @@ var pause_scene = load("res://scenes/Play Area/PauseUI.tscn")
 func _ready():
 	new_game()
 
-
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$ObjectTimer.stop()
 
 func new_game():
 	score = 0
@@ -21,6 +25,7 @@ func new_game():
 
 func _on_start_timer_timeout():
 	$MobTimer.start()
+	$ObjectTimer.start()
 	$ScoreTimer.start()
 
 
@@ -39,3 +44,14 @@ func _on_mob_timer_timeout():
 	var velocity = Vector2(randf_range(300.0, 700.0), 0.0)
 	spawnedProjectile.linear_velocity = velocity.rotated(direction)
 	add_child(spawnedProjectile)
+
+
+func _on_object_timer_timeout():
+	randomize()
+	var objs = [food, coin, req]
+	var chosenObj = objs[randi()% objs.size()]
+	var spawnedObj = chosenObj.instantiate()
+	var objSpawnLocation = get_node("Character/ObjectPath/ObjectSpawnLocation")
+	objSpawnLocation.progress_ratio = randf()
+	spawnedObj.position = objSpawnLocation.position
+	add_child(spawnedObj)

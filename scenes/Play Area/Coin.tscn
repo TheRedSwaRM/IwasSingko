@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsd0fv1mt4gji"]
+
+[ext_resource type="Texture2D" uid="uid://b52hr6m6xiido" path="res://assets/art/icon.png" id="1_gntc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p78ss"]
+size = Vector2(65, 61)
+
+[node name="Coin" type="RigidBody2D"]
+collision_layer = 8
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gntc1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_p78ss")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -33.0
+offset_top = -31.0
+offset_right = 31.0
+offset_bottom = 31.0
+pivot_offset = Vector2(41, 21)
+text = "Coin
+"

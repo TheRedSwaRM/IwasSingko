@@ -1,18 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://8dvud0lsy2ex"]
+[gd_scene load_steps=8 format=3 uid="uid://8dvud0lsy2ex"]
 
 [ext_resource type="Script" path="res://scenes/Play Area/PlayArea.gd" id="1_rtorh"]
 [ext_resource type="PackedScene" uid="uid://bsxnes5gdw4sf" path="res://scenes/Play Area/Character.tscn" id="3_1g7we"]
+[ext_resource type="PackedScene" uid="uid://owo83md1lye0" path="res://scenes/Play Area/Food.tscn" id="3_cstpc"]
 [ext_resource type="PackedScene" uid="uid://du7ydb14agavx" path="res://scenes/Play Area/Projectile.tscn" id="3_gyf7h"]
+[ext_resource type="PackedScene" uid="uid://bsd0fv1mt4gji" path="res://scenes/Play Area/Coin.tscn" id="4_iqtkc"]
+[ext_resource type="PackedScene" uid="uid://dmilnjo245o02" path="res://scenes/Play Area/Requirements.tscn" id="5_74cgh"]
 
 [sub_resource type="Curve2D" id="Curve2D_xd2bg"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -523, -340, 0, 0, 0, 0, 2009, -326, 0, 0, 0, 0, 2014, 1229, 0, 0, 0, 0, -525, 1225, 0, 0, 0, 0, -523, -340)
+"points": PackedVector2Array(0, 0, 0, 0, 343, -101, 0, 0, 0, 0, 1789, -189, 0, 0, 0, 0, 1789, 1093, 0, 0, 0, 0, -168, 1093, 0, 0, 0, 0, -171, -189, 0, 0, 0, 0, -53, 3, 0, 0, 0, 0, -101, 433, 0, 0, 0, 0, 6, 926, 0, 0, 0, 0, 450, 988, 0, 0, 0, 0, 1386, 965, 0, 0, 0, 0, 1596, 711, 0, 0, 0, 0, 1539, 182, 0, 0, 0, 0, 1358, 6, 0, 0, 0, 0, 515, 54, 0, 0, 0, 0, 150, 52, 0, 0, 0, 0, 40, -110, 0, 0, 0, 0, 71, 397, 0, 0, 0, 0, 128, 852, 0, 0, 0, 0, 611, 897, 0, 0, 0, 0, 1217, 892, 0, 0, 0, 0, 1449, 736, 0, 0, 0, 0, 1477, 374, 0, 0, 0, 0, 1225, 114, 0, 0, 0, 0, 343, -101)
 }
-point_count = 5
+point_count = 24
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rtorh")
 projectile = ExtResource("3_gyf7h")
+food = ExtResource("3_cstpc")
+coin = ExtResource("4_iqtkc")
+req = ExtResource("5_74cgh")
 
 [node name="background" type="ColorRect" parent="."]
 offset_left = 3.0
@@ -29,10 +35,21 @@ position = Vector2(-767, -486)
 curve = SubResource("Curve2D_xd2bg")
 
 [node name="ProjectileSpawnLocation" type="PathFollow2D" parent="Character/ProjectilePath"]
-position = Vector2(-523, -340)
-rotation = 0.00552917
+position = Vector2(343, -101)
+rotation = -0.0607826
+
+[node name="ObjectPath" type="Path2D" parent="Character"]
+position = Vector2(-767, -486)
+curve = SubResource("Curve2D_xd2bg")
+
+[node name="ObjectSpawnLocation" type="PathFollow2D" parent="Character/ObjectPath"]
+position = Vector2(343, -101)
+rotation = -0.0607826
 
 [node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ObjectTimer" type="Timer" parent="."]
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -41,5 +58,6 @@ one_shot = true
 [node name="ScoreTimer" type="Timer" parent="."]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ObjectTimer" to="." method="_on_object_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
