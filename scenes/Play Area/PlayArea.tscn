@@ -47,7 +47,7 @@ position = Vector2(343, -101)
 rotation = -0.0607826
 
 [node name="ProjectileTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.016
 
 [node name="ObjectTimer" type="Timer" parent="."]
 
@@ -57,6 +57,8 @@ one_shot = true
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
+[connection signal="hurt" from="Character" to="." method="_on_character_hurt"]
+[connection signal="obj" from="Character" to="." method="_on_character_obj"]
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
 [connection signal="timeout" from="ObjectTimer" to="." method="_on_object_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

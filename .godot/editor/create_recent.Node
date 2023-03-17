@@ -1,10 +1,10 @@
-TextEdit
 CollisionShape2D
+Area2D
+Timer
+TextEdit
 Sprite2D
 PathFollow2D
 Path2D
 Marker2D
-Timer
 RigidBody2D
-Area2D
 VideoStreamPlayer

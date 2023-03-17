@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://owo83md1lye0"]
+[gd_scene load_steps=4 format=3 uid="uid://owo83md1lye0"]
 
 [ext_resource type="Texture2D" uid="uid://b52hr6m6xiido" path="res://assets/art/icon.png" id="1_dnial"]
+[ext_resource type="Script" path="res://scenes/Play Area/Object.gd" id="1_n4fgs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okduq"]
 size = Vector2(65, 61)
 
-[node name="Food" type="RigidBody2D"]
+[node name="Food" type="RigidBody2D" groups=["food"]]
 collision_layer = 4
+collision_mask = 32
 gravity_scale = 0.0
+script = ExtResource("1_n4fgs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dnial")
@@ -23,3 +26,5 @@ offset_right = 31.0
 offset_bottom = 31.0
 pivot_offset = Vector2(41, 21)
 text = "Food"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

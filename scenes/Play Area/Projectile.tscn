@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b52hr6m6xiido" path="res://assets/art/icon.png" id="1_84for"]
 
-[node name="Projectile" type="RigidBody2D"]
+[node name="Projectile" type="RigidBody2D" groups=["enemy"]]
 collision_layer = 2
 gravity_scale = 0.0
 

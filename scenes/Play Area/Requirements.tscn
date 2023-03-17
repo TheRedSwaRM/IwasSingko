@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmilnjo245o02"]
+[gd_scene load_steps=4 format=3 uid="uid://dmilnjo245o02"]
 
+[ext_resource type="Script" path="res://scenes/Play Area/Object.gd" id="1_6bxct"]
 [ext_resource type="Texture2D" uid="uid://b52hr6m6xiido" path="res://assets/art/icon.png" id="1_yltms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24mcp"]
 size = Vector2(65, 61)
 
-[node name="Requirements" type="RigidBody2D"]
+[node name="Requirements" type="RigidBody2D" groups=["req"]]
 collision_layer = 16
+collision_mask = 32
 gravity_scale = 0.0
+script = ExtResource("1_6bxct")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_yltms")
@@ -23,3 +26,5 @@ offset_right = 31.0
 offset_bottom = 31.0
 pivot_offset = Vector2(41, 21)
 text = "Req"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

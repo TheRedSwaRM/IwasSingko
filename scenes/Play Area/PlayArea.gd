@@ -87,3 +87,11 @@ func _on_object_timer_timeout():
 	
 	# adds object to scene
 	add_child(spawnedObj)
+
+
+func _on_character_hurt():
+	print("hurt hp minus")
+
+
+func _on_character_obj(type):
+	print("collected " + type)
