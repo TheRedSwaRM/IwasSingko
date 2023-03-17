@@ -7,9 +7,9 @@ collision_layer = 2
 gravity_scale = 0.0
 
 [node name="enemy sprite" type="Sprite2D" parent="."]
-position = Vector2(33, 33)
+position = Vector2(1.20001, -3.1)
 texture = ExtResource("1_84for")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-473, -32)
+position = Vector2(-504.8, -68.1)
 polygon = PackedVector2Array(474, 32, 538, 32, 538, 95, 474, 95)

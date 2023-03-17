@@ -46,7 +46,7 @@ curve = SubResource("Curve2D_xd2bg")
 position = Vector2(343, -101)
 rotation = -0.0607826
 
-[node name="MobTimer" type="Timer" parent="."]
+[node name="ProjectileTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="ObjectTimer" type="Timer" parent="."]
@@ -57,7 +57,7 @@ one_shot = true
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
-[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
 [connection signal="timeout" from="ObjectTimer" to="." method="_on_object_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
