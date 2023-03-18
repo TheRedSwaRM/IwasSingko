@@ -24,7 +24,12 @@ func _process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-
+	if velocity == Vector2.ZERO:
+		$AnimationTree.get("parameters/playback").travel("idle")
+	else:
+		$AnimationTree.get("parameters/playback").travel("walk")
+		$AnimationTree.set("parameters/idle/blend_position", velocity)
+		$AnimationTree.set("parameters/walk/blend_position", velocity)
 	# sprint controls
 	# doubles movement speed if sprint is held
 	var movementSpeed = speed
