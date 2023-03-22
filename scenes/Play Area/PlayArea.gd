@@ -16,20 +16,40 @@ extends Node2D
 var score
 var coins
 
-var pause_scene = load("res://scenes/Play Area/PauseUI.tscn")
+var paused
 
 # Called when the node enters the scene tree for the first time.
 # calls new game function to start the timers for the game
 func _ready():
 	randomize()
 	newGame()
+	paused = false
 
-# called when game over state is reached
-# unused
-func game_over():
+func _process(delta):
+	if Input.is_action_just_released("pause"):
+		if paused == false:
+			paused = true
+			pauseGame()
+		else:
+			paused = false
+			resumeGame()
+			
+
+func pauseGame():
 	$ScoreTimer.stop()
 	$ProjectileTimer.stop()
 	$ObjectTimer.stop()
+	get_tree().paused = true
+	$PauseScene.show()
+	$HUD.hide()
+	
+func resumeGame():
+	$ScoreTimer.start()
+	$ProjectileTimer.start()
+	$ObjectTimer.start()
+	get_tree().paused = false
+	$PauseScene.hide()
+	$HUD.show()
 
 # new game function
 # sets score to 0 and starts the start timer
@@ -127,3 +147,7 @@ func _on_character_stamina_changed(stamina):
 	if stamina <= 0:
 		_on_character_game_over()
 	$HUD.updateStamina(stamina)
+
+
+func _on_resume_button_down():
+	resumeGame()

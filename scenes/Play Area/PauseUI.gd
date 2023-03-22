@@ -1,9 +1,7 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var pause_scene = load("res://scenes/Play Area/PauseUI.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,8 +21,8 @@ func _on_settings_button_down():
 
 
 func _on_resume_button_down():
-	queue_free()
-	pass # Replace with function body.
+	hide()
+	pass
 
 
 func _on_goToMainMenu_button_down():

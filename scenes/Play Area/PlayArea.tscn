@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://8dvud0lsy2ex"]
+[gd_scene load_steps=9 format=3 uid="uid://8dvud0lsy2ex"]
 
 [ext_resource type="Script" path="res://scenes/Play Area/PlayArea.gd" id="1_rtorh"]
 [ext_resource type="PackedScene" uid="uid://bsxnes5gdw4sf" path="res://scenes/Play Area/Character.tscn" id="3_1g7we"]
@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bsd0fv1mt4gji" path="res://scenes/Play Area/Coin.tscn" id="4_iqtkc"]
 [ext_resource type="PackedScene" uid="uid://dmilnjo245o02" path="res://scenes/Play Area/Requirements.tscn" id="5_74cgh"]
 [ext_resource type="PackedScene" uid="uid://1thqwx1jkmgr" path="res://scenes/Play Area/HUD.tscn" id="7_2662b"]
+[ext_resource type="PackedScene" uid="uid://dovft48d5oin6" path="res://scenes/Play Area/PauseUI.tscn" id="8_jdfys"]
 
 [node name="Node2D" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_rtorh")
 projectile = ExtResource("3_gyf7h")
 food = ExtResource("3_cstpc")
@@ -38,6 +40,10 @@ one_shot = true
 
 [node name="HUD" parent="." instance=ExtResource("7_2662b")]
 
+[node name="PauseScene" parent="." instance=ExtResource("8_jdfys")]
+process_mode = 2
+visible = false
+
 [connection signal="gameOver" from="Character" to="." method="_on_character_game_over"]
 [connection signal="obj" from="Character" to="." method="_on_character_obj"]
 [connection signal="staminaChanged" from="Character" to="." method="_on_character_stamina_changed"]
@@ -45,3 +51,6 @@ one_shot = true
 [connection signal="timeout" from="ObjectTimer" to="." method="_on_object_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="button_down" from="PauseScene/resume" to="." method="_on_resume_button_down"]
+
+[editable path="PauseScene"]
