@@ -1,6 +1,9 @@
+Timer
 CollisionShape2D
 Area2D
-Timer
+Label
+RichTextLabel
+CanvasLayer
 TextEdit
 Sprite2D
 PathFollow2D

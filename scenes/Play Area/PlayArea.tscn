@@ -6,12 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://du7ydb14agavx" path="res://scenes/Play Area/Projectile.tscn" id="3_gyf7h"]
 [ext_resource type="PackedScene" uid="uid://bsd0fv1mt4gji" path="res://scenes/Play Area/Coin.tscn" id="4_iqtkc"]
 [ext_resource type="PackedScene" uid="uid://dmilnjo245o02" path="res://scenes/Play Area/Requirements.tscn" id="5_74cgh"]
-
-[sub_resource type="Curve2D" id="Curve2D_xd2bg"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 343, -101, 0, 0, 0, 0, 1789, -189, 0, 0, 0, 0, 1789, 1093, 0, 0, 0, 0, -168, 1093, 0, 0, 0, 0, -171, -189, 0, 0, 0, 0, -53, 3, 0, 0, 0, 0, -101, 433, 0, 0, 0, 0, 6, 926, 0, 0, 0, 0, 450, 988, 0, 0, 0, 0, 1386, 965, 0, 0, 0, 0, 1596, 711, 0, 0, 0, 0, 1539, 182, 0, 0, 0, 0, 1358, 6, 0, 0, 0, 0, 515, 54, 0, 0, 0, 0, 150, 52, 0, 0, 0, 0, 40, -110, 0, 0, 0, 0, 71, 397, 0, 0, 0, 0, 128, 852, 0, 0, 0, 0, 611, 897, 0, 0, 0, 0, 1217, 892, 0, 0, 0, 0, 1449, 736, 0, 0, 0, 0, 1477, 374, 0, 0, 0, 0, 1225, 114, 0, 0, 0, 0, 343, -101)
-}
-point_count = 24
+[ext_resource type="PackedScene" uid="uid://1thqwx1jkmgr" path="res://scenes/Play Area/HUD.tscn" id="7_2662b"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rtorh")
@@ -30,24 +25,8 @@ color = Color(0.65098, 0.654902, 0.658824, 1)
 position = Vector2(514, 305)
 collision_mask = 14
 
-[node name="ProjectilePath" type="Path2D" parent="Character"]
-position = Vector2(-767, -486)
-curve = SubResource("Curve2D_xd2bg")
-
-[node name="ProjectileSpawnLocation" type="PathFollow2D" parent="Character/ProjectilePath"]
-position = Vector2(343, -101)
-rotation = -0.0607826
-
-[node name="ObjectPath" type="Path2D" parent="Character"]
-position = Vector2(-767, -486)
-curve = SubResource("Curve2D_xd2bg")
-
-[node name="ObjectSpawnLocation" type="PathFollow2D" parent="Character/ObjectPath"]
-position = Vector2(343, -101)
-rotation = -0.0607826
-
 [node name="ProjectileTimer" type="Timer" parent="."]
-wait_time = 0.016
+wait_time = 0.252
 
 [node name="ObjectTimer" type="Timer" parent="."]
 
@@ -57,8 +36,11 @@ one_shot = true
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
-[connection signal="hurt" from="Character" to="." method="_on_character_hurt"]
+[node name="HUD" parent="." instance=ExtResource("7_2662b")]
+
+[connection signal="gameOver" from="Character" to="." method="_on_character_game_over"]
 [connection signal="obj" from="Character" to="." method="_on_character_obj"]
+[connection signal="staminaChanged" from="Character" to="." method="_on_character_stamina_changed"]
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
 [connection signal="timeout" from="ObjectTimer" to="." method="_on_object_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

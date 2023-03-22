@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bsxnes5gdw4sf"]
+[gd_scene load_steps=31 format=3 uid="uid://bsxnes5gdw4sf"]
 
 [ext_resource type="Script" path="res://scenes/Play Area/CharacterController.gd" id="1_lochm"]
 [ext_resource type="Texture2D" uid="uid://cl5q4lnhc70l7" path="res://assets/art/playerCharacter/PlayerCharacterAsset.png" id="2_xkh2t"]
@@ -20,7 +20,7 @@ func _ready():
 size = Vector2(26.5, 28.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ge2i"]
-radius = 37.0135
+radius = 81.0987
 
 [sub_resource type="Animation" id="Animation_sdj3d"]
 length = 0.001
@@ -105,6 +105,23 @@ tracks/0/keys = {
 "values": [6]
 }
 
+[sub_resource type="Animation" id="Animation_3suh6"]
+resource_name = "move_down"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
 [sub_resource type="Animation" id="Animation_i40wk"]
 resource_name = "move_left"
 length = 0.3
@@ -154,23 +171,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [9, 10, 11]
-}
-
-[sub_resource type="Animation" id="Animation_3suh6"]
-resource_name = "move_down"
-length = 0.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dehol"]
@@ -245,6 +245,9 @@ transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_yo5vl"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rq10n"]
+radius = 878.028
+
 [node name="Character" type="Area2D"]
 collision_mask = 30
 script = ExtResource("1_lochm")
@@ -281,7 +284,7 @@ visible = false
 collision_layer = 32
 collision_mask = 28
 
-[node name="ObjectCollectorCollision" type="CollisionShape2D" parent="ObjectCollector"]
+[node name="ObjectCollectorCollision" type="CollisionShape2D" parent="ObjectCollector" groups=["character"]]
 visible = false
 shape = SubResource("CircleShape2D_8ge2i")
 
@@ -298,6 +301,23 @@ parameters/playback = SubResource("AnimationNodeStateMachinePlayback_yo5vl")
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
 
+[node name="BulletDestroyer" type="Area2D" parent="."]
+visible = false
+collision_mask = 2
+
+[node name="BulletDestroyerCollision" type="CollisionShape2D" parent="BulletDestroyer"]
+visible = false
+shape = SubResource("CircleShape2D_rq10n")
+
+[node name="PositionChecker" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="NapTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="CollisionTimer" to="." method="_on_collision_timer_timeout"]
 [connection signal="body_entered" from="ObjectCollector" to="." method="_on_object_collector_body_entered"]
+[connection signal="body_exited" from="BulletDestroyer" to="." method="_on_bullet_destroyer_body_exited"]
+[connection signal="timeout" from="PositionChecker" to="." method="_on_position_checker_timeout"]
+[connection signal="timeout" from="NapTimer" to="." method="_on_nap_timer_timeout"]
