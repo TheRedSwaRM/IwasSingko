@@ -1,2 +1,12 @@
 res://default_env.tres
-res://scenes/OpenSessionUI.tscn
+res://scenes/Play Area/Character.tscn
+res://scenes/Play Area/PauseUI.tscn
+res://scenes/Play Area/PlayArea.tscn
+res://scenes/Play Area/Coin.tscn
+res://scenes/Play Area/Food.tscn
+res://scenes/Play Area/Requirements.tscn
+res://scenes/Play Area/Projectile.tscn
+res://scenes/Play Area/CharacterController.gd
+res://scenes/Play Area/PlayArea.gd
+res://scenes/Play Area/Object.gd
+res://scenes/Play Area/ProjectileController.gd

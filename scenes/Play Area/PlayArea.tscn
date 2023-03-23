@@ -27,6 +27,19 @@ color = Color(0.65098, 0.654902, 0.658824, 1)
 position = Vector2(514, 305)
 collision_mask = 14
 
+[node name="PauseScene" parent="Character" instance=ExtResource("8_jdfys")]
+process_mode = 2
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -513.0
+offset_top = -300.0
+offset_right = -513.0
+offset_bottom = -300.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="ProjectileTimer" type="Timer" parent="."]
 wait_time = 0.252
 
@@ -40,17 +53,14 @@ one_shot = true
 
 [node name="HUD" parent="." instance=ExtResource("7_2662b")]
 
-[node name="PauseScene" parent="." instance=ExtResource("8_jdfys")]
-process_mode = 2
-visible = false
-
+[connection signal="pause" from="." to="Character" method="_on_node_2d_pause"]
 [connection signal="gameOver" from="Character" to="." method="_on_character_game_over"]
 [connection signal="obj" from="Character" to="." method="_on_character_obj"]
 [connection signal="staminaChanged" from="Character" to="." method="_on_character_stamina_changed"]
+[connection signal="button_down" from="Character/PauseScene/resume" to="." method="_on_resume_button_down"]
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
 [connection signal="timeout" from="ObjectTimer" to="." method="_on_object_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
-[connection signal="button_down" from="PauseScene/resume" to="." method="_on_resume_button_down"]
 
-[editable path="PauseScene"]
+[editable path="Character/PauseScene"]

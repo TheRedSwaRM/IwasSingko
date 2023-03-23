@@ -18,6 +18,8 @@ var coins
 
 var paused
 
+signal pause
+
 # Called when the node enters the scene tree for the first time.
 # calls new game function to start the timers for the game
 func _ready():
@@ -36,19 +38,21 @@ func _process(delta):
 			
 
 func pauseGame():
+	emit_signal("pause")
 	$ScoreTimer.stop()
 	$ProjectileTimer.stop()
 	$ObjectTimer.stop()
 	get_tree().paused = true
-	$PauseScene.show()
+	$Character/PauseScene.show()
 	$HUD.hide()
 	
 func resumeGame():
+	emit_signal("pause")
 	$ScoreTimer.start()
 	$ProjectileTimer.start()
 	$ObjectTimer.start()
 	get_tree().paused = false
-	$PauseScene.hide()
+	$Character/PauseScene.hide()
 	$HUD.show()
 
 # new game function

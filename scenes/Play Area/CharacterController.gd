@@ -23,6 +23,7 @@ var stamina
 var tired
 var prevPosition
 var napping
+var paused
 
 signal staminaChanged(stamina)
 signal obj(type)
@@ -34,53 +35,55 @@ func _ready():
 	tired = baseTired
 	prevPosition = position
 	napping = false
-
+	paused = false
 
 func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	# movement controls
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
-		
-	# animation
-	if velocity == Vector2.ZERO:
-		$AnimationTree.get("parameters/playback").travel("idle")
-	else:
-		$AnimationTree.get("parameters/playback").travel("walk")
-		$AnimationTree.set("parameters/idle/blend_position", velocity)
-		$AnimationTree.set("parameters/walk/blend_position", velocity)
-		
-	# sprint controls
-	# doubles movement speed if sprint is held
-	# tired bar is based off of position difference so no additional code for tiredness here
-	var movementSpeed = speed
-	if Input.is_action_pressed("sprint"):
-		movementSpeed *= 2
-
-	# nap controls
-	if Input.is_action_pressed("nap"):
-		# sets character to unable to move
-		movementSpeed = 0
-		# checks if napping was set to true already so that nap timer does not constantly restart itself
+	if paused == false:
+		var velocity = Vector2.ZERO # The player's movement vector.
+		# movement controls
 		if napping == false:
-			napping = true
-			$NapTimer.start()
-	# if nap button was released, nap timer is cancelled
-	if Input.is_action_just_released("nap"):
-		$NapTimer.stop()
-		napping = false
-	
-	# velocity is used to implement diagonal movement
-	# also covers the case where two keys towards the opposite direction are pressed at the same time
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * movementSpeed
-	position += velocity * delta
+			if Input.is_action_pressed("move_right"):
+				velocity.x += 1
+			if Input.is_action_pressed("move_left"):
+				velocity.x -= 1
+			if Input.is_action_pressed("move_down"):
+				velocity.y += 1
+			if Input.is_action_pressed("move_up"):
+				velocity.y -= 1
+			
+		# animation
+		if velocity == Vector2.ZERO:
+			$AnimationTree.get("parameters/playback").travel("idle")
+		else:
+			$AnimationTree.get("parameters/playback").travel("walk")
+			$AnimationTree.set("parameters/idle/blend_position", velocity)
+			$AnimationTree.set("parameters/walk/blend_position", velocity)
+			
+		# sprint controls
+		# doubles movement speed if sprint is held
+		# tired bar is based off of position difference so no additional code for tiredness here
+		var movementSpeed = speed
+		if Input.is_action_pressed("sprint"):
+			movementSpeed *= 2
+
+		# nap controls
+		if Input.is_action_pressed("nap"):
+			# sets character to unable to move
+			movementSpeed = 0
+			# checks if napping was set to true already so that nap timer does not constantly restart itself
+			if napping == false:
+				napping = true
+				$NapTimer.start()
+		# if nap button was released, nap timer is cancelled
+		if Input.is_action_just_released("nap"):
+			$NapTimer.stop()
+			napping = false
+		
+		# velocity is used to implement diagonal movement
+		# also covers the case where two keys towards the opposite direction are pressed at the same time
+		if velocity.length() > 0:
+			velocity = velocity.normalized() * movementSpeed
+		position += velocity * delta
 	
 # if projectile hit character checker
 func _on_body_entered(body):
@@ -157,3 +160,10 @@ func _on_nap_timer_timeout():
 			stamina = baseStamina
 		emit_signal("staminaChanged", stamina)
 	napping = true
+
+
+func _on_node_2d_pause():
+	if paused:
+		paused = false
+	else:
+		paused = true
