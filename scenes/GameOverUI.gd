@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_playAgain_button_down():
-	get_tree().change_scene_to_file("res://scenes/PlayArea.tscn")
+	get_tree().change_scene_to_file("res://scenes/Play Area/PlayArea.tscn")
 	pass # Replace with function body.
 
 

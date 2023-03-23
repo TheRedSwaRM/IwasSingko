@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://8dvud0lsy2ex"]
+
+[ext_resource type="Script" path="res://scenes/Play Area/PlayArea.gd" id="1_rtorh"]
+[ext_resource type="PackedScene" uid="uid://bsxnes5gdw4sf" path="res://scenes/Play Area/Character.tscn" id="3_1g7we"]
+[ext_resource type="PackedScene" uid="uid://owo83md1lye0" path="res://scenes/Play Area/Food.tscn" id="3_cstpc"]
+[ext_resource type="PackedScene" uid="uid://du7ydb14agavx" path="res://scenes/Play Area/Projectile.tscn" id="3_gyf7h"]
+[ext_resource type="PackedScene" uid="uid://bsd0fv1mt4gji" path="res://scenes/Play Area/Coin.tscn" id="4_iqtkc"]
+[ext_resource type="PackedScene" uid="uid://dmilnjo245o02" path="res://scenes/Play Area/Requirements.tscn" id="5_74cgh"]
+[ext_resource type="PackedScene" uid="uid://1thqwx1jkmgr" path="res://scenes/Play Area/HUD.tscn" id="7_2662b"]
+[ext_resource type="PackedScene" uid="uid://dovft48d5oin6" path="res://scenes/Play Area/PauseUI.tscn" id="8_jdfys"]
+
+[node name="Node2D" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_rtorh")
+projectile = ExtResource("3_gyf7h")
+food = ExtResource("3_cstpc")
+coin = ExtResource("4_iqtkc")
+req = ExtResource("5_74cgh")
+
+[node name="background" type="ColorRect" parent="."]
+offset_left = 3.0
+offset_right = 1027.0
+offset_bottom = 600.0
+color = Color(0.65098, 0.654902, 0.658824, 1)
+
+[node name="Character" parent="." instance=ExtResource("3_1g7we")]
+position = Vector2(514, 305)
+collision_mask = 14
+
+[node name="ProjectileTimer" type="Timer" parent="."]
+wait_time = 0.252
+
+[node name="ObjectTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("7_2662b")]
+
+[node name="PauseScene" parent="." instance=ExtResource("8_jdfys")]
+process_mode = 2
+visible = false
+
+[connection signal="gameOver" from="Character" to="." method="_on_character_game_over"]
+[connection signal="obj" from="Character" to="." method="_on_character_obj"]
+[connection signal="staminaChanged" from="Character" to="." method="_on_character_stamina_changed"]
+[connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
+[connection signal="timeout" from="ObjectTimer" to="." method="_on_object_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="button_down" from="PauseScene/resume" to="." method="_on_resume_button_down"]
+
+[editable path="PauseScene"]
