@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd6pfls1y7xm3"]
+
+[ext_resource type="Texture2D" uid="uid://b52hr6m6xiido" path="res://assets/art/icon.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ddk3hqyeka6dp" path="res://assets/art/pauseBtn.png" id="3"]
+[ext_resource type="Script" path="res://scenes/PlayArea.gd" id="4"]
+[ext_resource type="Script" path="res://scenes/Play Area3D Scripts/CharacterController.gd" id="5"]
+[ext_resource type="Script" path="res://scenes/Charactercamera.gd" id="6"]
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="7"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("4")
+
+[node name="background" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1026.0
+offset_bottom = 603.0
+color = Color(0.65098, 0.654902, 0.658824, 1)
+
+[node name="Character" type="Area2D" parent="."]
+position = Vector2(510, 280)
+script = ExtResource("5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character"]
+position = Vector2(4, 3)
+texture = ExtResource("1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Character"]
+position = Vector2(-508, -285)
+polygon = PackedVector2Array(546, 320, 480, 320, 480, 255, 546, 255)
+
+[node name="desc" type="Label" parent="Character"]
+offset_left = 44.0
+offset_top = -13.0
+offset_right = 140.0
+offset_bottom = 22.0
+text = "Player Character"
+
+[node name="desc2" type="Label" parent="Character"]
+offset_left = 52.0
+offset_top = -53.0
+offset_right = 148.0
+offset_bottom = -37.0
+text = "Energy Bar"
+
+[node name="BlackBar2" type="ColorRect" parent="Character"]
+offset_left = -28.0
+offset_top = -53.0
+offset_right = 36.0
+offset_bottom = -37.0
+color = Color(1, 0.823529, 0.215686, 1)
+
+[node name="TextureButton" type="TextureButton" parent="Character"]
+offset_left = -492.0
+offset_top = -269.0
+offset_right = 588.0
+offset_bottom = 811.0
+scale = Vector2(0.06, 0.06)
+texture_normal = ExtResource("3")
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+position = Vector2(5, 23)
+script = ExtResource("6")
+
+[node name="enemy" type="RigidBody2D" parent="."]
+position = Vector2(518, 81)
+gravity_scale = 0.0
+script = ExtResource("7")
+
+[node name="enemy sprite" type="Sprite2D" parent="enemy"]
+position = Vector2(-2, 1)
+texture = ExtResource("1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy"]
+position = Vector2(-508, -62)
+polygon = PackedVector2Array(475, 30, 541, 31, 544, 93, 476, 94)
+
+[node name="enemy2" type="RigidBody2D" parent="."]
+position = Vector2(291, 272)
+gravity_scale = 0.0
+script = ExtResource("7")
+
+[node name="enemy sprite" type="Sprite2D" parent="enemy2"]
+position = Vector2(-2, 1)
+texture = ExtResource("1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy2"]
+position = Vector2(-508, -62)
+polygon = PackedVector2Array(475, 30, 541, 31, 544, 93, 476, 94)
+
+[node name="enemy3" type="RigidBody2D" parent="."]
+position = Vector2(512, 439)
+gravity_scale = 0.0
+script = ExtResource("7")
+
+[node name="enemy sprite" type="Sprite2D" parent="enemy3"]
+position = Vector2(-2, 1)
+texture = ExtResource("1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy3"]
+position = Vector2(-508, -62)
+polygon = PackedVector2Array(475, 30, 541, 31, 544, 93, 476, 94)
+
+[node name="enemy4" type="RigidBody2D" parent="."]
+position = Vector2(772, 289)
+gravity_scale = 0.0
+script = ExtResource("7")
+
+[node name="enemy sprite" type="Sprite2D" parent="enemy4"]
+position = Vector2(-2, 1)
+texture = ExtResource("1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy4"]
+position = Vector2(-508, -62)
+polygon = PackedVector2Array(475, 30, 541, 31, 544, 93, 476, 94)
+
+[connection signal="body_entered" from="Character" to="Character" method="_on_Character_body_entered"]
+[connection signal="button_down" from="Character/TextureButton" to="." method="_on_TextureButton_button_down"]

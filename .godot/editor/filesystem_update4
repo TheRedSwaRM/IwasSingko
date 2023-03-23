@@ -1,11 +1,9 @@
 res://default_env.tres
-res://scenes/Play Area/PlayArea.tscn
-res://scenes/Play Area/PlayArea.gd
-res://scenes/Play Area/Character.tscn
-res://scenes/Play Area/PauseUI.tscn
-res://scenes/Play Area/Projectile.tscn
-res://scenes/Play Area/Food.tscn
-res://scenes/Play Area/Requirements.tscn
-res://scenes/Play Area/Coin.tscn
-res://scenes/Play Area/HUD.tscn
-res://scenes/Play Area/ProjectileController.gd
+res://scenes/OpenSessionUI.tscn
+res://scenes/MainMenuUI.tscn
+res://scenes/GameOverUI.tscn
+res://scenes/PauseUI.tscn
+res://scenes/HowToPlayUI.tscn
+res://scenes/PlayArea.tscn
+res://scenes/SelectDifficultyUI.tscn
+res://scenes/SettingsUI.tscn
