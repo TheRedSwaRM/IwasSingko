@@ -41,8 +41,9 @@ text = "Insert cutscene here"
 
 [node name="MainMenuPrompt" type="Label" parent="."]
 layout_mode = 0
-offset_left = 807.0
-offset_top = 546.0
-offset_right = 998.0
-offset_bottom = 572.0
+offset_left = 808.0
+offset_top = 560.0
+offset_right = 999.0
+offset_bottom = 586.0
+theme_override_fonts/font = ExtResource("1")
 text = "Press Any Button to Skip"
