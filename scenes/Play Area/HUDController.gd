@@ -11,3 +11,7 @@ func updateStamina(stamina):
 # updates coins text
 func updateCoins(coins):
 	$CoinsLabel.text = "Coins: " + str(coins)
+	
+# updates difficulty text
+func updateDiff(diff):
+	$DiffLabel.text = str(diff)
