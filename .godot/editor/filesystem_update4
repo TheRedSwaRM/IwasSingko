@@ -1,19 +1,12 @@
 res://default_env.tres
-res://scenes/Play Area/Projectile.tscn
-res://scenes/Play Area/ProjectileController.gd
-res://SingletonScript.gd
-res://scenes/SelectDifficultyUI.gd
-res://scenes/Play Area/HUD.tscn
-res://scenes/Play Area/HUDController.gd
-res://scenes/Play Area/PlayArea.tscn
-res://scenes/Play Area/PlayArea.gd
+res://scenes/MainMenuUI.tscn
+res://scenes/GameOverUI.gd
 res://scenes/Play Area/Character.tscn
 res://scenes/Play Area/PauseUI.tscn
+res://scenes/Play Area/PlayArea.tscn
 res://scenes/Play Area/Coin.tscn
 res://scenes/Play Area/Food.tscn
 res://scenes/Play Area/Requirements.tscn
-res://scenes/SelectDifficultyUI.tscn
-res://scenes/Play Area/PauseUI.gd
+res://scenes/Play Area/Projectile.tscn
+res://scenes/Play Area/HUD.tscn
 res://scenes/GameOverUI.tscn
-res://scenes/GameOverUI.gd
-res://scenes/MainMenuUI.tscn

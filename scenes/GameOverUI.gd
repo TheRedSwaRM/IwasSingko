@@ -14,6 +14,8 @@ func _ready():
 	
 	if SingletonScript.playAreaScore > SingletonScript.playerData["player"]["playerHighScore"]:
 		SingletonScript.SetPlayerHighScore(SingletonScript.playAreaScore)
+	
+	SingletonScript.SavePlayerData()
 		
 	$HighScoreLabel.text = "High Score: " + str(SingletonScript.playerData["player"]["playerHighScore"])
 
