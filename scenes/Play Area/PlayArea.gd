@@ -167,21 +167,21 @@ func playAreaSetDifficulty(diff):
 	if diff == "Easy":
 		surviveScore = 5
 		coinValue = 5
-		reqScore = 20
+		reqScore = 20 + SingletonScript.playerData["player"]["playerScoreInc"]
 		projMinSpeed = 400.0
 		projMaxSpeed = 700.0
 		$ProjectileTimer.wait_time = 0.250
 	elif diff == "Normal":
 		surviveScore = 10
 		coinValue = 10
-		reqScore = 30
+		reqScore = 30 + SingletonScript.playerData["player"]["playerScoreInc"]
 		projMinSpeed = 600.0
 		projMaxSpeed = 900.0
 		$ProjectileTimer.wait_time = 0.200
 	elif diff == "Hard":
 		surviveScore = 15
 		coinValue = 15
-		reqScore = 40
+		reqScore = 40 + SingletonScript.playerData["player"]["playerScoreInc"]
 		projMinSpeed = 800.0
 		projMaxSpeed = 1100.0
 		$ProjectileTimer.wait_time = 0.150
