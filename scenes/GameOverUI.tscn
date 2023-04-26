@@ -64,5 +64,43 @@ offset_right = 896.0
 offset_bottom = 344.0
 text = "Back to Main Menu"
 
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105
+anchor_top = 0.603
+anchor_right = 0.361
+anchor_bottom = 0.625
+offset_left = 0.479996
+offset_top = 0.199982
+offset_right = 0.335968
+offset_bottom = 13.0
+text = "Score: 10000000000000000000000"
+
+[node name="CoinsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105
+anchor_top = 0.637
+anchor_right = 0.347
+anchor_bottom = 0.68
+offset_left = 0.479996
+offset_top = -0.200012
+offset_right = 14.672
+text = "Coins: 10000000000000000000000"
+
+[node name="HighScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105
+anchor_top = 0.668
+anchor_right = 0.4
+anchor_bottom = 0.712
+offset_left = 0.479996
+offset_top = 0.199982
+offset_right = -39.6
+offset_bottom = -0.200012
+text = "High Score: 10000000000000000000000"
+
 [connection signal="button_down" from="playAgain" to="." method="_on_playAgain_button_down"]
 [connection signal="button_down" from="backToMainMenu" to="." method="_on_backToMainMenu_button_down"]

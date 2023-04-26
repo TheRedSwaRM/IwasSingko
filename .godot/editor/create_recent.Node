@@ -1,7 +1,7 @@
+Label
 CollisionShape2D
 Timer
 Area2D
-Label
 RichTextLabel
 CanvasLayer
 TextEdit

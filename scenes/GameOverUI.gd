@@ -8,7 +8,14 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$ScoreLabel.text = "Score: " + str(SingletonScript.playAreaScore)
+	
+	$CoinsLabel.text = "Coins: " + str(SingletonScript.playerData["player"]["playerCoins"])
+	
+	if SingletonScript.playAreaScore > SingletonScript.playerData["player"]["playerHighScore"]:
+		SingletonScript.SetPlayerHighScore(SingletonScript.playAreaScore)
+		
+	$HighScoreLabel.text = "High Score: " + str(SingletonScript.playerData["player"]["playerHighScore"])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

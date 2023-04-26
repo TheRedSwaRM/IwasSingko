@@ -279,6 +279,7 @@ position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_t574h")
 
 [node name="CollisionTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="ObjectCollector" type="Area2D" parent="."]
