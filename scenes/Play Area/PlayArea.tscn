@@ -43,7 +43,14 @@ grow_vertical = 1
 [node name="ProjectileTimer" type="Timer" parent="."]
 wait_time = 0.252
 
-[node name="ObjectTimer" type="Timer" parent="."]
+[node name="CoinTimer" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="FoodTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="ReqTimer" type="Timer" parent="."]
+wait_time = 10.0
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -59,7 +66,9 @@ one_shot = true
 [connection signal="staminaChanged" from="Character" to="." method="_on_character_stamina_changed"]
 [connection signal="button_down" from="Character/PauseScene/resume" to="." method="_on_resume_button_down"]
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
-[connection signal="timeout" from="ObjectTimer" to="." method="_on_object_timer_timeout"]
+[connection signal="timeout" from="CoinTimer" to="." method="_on_coin_timer_timeout"]
+[connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]
+[connection signal="timeout" from="ReqTimer" to="." method="_on_req_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 

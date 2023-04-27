@@ -42,7 +42,9 @@ func pauseGame():
 	emit_signal("pause")
 	$ScoreTimer.stop()
 	$ProjectileTimer.stop()
-	$ObjectTimer.stop()
+	$CoinTimer.stop()
+	$FoodTimer.stop()
+	$ReqTimer.stop()
 	get_tree().paused = true
 	$Character/PauseScene.show()
 	$HUD.hide()
@@ -51,7 +53,9 @@ func resumeGame():
 	emit_signal("pause")
 	$ScoreTimer.start()
 	$ProjectileTimer.start()
-	$ObjectTimer.start()
+	$CoinTimer.start()
+	$FoodTimer.start()
+	$ReqTimer.start()
 	get_tree().paused = false
 	$Character/PauseScene.hide()
 	$HUD.show()
@@ -62,6 +66,7 @@ func resumeGame():
 func newGame():
 	score = 0
 	coins = 0
+	$FoodTimer.wait_time = SingletonScript.playerData["player"]["playerRateFood"]
 	$HUD.updateScore(score)
 	$HUD.updateCoins(coins)
 	SingletonScript.SetPlayAreaCoins(coins)
@@ -74,7 +79,9 @@ func newGame():
 # starts other timers
 func _on_start_timer_timeout():
 	$ProjectileTimer.start()
-	$ObjectTimer.start()
+	$CoinTimer.start()
+	$FoodTimer.start()
+	$ReqTimer.start()
 	$ScoreTimer.start()
 
 # score is increased based on how long the player has survived
@@ -104,23 +111,6 @@ func _on_projectile_timer_timeout():
 	
 	# adds projectile to scene
 	add_child(spawnedProjectile)
-
-# spawns an object for every timeout
-func _on_object_timer_timeout():
-	# array of objects to spawn
-	var objs = [food, coin, req]
-	
-	# randomly chooses object to spawn
-	var chosenObj = objs[randi()% objs.size()]
-	
-	# spawns object
-	var spawnedObj = chosenObj.instantiate()
-	
-	#sets random position for object to spawn
-	spawnedObj.position = getRandomPosition()
-	
-	# adds object to scene
-	add_child(spawnedObj)
 
 # selectsts a random position offscreen to spawn
 func getRandomPosition():
@@ -185,3 +175,34 @@ func playAreaSetDifficulty(diff):
 		projMinSpeed = 800.0
 		projMaxSpeed = 1100.0
 		$ProjectileTimer.wait_time = 0.150
+
+
+func _on_coin_timer_timeout():
+		# spawns object
+	var spawnedCoin = coin.instantiate()
+	
+	#sets random position for object to spawn
+	spawnedCoin.position = getRandomPosition()
+	
+	# adds object to scene
+	add_child(spawnedCoin)
+
+
+func _on_food_timer_timeout():
+	var spawnedFood = food.instantiate()
+	
+	#sets random position for object to spawn
+	spawnedFood.position = getRandomPosition()
+	
+	# adds object to scene
+	add_child(spawnedFood)
+
+
+func _on_req_timer_timeout():
+	var spawnedReq = req.instantiate()
+	
+	#sets random position for object to spawn
+	spawnedReq.position = getRandomPosition()
+	
+	# adds object to scene
+	add_child(spawnedReq)

@@ -6,7 +6,7 @@ var playerData = {
 		"playerHighScore" : 0,
 		"playerMaxEnergy" : 100,
 		"playerMovementSpeed" : 400,
-		"playerRateFood" : 1,
+		"playerRateFood" : 10,
 		"playerRateReq" : 1,
 		"playerScoreInc" : 10,
 		"playerFoodInc" : 10
@@ -47,7 +47,7 @@ func NewPlayerData():
 		"playerHighScore" : 0,
 		"playerMaxEnergy" : 100,
 		"playerMovementSpeed" : 400,
-		"playerRateFood" : 1,
+		"playerRateFood" : 10,
 		"playerRateReq" : 1,
 		"playerScoreInc" : 10,
 		"playerFoodInc" : 10
