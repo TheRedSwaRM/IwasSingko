@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxxgxykhav2qb"]
+[gd_scene load_steps=9 format=3 uid="uid://bxxgxykhav2qb"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/PauseUI.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dud1c53jqv7gq" path="res://assets/art/UI/Resume_Idle.png" id="3_p8o5q"]
+[ext_resource type="Texture2D" uid="uid://bxqq4ca1r60h6" path="res://assets/art/UI/Resume_Hover.png" id="4_wprcu"]
+[ext_resource type="Texture2D" uid="uid://c44omi75aesja" path="res://assets/art/UI/Settings_Idle.png" id="5_sijq6"]
+[ext_resource type="Texture2D" uid="uid://nh4cllk35cwh" path="res://assets/art/UI/Settings_Hover.png" id="6_jy2oi"]
+[ext_resource type="Texture2D" uid="uid://dt8qp4brr7vdg" path="res://assets/art/UI/GoToMainMenu_Idle.png" id="7_12a6d"]
+[ext_resource type="Texture2D" uid="uid://d0b5odbw3xqat" path="res://assets/art/UI/GoToMainMenu_Hover.png" id="8_4nkfp"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -45,29 +51,38 @@ theme_override_font_sizes/font_size = 120
 text = "Paused"
 horizontal_alignment = 1
 
-[node name="resume" type="Button" parent="."]
+[node name="resume" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 576.0
 offset_top = 216.0
-offset_right = 896.0
-offset_bottom = 256.0
-text = "Resume"
+offset_right = 656.0
+offset_bottom = 232.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("3_p8o5q")
+texture_hover = ExtResource("4_wprcu")
 
-[node name="settings" type="Button" parent="."]
+[node name="settings" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 576.0
-offset_top = 280.0
-offset_right = 896.0
-offset_bottom = 320.0
-text = "Settings"
+offset_top = 296.0
+offset_right = 656.0
+offset_bottom = 312.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("5_sijq6")
+texture_hover = ExtResource("6_jy2oi")
 
-[node name="goToMainMenu" type="Button" parent="."]
+[node name="goToMainMenu" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 576.0
-offset_top = 344.0
-offset_right = 896.0
-offset_bottom = 384.0
-text = "Go to Main Menu"
+offset_top = 376.0
+offset_right = 656.0
+offset_bottom = 392.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("7_12a6d")
+texture_hover = ExtResource("8_4nkfp")
 
 [connection signal="button_down" from="resume" to="." method="_on_resume_button_down"]
 [connection signal="button_down" from="settings" to="." method="_on_settings_button_down"]

@@ -1,7 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dehq4mj2kfvb5"]
+[gd_scene load_steps=14 format=3 uid="uid://dehq4mj2kfvb5"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/MainMenuUI.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://c27fmvco7td2e" path="res://assets/art/UI/Play_Idle.png" id="2_ulyc7"]
+[ext_resource type="Texture2D" uid="uid://r01e08o3y7pv" path="res://assets/art/UI/Play_Hover.png" id="3_t8j2j"]
+[ext_resource type="Texture2D" uid="uid://c15ybkoeop1dc" path="res://assets/art/UI/Shop_Idle.png" id="4_p428d"]
+[ext_resource type="Texture2D" uid="uid://hgpdnheswtsc" path="res://assets/art/UI/Shop_Hover.png" id="5_k30su"]
+[ext_resource type="Texture2D" uid="uid://c44omi75aesja" path="res://assets/art/UI/Settings_Idle.png" id="6_vtooe"]
+[ext_resource type="Texture2D" uid="uid://nh4cllk35cwh" path="res://assets/art/UI/Settings_Hover.png" id="7_tf4m2"]
+[ext_resource type="Texture2D" uid="uid://cc6vf3n53h6s3" path="res://assets/art/UI/HowToPlay_Idle.png" id="8_7it1i"]
+[ext_resource type="Texture2D" uid="uid://do1ryvm4x4ndi" path="res://assets/art/UI/HowToPlay_Hover.png" id="9_btptj"]
+[ext_resource type="Texture2D" uid="uid://bmte2idcpb40" path="res://assets/art/UI/Exit_Idle.png" id="10_7mxgp"]
+[ext_resource type="Texture2D" uid="uid://1psw3j782mpo" path="res://assets/art/UI/Exit_Hover.png" id="11_4svwg"]
 
 [sub_resource type="Theme" id="Theme_muspd"]
 default_font = ExtResource("1")
@@ -20,59 +30,67 @@ layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 600.0
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="goToPlay" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 522.0
-offset_top = 245.0
-offset_right = 850.0
-offset_bottom = 302.0
+offset_left = 656.0
+offset_top = 136.0
+offset_right = 736.0
+offset_bottom = 152.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_ulyc7")
+texture_hover = ExtResource("3_t8j2j")
 
-[node name="goToPlay" type="Button" parent="."]
+[node name="goToShop" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 663.0
-offset_top = 159.0
-offset_right = 969.0
-offset_bottom = 199.0
-text = "Play"
+offset_left = 656.0
+offset_top = 224.0
+offset_right = 736.0
+offset_bottom = 240.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_p428d")
+texture_hover = ExtResource("5_k30su")
 
-[node name="goToShop" type="Button" parent="."]
+[node name="goToSettings" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 663.0
-offset_top = 247.0
-offset_right = 969.0
-offset_bottom = 287.0
-text = "Shop"
+offset_left = 656.0
+offset_top = 312.0
+offset_right = 736.0
+offset_bottom = 328.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("6_vtooe")
+texture_hover = ExtResource("7_tf4m2")
 
-[node name="goToSettings" type="Button" parent="."]
+[node name="goToGuide" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 663.0
-offset_top = 335.0
-offset_right = 969.0
-offset_bottom = 375.0
-text = "Settings"
+offset_left = 656.0
+offset_top = 400.0
+offset_right = 736.0
+offset_bottom = 416.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("8_7it1i")
+texture_hover = ExtResource("9_btptj")
 
-[node name="goToGuide" type="Button" parent="."]
+[node name="exit" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 663.0
-offset_top = 423.0
-offset_right = 969.0
-offset_bottom = 463.0
-text = "How to Play"
-
-[node name="exit" type="Button" parent="."]
-layout_mode = 0
-offset_left = 663.0
-offset_top = 511.0
-offset_right = 969.0
-offset_bottom = 551.0
-text = "Exit"
+offset_left = 656.0
+offset_top = 488.0
+offset_right = 736.0
+offset_bottom = 504.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("10_7mxgp")
+texture_hover = ExtResource("11_4svwg")
 
 [node name="title" type="Label" parent="."]
 layout_mode = 0
-offset_left = -35.0
-offset_top = 98.0
-offset_right = 673.0
-offset_bottom = 464.0
+offset_left = -48.0
+offset_top = 104.0
+offset_right = 660.0
+offset_bottom = 470.0
 rotation = -6.41369
 theme = SubResource("Theme_muspd")
 theme_override_colors/font_color = Color(0, 0, 0, 1)

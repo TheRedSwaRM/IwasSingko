@@ -1,23 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp5omqpwv7i4n"]
+[gd_scene load_steps=6 format=3 uid="uid://cp5omqpwv7i4n"]
 
 [ext_resource type="Script" path="res://scenes/ShopUI.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://iyt7tyukw8le" path="res://assets/art/ShopBackgroundAsset.png" id="2_fmsuw"]
 [ext_resource type="Texture2D" uid="uid://gi0ie37uqh6n" path="res://assets/art/ShopItemsAssets.png" id="3_1ehxy"]
+[ext_resource type="Texture2D" uid="uid://dt8qp4brr7vdg" path="res://assets/art/UI/GoToMainMenu_Idle.png" id="3_bvos8"]
+[ext_resource type="Texture2D" uid="uid://d0b5odbw3xqat" path="res://assets/art/UI/GoToMainMenu_Hover.png" id="4_gcfcd"]
 
 [node name="ShopUI" type="Node2D"]
 script = ExtResource("2")
+
+[node name="background" type="ColorRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 600.0
+color = Color(0.65098, 0.654902, 0.658824, 1)
+
+[node name="ShopBackgroundAsset" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(384, 296)
+scale = Vector2(4, 4)
+texture = ExtResource("2_fmsuw")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="background" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 600.0
-color = Color(0.65098, 0.654902, 0.658824, 1)
 
 [node name="BlackBar1" type="ColorRect" parent="Control"]
 layout_mode = 0
@@ -32,18 +39,16 @@ offset_right = 1024.0
 offset_bottom = 600.0
 color = Color(0, 0, 0, 1)
 
-[node name="goToMainMenu" type="Button" parent="Control"]
+[node name="goToMainMenu" type="TextureButton" parent="Control"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 824.0
+offset_left = 856.0
 offset_top = 8.0
-offset_right = 1013.0
-offset_bottom = 40.0
-text = "Go Back to Main Menu"
-
-[node name="ShopBackgroundAsset" type="Sprite2D" parent="."]
-position = Vector2(381, 300)
-scale = Vector2(4, 4)
-texture = ExtResource("2_fmsuw")
+offset_right = 936.0
+offset_bottom = 24.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_bvos8")
+texture_hover = ExtResource("4_gcfcd")
 
 [node name="CoinsLabel" type="Label" parent="."]
 offset_left = 18.0
@@ -53,10 +58,11 @@ offset_bottom = 50.0
 text = "Coins: 1000000000000"
 
 [node name="Gatorade Button" type="Button" parent="."]
-offset_left = 74.0
-offset_top = 264.0
-offset_right = 139.0
-offset_bottom = 329.0
+texture_filter = 1
+offset_left = 80.0
+offset_top = 256.0
+offset_right = 145.0
+offset_bottom = 321.0
 
 [node name="Gatorade Sprite" type="Sprite2D" parent="Gatorade Button"]
 position = Vector2(32, 32)
@@ -67,10 +73,11 @@ vframes = 8
 metadata/_edit_lock_ = true
 
 [node name="Candy Button" type="Button" parent="."]
-offset_left = 100.0
-offset_top = 333.0
-offset_right = 167.0
-offset_bottom = 398.0
+texture_filter = 1
+offset_left = 88.0
+offset_top = 328.0
+offset_right = 155.0
+offset_bottom = 393.0
 
 [node name="Candy Sprite" type="Sprite2D" parent="Candy Button"]
 position = Vector2(34, 32)
@@ -82,10 +89,11 @@ frame = 2
 metadata/_edit_lock_ = true
 
 [node name="Kopiko Button" type="Button" parent="."]
-offset_left = 438.0
-offset_top = 262.0
-offset_right = 505.0
-offset_bottom = 327.0
+texture_filter = 1
+offset_left = 432.0
+offset_top = 256.0
+offset_right = 499.0
+offset_bottom = 321.0
 
 [node name="Kopiko Sprite" type="Sprite2D" parent="Kopiko Button"]
 position = Vector2(34, 32)
@@ -97,10 +105,11 @@ frame = 4
 metadata/_edit_lock_ = true
 
 [node name="Taho Button" type="Button" parent="."]
-offset_left = 511.0
-offset_top = 261.0
-offset_right = 578.0
-offset_bottom = 326.0
+texture_filter = 1
+offset_left = 504.0
+offset_top = 256.0
+offset_right = 571.0
+offset_bottom = 321.0
 
 [node name="Taho Sprite" type="Sprite2D" parent="Taho Button"]
 position = Vector2(34, 32)
@@ -112,10 +121,11 @@ frame = 6
 metadata/_edit_lock_ = true
 
 [node name="Milk Button" type="Button" parent="."]
-offset_left = 150.0
-offset_top = 263.0
-offset_right = 217.0
-offset_bottom = 328.0
+texture_filter = 1
+offset_left = 144.0
+offset_top = 256.0
+offset_right = 211.0
+offset_bottom = 321.0
 
 [node name="Milk Sprite" type="Sprite2D" parent="Milk Button"]
 position = Vector2(34, 32)
@@ -127,10 +137,11 @@ frame = 8
 metadata/_edit_lock_ = true
 
 [node name="Strips Button" type="Button" parent="."]
-offset_left = 454.0
-offset_top = 332.0
-offset_right = 521.0
-offset_bottom = 397.0
+texture_filter = 1
+offset_left = 416.0
+offset_top = 328.0
+offset_right = 483.0
+offset_bottom = 393.0
 
 [node name="Strips Sprite" type="Sprite2D" parent="Strips Button"]
 position = Vector2(34, 32)
@@ -142,10 +153,11 @@ frame = 10
 metadata/_edit_lock_ = true
 
 [node name="Sardinas Button" type="Button" parent="."]
-offset_left = 551.0
-offset_top = 330.0
-offset_right = 618.0
-offset_bottom = 395.0
+texture_filter = 1
+offset_left = 296.0
+offset_top = 376.0
+offset_right = 363.0
+offset_bottom = 441.0
 
 [node name="Sardinas Sprite" type="Sprite2D" parent="Sardinas Button"]
 position = Vector2(34, 32)
@@ -157,10 +169,11 @@ frame = 12
 metadata/_edit_lock_ = true
 
 [node name="Toyo Button" type="Button" parent="."]
-offset_left = 280.0
-offset_top = 378.0
-offset_right = 347.0
-offset_bottom = 443.0
+texture_filter = 1
+offset_left = 224.0
+offset_top = 376.0
+offset_right = 291.0
+offset_bottom = 441.0
 
 [node name="Toyo Sprite" type="Sprite2D" parent="Toyo Button"]
 position = Vector2(34, 32)

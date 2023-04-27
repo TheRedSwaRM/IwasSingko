@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhk6ap5dor5fb"]
+[gd_scene load_steps=6 format=3 uid="uid://dhk6ap5dor5fb"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/HowToPlayUI.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dt8qp4brr7vdg" path="res://assets/art/UI/GoToMainMenu_Idle.png" id="3_idbfi"]
+[ext_resource type="Texture2D" uid="uid://d0b5odbw3xqat" path="res://assets/art/UI/GoToMainMenu_Hover.png" id="4_8i5vu"]
 
 [sub_resource type="Theme" id="Theme_ujoew"]
 default_font = ExtResource("1")
@@ -63,30 +65,16 @@ rotation = -6.47694
 pivot_offset = Vector2(326, 32)
 text = "Insert guide here"
 
-[node name="nextImage" type="Label" parent="."]
+[node name="goToMainMenu" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 955.0
-offset_top = 556.0
-offset_right = 1021.0
-offset_bottom = 596.0
-text = "Next"
-
-[node name="previousImage" type="Label" parent="."]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 556.0
-offset_right = 68.0
-offset_bottom = 596.0
-text = "Back"
-
-[node name="goToMainMenu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 832.0
-offset_top = 9.0
-offset_right = 1017.0
-offset_bottom = 39.0
+offset_left = 856.0
+offset_top = 8.0
+offset_right = 936.0
+offset_bottom = 24.0
+scale = Vector2(2, 2)
 theme = SubResource("Theme_ujoew")
-text = "Go Back to Main Menu"
+texture_normal = ExtResource("3_idbfi")
+texture_hover = ExtResource("4_8i5vu")
 
 [connection signal="button_down" from="goToMainMenu" to="." method="_on_goToMainMenu_button_down"]
 [connection signal="mouse_entered" from="goToMainMenu" to="." method="_on_goToMainMenu_mouse_entered"]
