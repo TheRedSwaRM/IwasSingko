@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://dovft48d5oin6"]
+
+[ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
+[ext_resource type="Script" path="res://scenes/Play Area/PauseUI.gd" id="2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 600.0
+color = Color(0.65098, 0.654902, 0.658824, 1)
+
+[node name="BlackBar1" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
+
+[node name="BlackBar2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 552.0
+offset_right = 1024.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 207.0
+offset_right = 518.0
+offset_bottom = 330.0
+rotation = -6.42098
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 120
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="resume" type="Button" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 216.0
+offset_right = 896.0
+offset_bottom = 256.0
+text = "Resume"
+
+[node name="settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 280.0
+offset_right = 896.0
+offset_bottom = 320.0
+text = "Settings"
+
+[node name="goToMainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 344.0
+offset_right = 896.0
+offset_bottom = 384.0
+text = "Go to Main Menu"
+
+[connection signal="button_down" from="resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="settings" to="." method="_on_settings_button_down"]
+[connection signal="button_down" from="goToMainMenu" to="." method="_on_goToMainMenu_button_down"]

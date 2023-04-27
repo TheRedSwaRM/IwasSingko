@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://dehq4mj2kfvb5"]
+
+[ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
+[ext_resource type="Script" path="res://scenes/MainMenuUI.gd" id="2"]
+
+[sub_resource type="Theme" id="Theme_muspd"]
+default_font = ExtResource("1")
+
+[node name="MainMenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 600.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 245.0
+offset_right = 850.0
+offset_bottom = 302.0
+
+[node name="goToPlay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 159.0
+offset_right = 969.0
+offset_bottom = 199.0
+text = "Play"
+
+[node name="goToShop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 247.0
+offset_right = 969.0
+offset_bottom = 287.0
+text = "Shop"
+
+[node name="goToSettings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 335.0
+offset_right = 969.0
+offset_bottom = 375.0
+text = "Settings"
+
+[node name="goToGuide" type="Button" parent="."]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 423.0
+offset_right = 969.0
+offset_bottom = 463.0
+text = "How to Play"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 511.0
+offset_right = 969.0
+offset_bottom = 551.0
+text = "Exit"
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 98.0
+offset_right = 673.0
+offset_bottom = 464.0
+rotation = -6.41369
+theme = SubResource("Theme_muspd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 180
+text = "Iwas
+Singko!"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="goToPlay" to="." method="_on_goToPlay_button_down"]
+[connection signal="button_down" from="goToShop" to="." method="_on_goToShop_button_down"]
+[connection signal="button_down" from="goToSettings" to="." method="_on_goToSettings_button_down"]
+[connection signal="button_down" from="goToGuide" to="." method="_on_goToGuide_button_down"]
+[connection signal="button_down" from="exit" to="." method="_on_exit_button_down"]

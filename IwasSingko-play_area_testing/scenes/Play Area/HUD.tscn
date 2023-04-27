@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://1thqwx1jkmgr"]
+
+[ext_resource type="Script" path="res://scenes/Play Area/HUDController.gd" id="1_n1377"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_n1377")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Score: 10000000000"
+horizontal_alignment = 1
+
+[node name="CoinsLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = 0.04
+anchor_right = 1.003
+anchor_bottom = 0.083
+offset_left = 3.0
+offset_right = -0.0720215
+offset_bottom = 0.199997
+grow_horizontal = 2
+text = "Coins: 10000000"
+horizontal_alignment = 1
+
+[node name="StaminaLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -60.0
+offset_right = 54.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Stamina: 100"
+horizontal_alignment = 1
+
+[node name="DiffLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.025
+anchor_right = 0.088
+anchor_bottom = 0.068
+offset_left = 0.279999
+offset_right = -0.112007
+offset_bottom = 0.199997
+text = "Normal"

@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://boac4uvy8w64w"]
+
+[ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
+[ext_resource type="Script" path="res://scenes/GameOverUI.gd" id="2"]
+
+[sub_resource type="Theme" id="Theme_oermu"]
+default_font = ExtResource("1")
+
+[node name="Control2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 600.0
+color = Color(0.65098, 0.654902, 0.658824, 1)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 157.0
+offset_right = 561.0
+offset_bottom = 523.0
+rotation = -6.46036
+theme = SubResource("Theme_oermu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "GAME
+OVER!"
+horizontal_alignment = 1
+
+[node name="BlackBar1" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
+
+[node name="BlackBar2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 552.0
+offset_right = 1024.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="playAgain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 216.0
+offset_right = 896.0
+offset_bottom = 256.0
+text = "Play Again"
+
+[node name="backToMainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 304.0
+offset_right = 896.0
+offset_bottom = 344.0
+text = "Back to Main Menu"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105
+anchor_top = 0.603
+anchor_right = 0.361
+anchor_bottom = 0.625
+offset_left = 0.479996
+offset_top = 0.199982
+offset_right = 0.335968
+offset_bottom = 13.0
+text = "Score: 10000000000000000000000"
+
+[node name="CoinsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105
+anchor_top = 0.637
+anchor_right = 0.347
+anchor_bottom = 0.68
+offset_left = 0.479996
+offset_top = -0.200012
+offset_right = 14.672
+text = "Coins: 10000000000000000000000"
+
+[node name="HighScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105
+anchor_top = 0.668
+anchor_right = 0.4
+anchor_bottom = 0.712
+offset_left = 0.479996
+offset_top = 0.199982
+offset_right = -39.6
+offset_bottom = -0.200012
+text = "High Score: 10000000000000000000000"
+
+[connection signal="button_down" from="playAgain" to="." method="_on_playAgain_button_down"]
+[connection signal="button_down" from="backToMainMenu" to="." method="_on_backToMainMenu_button_down"]
