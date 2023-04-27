@@ -5,11 +5,12 @@ extends Node2D
 @export var food: PackedScene
 @export var coin: PackedScene
 @export var req: PackedScene
-@export var surviveScore = 5 # passive score increase the player gets through surviving
-@export var coinValue = 5 # how much coins the player gets when collecting
-@export var reqScore = 20 # how much points the player gets when collecting
-@export var projMinSpeed = 400.0 # minimum projectile speed
-@export var projMaxSpeed = 700.0 # maximum projectile speed
+
+var surviveScore = 5 # passive score increase the player gets through surviving
+var coinValue = 5 # how much coins the player gets when collecting
+var reqScore = 20 # how much points the player gets when collecting
+var projMinSpeed = 400.0 # minimum projectile speed
+var projMaxSpeed = 700.0 # maximum projectile speed
 
 @onready var character = get_tree().get_first_node_in_group("character")
 
@@ -63,6 +64,9 @@ func newGame():
 	coins = 0
 	$HUD.updateScore(score)
 	$HUD.updateCoins(coins)
+	SingletonScript.SetPlayAreaCoins(coins)
+	$HUD.updateDiff(SingletonScript.playAreaDifficulty)
+	playAreaSetDifficulty(SingletonScript.playAreaDifficulty)
 	$StartTimer.start()
 
 
@@ -77,6 +81,7 @@ func _on_start_timer_timeout():
 func _on_score_timer_timeout():
 	score += surviveScore
 	$HUD.updateScore(score)
+	SingletonScript.SetPlayAreaScore(score)
 
 # spawns a projectile for every timeout
 func _on_projectile_timer_timeout():
@@ -138,9 +143,11 @@ func _on_character_obj(type):
 	if type == "req":
 		score += reqScore
 		$HUD.updateScore(score)
+		SingletonScript.SetPlayAreaScore(score)
 	if type == "coin":
 		coins += coinValue
 		$HUD.updateCoins(coins)
+		SingletonScript.SetPlayerCoins(SingletonScript.playerData["player"]["playerCoins"] + coinValue)
 
 # character sends game over signal and UI changes to gameover
 func _on_character_game_over():
@@ -155,3 +162,26 @@ func _on_character_stamina_changed(stamina):
 
 func _on_resume_button_down():
 	resumeGame()
+	
+func playAreaSetDifficulty(diff):
+	if diff == "Easy":
+		surviveScore = 5
+		coinValue = 5
+		reqScore = 20 + SingletonScript.playerData["player"]["playerScoreInc"]
+		projMinSpeed = 400.0
+		projMaxSpeed = 700.0
+		$ProjectileTimer.wait_time = 0.250
+	elif diff == "Normal":
+		surviveScore = 10
+		coinValue = 10
+		reqScore = 30 + SingletonScript.playerData["player"]["playerScoreInc"]
+		projMinSpeed = 600.0
+		projMaxSpeed = 900.0
+		$ProjectileTimer.wait_time = 0.200
+	elif diff == "Hard":
+		surviveScore = 15
+		coinValue = 15
+		reqScore = 40 + SingletonScript.playerData["player"]["playerScoreInc"]
+		projMinSpeed = 800.0
+		projMaxSpeed = 1100.0
+		$ProjectileTimer.wait_time = 0.150

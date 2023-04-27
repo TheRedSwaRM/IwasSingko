@@ -31,6 +31,11 @@ signal gameOver
 
 # init variables
 func _ready():
+	baseStamina = SingletonScript.playerData["player"]["playerMaxEnergy"]
+	speed = SingletonScript.playerData["player"]["playerMovementSpeed"]
+	baseTired = SingletonScript.playerData["character"]["charEnergyConsumption"]
+	napInc = SingletonScript.playerData["character"]["charNapIncrease"]
+	foodStamina = SingletonScript.playerData["player"]["playerFoodInc"]
 	stamina = baseStamina
 	tired = baseTired
 	prevPosition = position

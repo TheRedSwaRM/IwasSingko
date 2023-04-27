@@ -15,6 +15,10 @@ run/main_scene="res://scenes/OpenSessionUI.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://assets/art/icon.png"
 
+[autoload]
+
+SingletonScript="*res://SingletonScript.gd"
+
 [display]
 
 window/size/viewport_width=1024

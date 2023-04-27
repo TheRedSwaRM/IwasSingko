@@ -39,3 +39,14 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Stamina: 100"
 horizontal_alignment = 1
+
+[node name="DiffLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.025
+anchor_right = 0.088
+anchor_bottom = 0.068
+offset_left = 0.279999
+offset_right = -0.112007
+offset_bottom = 0.199997
+text = "Normal"

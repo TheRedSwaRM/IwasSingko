@@ -1,4 +1,5 @@
 res://default_env.tres
+res://scenes/ShopUI.tscn
 res://scenes/Play Area/Character.tscn
 res://scenes/Play Area/PauseUI.tscn
 res://scenes/Play Area/PlayArea.tscn
@@ -6,7 +7,10 @@ res://scenes/Play Area/Coin.tscn
 res://scenes/Play Area/Food.tscn
 res://scenes/Play Area/Requirements.tscn
 res://scenes/Play Area/Projectile.tscn
+res://scenes/Play Area/HUD.tscn
+res://scenes/GameOverUI.tscn
+res://scenes/MainMenuUI.tscn
+res://scenes/ShopUI.gd
+res://SingletonScript.gd
 res://scenes/Play Area/CharacterController.gd
 res://scenes/Play Area/PlayArea.gd
-res://scenes/Play Area/Object.gd
-res://scenes/Play Area/ProjectileController.gd

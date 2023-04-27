@@ -1,0 +1,182 @@
+[33mcommit 944d9f9a4074e962adc4b2cb491cb497d5861a17[m[33m ([m[1;36mHEAD -> [m[1;32mplay_area_testing[m[33m, [m[1;32mmain[m[33m)[m
+Author: Wilyanse <willjose51@gmail.com>
+Date:   Thu Mar 23 22:29:31 2023 +0800
+
+    Modified sprite assets and collision shapes; improved pause functionality
+
+[33mcommit 10e347392bc42a194dd166f5ee1c073107878ae6[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: TheRedSwaRM <rsbalatibat@up.edu.ph>
+Date:   Thu Mar 23 19:22:53 2023 +0800
+
+    added ProjectileSpriteAsset and RequirementsSpriteAsset
+
+[33mcommit 0b589b96bf90bd59922450ca8762c30b63767705[m
+Author: TheRedSwaRM <rsbalatibat@up.edu.ph>
+Date:   Thu Mar 23 19:10:01 2023 +0800
+
+    Added Enemy and Custom Main Menu Sprite Assets (however not yet implemented in actual game, yet)
+
+[33mcommit 8710e49ed653f548b4642d7715326fe7a9583407[m
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Thu Mar 23 18:07:40 2023 +0800
+
+    edited .gitignore
+
+[33mcommit 57e6405dd5d96deb3c26538c96178f4d67017821[m
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Thu Mar 23 18:07:02 2023 +0800
+
+    commited from laptop, some edits due to Godot's compilations
+
+[33mcommit fd0d4220740c3695da211a73783c7999c39ffb15[m
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Thu Mar 23 09:33:45 2023 +0800
+
+    Checking some merged stuff from separate branch
+
+[33mcommit e8fdf0c8d5544c45fe072edf84bfa1dd20471e14[m
+Merge: f7aa361 eba4bac
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Thu Mar 23 09:24:21 2023 +0800
+
+    Merge pull request #3 from TheRedSwaRM/play_area_testing
+    
+    Play area testing merge with main branch
+
+[33mcommit eba4bac26a7d35f8d43731e712b54f9da261dd0d[m[33m ([m[1;31morigin/play_area_testing[m[33m)[m
+Author: Wilyanse <willjose51@gmail.com>
+Date:   Wed Mar 22 20:59:15 2023 +0800
+
+    Implemented pause functionality using the escape key
+
+[33mcommit c5ddf5ec8118b4d00387c04e6e3740ba446f131a[m
+Author: Wilyanse <willjose51@gmail.com>
+Date:   Wed Mar 22 15:14:38 2023 +0800
+
+    Implemented scoring system, placeholder HUD, garbage collection on stray projectiles, stamina system, new projectile and object spawner, comments on previous code
+
+[33mcommit e2dd77bb8542f835a5c849e1d059ba60bb8f9039[m
+Merge: 5578bc6 dbd9a9d
+Author: jeddydej <102528395+jdcmps@users.noreply.github.com>
+Date:   Sat Mar 18 22:27:13 2023 +0800
+
+    Merge pull request #2 from TheRedSwaRM/walking_animation
+    
+    Add files via upload
+
+[33mcommit dbd9a9d10c50b9e49fda464ebaa03a169c8b7982[m[33m ([m[1;31morigin/walking_animation[m[33m)[m
+Author: jeddydej <102528395+jdcmps@users.noreply.github.com>
+Date:   Sat Mar 18 22:19:01 2023 +0800
+
+    Add files via upload
+
+[33mcommit f7aa36170e1c9ad84a05e784b572bb26a7178352[m
+Author: TheRedSwaRM <rsbalatibat@up.edu.ph>
+Date:   Sat Mar 18 16:38:40 2023 +0800
+
+    modified PlayerCharacterAsset
+
+[33mcommit 76d8ecba231f470e177c50fffedc25ad9774960c[m
+Author: TheRedSwaRM <rsbalatibat@up.edu.ph>
+Date:   Sat Mar 18 11:20:58 2023 +0800
+
+    Added CoinSpriteAsset, FoodPacketAsset, GrassAsset, and Modified PlayerCharacterAsset in assets folder
+
+[33mcommit 5578bc64e5dccfb453c2b1f885473c4d79eee277[m
+Author: Wilyanse <willjose51@gmail.com>
+Date:   Fri Mar 17 15:22:20 2023 +0800
+
+    Implemented cooldown for getting hit with projectiles; Added separate collision for collecting objects
+
+[33mcommit 34efc3ce0a3236b96211d01185456456e83f98e1[m
+Author: Wilyanse <willjose51@gmail.com>
+Date:   Fri Mar 17 12:56:47 2023 +0800
+
+    Added comments to existing code
+
+[33mcommit ccdc5c44de1553fe1f5d6f01208d185978229abc[m
+Author: Wilyanse <willjose51@gmail.com>
+Date:   Wed Mar 15 14:45:41 2023 +0800
+
+    Added placeholder food, coins, requirements; Implemented spawning food, coins, and requirements
+
+[33mcommit fe69b848b71edb6d3b02ca5461fc3bfef0fb8e7b[m
+Author: Wilyanse <willjose51@gmail.com>
+Date:   Wed Mar 15 13:50:12 2023 +0800
+
+    Updated scripts to Godot 4.0; Added character movement; Added randomly spawning projectiles with collision
+
+[33mcommit a2c2e64c97026bbc2c8534f031243bf4aafec88b[m
+Author: TheRedSwaRM <rsbalatibat@up.edu.ph>
+Date:   Mon Mar 13 22:51:05 2023 +0800
+
+    some changes by the godot engine itself I think
+
+[33mcommit 25c6b415d11534a2da8b633554a6d83346057a55[m
+Author: TheRedSwaRM <rsbalatibat@up.edu.ph>
+Date:   Sun Mar 12 22:14:40 2023 +0800
+
+    Migrated to Godot 4.0
+
+[33mcommit c86a67a498d5d03c903a8363f7ade2d96bc8c6cd[m
+Author: TheRedSwaRM <rsbalatibat@up.edu.ph>
+Date:   Sun Mar 12 21:50:25 2023 +0800
+
+    added playerCharacter sprites
+
+[33mcommit e0212675f6943117eb3cf84e6a8fe83eb4f3c00e[m
+Merge: 0e9ec93 b1eeb41
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Sun Mar 12 21:45:07 2023 +0800
+
+    Merge pull request #1 from TheRedSwaRM/play_area_testing
+    
+    Added Character Controls; Testing with Collision
+
+[33mcommit 0e9ec9398bc2771a2368ebb603786d8be7c2360d[m
+Author: TheRedSwaRM <rsbalatibat@up.edu.ph>
+Date:   Wed Mar 8 15:24:29 2023 +0800
+
+    created playerCharacter sprites
+
+[33mcommit b1eeb41c9300a9fbeb543aecaded74ac0305dcbf[m
+Author: Wilyanse <willjose51@gmail.com>
+Date:   Fri Mar 3 14:51:44 2023 +0800
+
+    Added Character Controls; Testing with Collision
+
+[33mcommit 975c44732dc0a7112972de29970c6285d659400b[m
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Thu Mar 2 13:46:56 2023 +0800
+
+    Implemented Pause Functionalities, Go Back to Main Menu Functionalities, Capability to Exit Game
+
+[33mcommit 982e95873b65c86d774e8ee0ea81085f1a4bc7e7[m
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Wed Mar 1 09:32:32 2023 +0800
+
+    Loading screen is skippable, now shows at the start of opening the game
+
+[33mcommit 550469a4870b4bb8d3443f3c2ef8f1dc80c0279d[m
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Tue Feb 28 13:55:02 2023 +0800
+
+    There is now Main Menu button functionality!
+
+[33mcommit 9e79e90c0339db89c2e0a4a074d131eb110c0c42[m
+Author: TheRedSwaRM <rsbalatibat@up.edu.ph>
+Date:   Sat Feb 25 17:17:05 2023 +0800
+
+    Initial Commit
+
+[33mcommit a7b16739daa69ef9cc36c1c1854c144252525f91[m
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Thu Feb 23 19:53:57 2023 +0800
+
+    Update README.md
+
+[33mcommit bdee495dcd0951520fc519ec67bbdd5d3785b7a2[m
+Author: Ralf Michael Balatibat <rsbalatibat@up.edu.ph>
+Date:   Thu Feb 23 19:51:10 2023 +0800
+
+    Initial commit
