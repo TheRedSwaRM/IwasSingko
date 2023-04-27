@@ -107,6 +107,8 @@ offset_top = 128.0
 offset_right = 984.0
 offset_bottom = 144.0
 theme = SubResource("Theme_qyhnn")
+min_value = -30.0
+max_value = 0.0
 
 [node name="volume" type="Label" parent="."]
 layout_mode = 0
@@ -188,4 +190,5 @@ theme = SubResource("Theme_qamov")
 theme_override_font_sizes/font_size = 20
 text = "Back"
 
+[connection signal="value_changed" from="volumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]

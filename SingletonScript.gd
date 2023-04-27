@@ -22,7 +22,7 @@ var playerData = {
 		"playerWalkLeft" : "Left",
 		"playerSprint" : "Z",
 		"playerNap" : "X",
-		"playerVolume" : 100
+		"playerVolume" : 0
 	}
 }
 
@@ -63,7 +63,7 @@ func NewPlayerData():
 		"playerWalkLeft" : "Left",
 		"playerSprint" : "Z",
 		"playerNap" : "X",
-		"playerVolume" : 100
+		"playerVolume" : 0
 	}
 }
 
@@ -127,3 +127,6 @@ func SetPlayerScoreInc(val):
 
 func SetPlayerFoodInc(val):
 	playerData["player"]["playerFoodInc"] = val
+
+func SetControlsPlayerVolume(val):
+	playerData["controls"]["playerVolume"] = val

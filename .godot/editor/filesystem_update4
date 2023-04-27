@@ -13,3 +13,6 @@ res://scenes/MainMenuUI.tscn
 res://scenes/ShopUI.tscn
 res://SingletonScript.gd
 res://scenes/ShopUI.gd
+res://scenes/SettingsUI.gd
+res://scenes/SettingsUI.tscn
+res://scenes/MainMenuUI.gd
