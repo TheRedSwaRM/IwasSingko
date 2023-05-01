@@ -1,10 +1,11 @@
 res://default_env.tres
+res://scenes/Play Area/PlayArea.tscn
 res://scenes/MainMenuUI.tscn
 res://scenes/SelectDifficultyUI.tscn
-res://scenes/Play Area/PlayArea.tscn
 res://scenes/GameOverUI.tscn
 res://scenes/HowToPlayUI.tscn
 res://scenes/OpenSessionUI.tscn
 res://scenes/PauseUI.tscn
 res://scenes/SettingsUI.tscn
 res://scenes/ShopUI.tscn
+res://scenes/Play Area/Character.tscn
