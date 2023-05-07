@@ -16,6 +16,7 @@ var projMaxSpeed = 700.0 # maximum projectile speed
 
 var score
 var coins
+var rng
 
 var paused
 
@@ -24,7 +25,7 @@ signal pause
 # Called when the node enters the scene tree for the first time.
 # calls new game function to start the timers for the game
 func _ready():
-	randomize()
+	rng = RandomNumberGenerator.new()
 	newGame()
 	paused = false
 
@@ -94,7 +95,8 @@ func _on_score_timer_timeout():
 func _on_projectile_timer_timeout():
 	# spawns projectile
 	var spawnedProjectile = projectile.instantiate()
-	
+	spawnedProjectile.hide()
+	spawnedProjectile.get_node("Sprite2D").set_frame(rng.randi_range(0, 15.0))
 	# sets random position for the projectile
 	spawnedProjectile.position = getRandomPosition()
 	
@@ -110,6 +112,7 @@ func _on_projectile_timer_timeout():
 	spawnedProjectile.linear_velocity = velocity.rotated(direction.rotated(randomRotation).angle())
 	
 	# adds projectile to scene
+	spawnedProjectile.show()
 	add_child(spawnedProjectile)
 
 # selectsts a random position offscreen to spawn
@@ -193,6 +196,7 @@ func _on_food_timer_timeout():
 	
 	#sets random position for object to spawn
 	spawnedFood.position = getRandomPosition()
+	spawnedFood.get_node("Sprite2D").set_frame(rng.randi_range(0, 15.0))
 	
 	# adds object to scene
 	add_child(spawnedFood)
@@ -203,6 +207,7 @@ func _on_req_timer_timeout():
 	
 	#sets random position for object to spawn
 	spawnedReq.position = getRandomPosition()
+	spawnedReq.get_node("Sprite2D").set_frame(rng.randi_range(0, 11.0))
 	
 	# adds object to scene
 	add_child(spawnedReq)

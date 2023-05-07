@@ -34,6 +34,8 @@ func _on_volume_slider_value_changed(value):
 		AudioServer.set_bus_mute(masterVolumeBus, true)
 	else:
 		AudioServer.set_bus_mute(masterVolumeBus, false)
+		
+	SingletonScript.SavePlayerData()
 
 
 func _on_control_up_item_selected(index):
@@ -43,6 +45,8 @@ func _on_control_up_item_selected(index):
 		event.set_keycode(KEY_UP)
 	else:
 		event.set_keycode(KEY_W)
+	
+	SingletonScript.SavePlayerData()
 
 func _on_control_down_item_selected(index):
 	SingletonScript.SetControlsPlayerWalkDown(index)
@@ -51,6 +55,8 @@ func _on_control_down_item_selected(index):
 		event.set_keycode(KEY_DOWN)
 	else:
 		event.set_keycode(KEY_S)
+		
+	SingletonScript.SavePlayerData()
 
 func _on_control_left_item_selected(index):
 	SingletonScript.SetControlsPlayerWalkLeft(index)
@@ -59,6 +65,8 @@ func _on_control_left_item_selected(index):
 		event.set_keycode(KEY_LEFT)
 	else:
 		event.set_keycode(KEY_A)
+	
+	SingletonScript.SavePlayerData()
 
 func _on_control_right_item_selected(index):
 	SingletonScript.SetControlsPlayerWalkRight(index)
@@ -67,6 +75,8 @@ func _on_control_right_item_selected(index):
 		event.set_keycode(KEY_RIGHT)
 	else:
 		event.set_keycode(KEY_D)
+	
+	SingletonScript.SavePlayerData()
 
 func _on_control_sprint_item_selected(index):
 	SingletonScript.SetControlsPlayerSprint(index)
@@ -75,6 +85,8 @@ func _on_control_sprint_item_selected(index):
 		event.set_keycode(KEY_Z)
 	else:
 		event.set_keycode(KEY_J)
+	
+	SingletonScript.SavePlayerData()
 
 func _on_control_nap_item_selected(index):
 	SingletonScript.SetControlsPlayerNap(index)
@@ -83,3 +95,5 @@ func _on_control_nap_item_selected(index):
 		event.set_keycode(KEY_X)
 	else:
 		event.set_keycode(KEY_K)
+	
+	SingletonScript.SavePlayerData()

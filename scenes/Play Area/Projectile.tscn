@@ -4,23 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://478sljt0n7g5" path="res://assets/art/ProjectileSpriteAsset.png" id="2_ggg7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_so0r4"]
-size = Vector2(92, 14)
+size = Vector2(97, 17)
 
 [node name="Projectile" type="RigidBody2D" groups=["enemy"]]
 collision_layer = 2
 gravity_scale = 0.0
 script = ExtResource("1_sv1vh")
 
-[node name="enemy sprite" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.8147e-06, 9.53674e-07)
 scale = Vector2(1.57333, 1.57333)
 texture = ExtResource("2_ggg7s")
-region_enabled = true
+hframes = 2
+vframes = 8
 region_rect = Rect2(0, 0, 64, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 process_mode = 1
-position = Vector2(0, -2)
+position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_so0r4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
