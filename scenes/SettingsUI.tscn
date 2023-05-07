@@ -47,6 +47,11 @@ offset_top = 160.0
 offset_right = 984.0
 offset_bottom = 200.0
 theme = SubResource("Theme_qyhnn")
+item_count = 2
+popup/item_0/text = "Up Arrow"
+popup/item_0/id = 1
+popup/item_1/text = "W"
+popup/item_1/id = 0
 
 [node name="ControlDown" type="OptionButton" parent="."]
 layout_mode = 0
@@ -55,6 +60,11 @@ offset_top = 216.0
 offset_right = 986.0
 offset_bottom = 256.0
 theme = SubResource("Theme_qyhnn")
+item_count = 2
+popup/item_0/text = "Down Arrow"
+popup/item_0/id = 1
+popup/item_1/text = "S"
+popup/item_1/id = 0
 
 [node name="ControlLeft" type="OptionButton" parent="."]
 layout_mode = 0
@@ -63,6 +73,11 @@ offset_top = 272.0
 offset_right = 986.0
 offset_bottom = 312.0
 theme = SubResource("Theme_qyhnn")
+item_count = 2
+popup/item_0/text = "Left Arrow"
+popup/item_0/id = 1
+popup/item_1/text = "A"
+popup/item_1/id = 0
 
 [node name="ControlRight" type="OptionButton" parent="."]
 layout_mode = 0
@@ -71,6 +86,11 @@ offset_top = 328.0
 offset_right = 986.0
 offset_bottom = 368.0
 theme = SubResource("Theme_qyhnn")
+item_count = 2
+popup/item_0/text = "Right Arrow"
+popup/item_0/id = 1
+popup/item_1/text = "D"
+popup/item_1/id = 0
 
 [node name="ControlSprint" type="OptionButton" parent="."]
 layout_mode = 0
@@ -79,6 +99,11 @@ offset_top = 384.0
 offset_right = 986.0
 offset_bottom = 424.0
 theme = SubResource("Theme_qyhnn")
+item_count = 2
+popup/item_0/text = "Z"
+popup/item_0/id = 0
+popup/item_1/text = "J"
+popup/item_1/id = 1
 
 [node name="ControlNap" type="OptionButton" parent="."]
 layout_mode = 0
@@ -87,6 +112,11 @@ offset_top = 440.0
 offset_right = 986.0
 offset_bottom = 480.0
 theme = SubResource("Theme_qyhnn")
+item_count = 2
+popup/item_0/text = "X"
+popup/item_0/id = 0
+popup/item_1/text = "K"
+popup/item_1/id = 1
 
 [node name="title" type="Label" parent="."]
 layout_mode = 0
@@ -190,5 +220,11 @@ theme = SubResource("Theme_qamov")
 theme_override_font_sizes/font_size = 20
 text = "Back"
 
+[connection signal="item_selected" from="ControlUP" to="." method="_on_control_up_item_selected"]
+[connection signal="item_selected" from="ControlDown" to="." method="_on_control_down_item_selected"]
+[connection signal="item_selected" from="ControlLeft" to="." method="_on_control_left_item_selected"]
+[connection signal="item_selected" from="ControlRight" to="." method="_on_control_right_item_selected"]
+[connection signal="item_selected" from="ControlSprint" to="." method="_on_control_sprint_item_selected"]
+[connection signal="item_selected" from="ControlNap" to="." method="_on_control_nap_item_selected"]
 [connection signal="value_changed" from="volumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]

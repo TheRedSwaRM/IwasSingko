@@ -16,12 +16,12 @@ var playerData = {
 		"charNapIncrease" : 3
 	},
 	"controls" : {
-		"playerWalkUp" : "Up",
-		"playerWalkDown" : "Down",
-		"playerWalkRight" : "Right",
-		"playerWalkLeft" : "Left",
-		"playerSprint" : "Z",
-		"playerNap" : "X",
+		"playerWalkUp" : 0,
+		"playerWalkDown" : 0,
+		"playerWalkRight" : 0,
+		"playerWalkLeft" : 0,
+		"playerSprint" : 0,
+		"playerNap" : 0,
 		"playerVolume" : 0
 	}
 }
@@ -43,7 +43,7 @@ func _process(delta):
 func NewPlayerData():
 	return {
 	"player" : {
-		"playerCoins" : 100000000,
+		"playerCoins" : 0,
 		"playerHighScore" : 0,
 		"playerMaxEnergy" : 100,
 		"playerMovementSpeed" : 400,
@@ -57,12 +57,12 @@ func NewPlayerData():
 		"charNapIncrease" : 3
 	},
 	"controls" : {
-		"playerWalkUp" : "Up",
-		"playerWalkDown" : "Down",
-		"playerWalkRight" : "Right",
-		"playerWalkLeft" : "Left",
-		"playerSprint" : "Z",
-		"playerNap" : "X",
+		"playerWalkUp" : 0,
+		"playerWalkDown" : 0,
+		"playerWalkRight" : 0,
+		"playerWalkLeft" : 0,
+		"playerSprint" : 0,
+		"playerNap" : 0,
 		"playerVolume" : 0
 	}
 }
@@ -130,3 +130,21 @@ func SetPlayerFoodInc(val):
 
 func SetControlsPlayerVolume(val):
 	playerData["controls"]["playerVolume"] = val
+
+func SetControlsPlayerWalkUp(val):
+	playerData["controls"]["playerWalkUp"] = val
+	
+func SetControlsPlayerWalkDown(val):
+	playerData["controls"]["playerWalkDown"] = val
+
+func SetControlsPlayerWalkLeft(val):
+	playerData["controls"]["playerWalkLeft"] = val
+	
+func SetControlsPlayerWalkRight(val):
+	playerData["controls"]["playerWalkRight"] = val
+	
+func SetControlsPlayerSprint(val):
+	playerData["controls"]["playerSprint"] = val
+	
+func SetControlsPlayerNap(val):
+	playerData["controls"]["playerNap"] = val

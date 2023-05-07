@@ -1,80 +1,80 @@
 2a60927148abd1d33b818b535e306557
-::res://::1683125458
-default_env.tres::Environment::8059040173883003983::1683125438::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1682568951::0::1::::<><>::
-PauseButton.tscn::PackedScene::-1::1678687990::0::1::::<><>::res://scenes/PauseButton.gd<>res://assets/art/pauseBtn.png
-README.md::TextFile::-1::1677562577::0::1::::<><>::
-SingletonScript.gd::GDScript::-1::1683076148::0::1::::<>Node<>::
-::res://assets/::1677717926
-::res://assets/art/::1683076148
-BossSpriteAsset.png::CompressedTexture2D::5780437204848236796::1682521126::1683076148::1::::<><>::
-CoinSpriteAsset.png::CompressedTexture2D::4741298120282893982::1679534086::1679534318::1::::<><>::
-EnemySprites.png::CompressedTexture2D::2947076413239556554::1680049594::1680049594::1::::<><>::
-FoodPackAsset.png::CompressedTexture2D::9206645052847552704::1679534086::1679534318::1::::<><>::
-GrassAsset.png::CompressedTexture2D::4665287570721783429::1679534086::1679534318::1::::<><>::
-icon.png::CompressedTexture2D::4548281217840500132::1677562577::1678687990::1::::<><>::
-MainMenuUISprites.png::CompressedTexture2D::1545598800024934204::1683076148::1680049594::1::::<><>::
-pauseBtn.png::CompressedTexture2D::7392185813532842641::1677717915::1678687990::1::::<><>::
-ProjectileSpriteAsset.png::CompressedTexture2D::2103572951241754370::1683076148::1682555942::1::::<><>::
-RequirementsSpriteAsset.png::CompressedTexture2D::857819878132503145::1680049594::1682555942::1::::<><>::
-ShopBackgroundAsset.png::CompressedTexture2D::612267619411146958::1682568951::1682568951::1::::<><>::
-ShopItemsAssets.png::CompressedTexture2D::439180549860295815::1682568951::1682568951::1::::<><>::
-::res://assets/art/playerCharacter/::1679534796
-PlayerCharacterAsset.png::CompressedTexture2D::5607873838095173690::1679534796::1679534796::1::::<><>::
-::res://assets/art/UI/::1683076148
-Easy_Hover.png::CompressedTexture2D::1315443555459990302::1683076148::1683076148::1::::<><>::
-Easy_Idle.png::CompressedTexture2D::5574159527225303595::1683076148::1683076148::1::::<><>::
-Exit_Hover.png::CompressedTexture2D::1857009280291594724::1683076148::1683076148::1::::<><>::
-Exit_Idle.png::CompressedTexture2D::96123573353391983::1683076148::1683076148::1::::<><>::
-GoToMainMenu_Hover.png::CompressedTexture2D::8917894190834609099::1683076148::1683076148::1::::<><>::
-GoToMainMenu_Idle.png::CompressedTexture2D::8561974330397088560::1683076148::1683076148::1::::<><>::
-Hard_Hover.png::CompressedTexture2D::33484043758207059::1683076148::1683076148::1::::<><>::
-Hard_Idle.png::CompressedTexture2D::4015117553471417372::1683076148::1683076148::1::::<><>::
-HowToPlay_Hover.png::CompressedTexture2D::8196655854425582106::1683076148::1683076148::1::::<><>::
-HowToPlay_Idle.png::CompressedTexture2D::4978500242992793332::1683076148::1683076148::1::::<><>::
-Normal_Hover.png::CompressedTexture2D::8511030918291837992::1683076148::1683076148::1::::<><>::
-Normal_Idle.png::CompressedTexture2D::3687100290566488359::1683076148::1683076148::1::::<><>::
-PlayAgain_Hover.png::CompressedTexture2D::3405662888345984949::1683076148::1683076148::1::::<><>::
-PlayAgain_Idle.png::CompressedTexture2D::8946567914157710087::1683076148::1683076148::1::::<><>::
-Play_Hover.png::CompressedTexture2D::1246406935422386067::1683076148::1683076148::1::::<><>::
-Play_Idle.png::CompressedTexture2D::6734326354993252094::1683076148::1683076148::1::::<><>::
-Resume_Hover.png::CompressedTexture2D::4034817497592294329::1683076148::1683076148::1::::<><>::
-Resume_Idle.png::CompressedTexture2D::8570815889888058788::1683076148::1683076148::1::::<><>::
-Settings_Hover.png::CompressedTexture2D::928670571193530667::1683076148::1683076148::1::::<><>::
-Settings_Idle.png::CompressedTexture2D::6869056726166247514::1683076148::1683076148::1::::<><>::
-Shop_Hover.png::CompressedTexture2D::504624978087662786::1683076148::1683076148::1::::<><>::
-Shop_Idle.png::CompressedTexture2D::6661142175278970792::1683076148::1683076148::1::::<><>::
-::res://assets/text/::1678687991
-Minecraft.ttf::FontFile::1180218432079130511::1677562577::1678687991::1::::<><>::
-::res://scenes/::1683076582
-Area2D.gd::GDScript::-1::1677718313::0::1::::<>Area2D<>::
-GameOverUI.gd::GDScript::-1::1682568951::0::1::::<>Control<>::
-GameOverUI.tscn::PackedScene::3369238800677675756::1683076581::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/GameOverUI.gd<>uid://d0p1wwnu0o7f4<>uid://bory1gl3vhkyv<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
-HowToPlayUI.gd::GDScript::-1::1678687991::0::1::::<>Control<>::
-HowToPlayUI.tscn::PackedScene::7673110795211990635::1683076581::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/HowToPlayUI.gd<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
-MainMenuUI.gd::GDScript::-1::1683076149::0::1::::<>Control<>::
-MainMenuUI.tscn::PackedScene::7455491975241138684::1683076581::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/MainMenuUI.gd<>uid://c27fmvco7td2e<>uid://r01e08o3y7pv<>uid://c15ybkoeop1dc<>uid://hgpdnheswtsc<>uid://c44omi75aesja<>uid://nh4cllk35cwh<>uid://cc6vf3n53h6s3<>uid://do1ryvm4x4ndi<>uid://bmte2idcpb40<>uid://1psw3j782mpo
-OpenSessionUI.gd::GDScript::-1::1678687991::0::1::::<>Control<>::
-OpenSessionUI.tscn::PackedScene::6589769524455630649::1683076581::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/OpenSessionUI.gd
-PauseUI.tscn::PackedScene::4048651427254984853::1683076581::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/PauseUI.gd<>uid://dud1c53jqv7gq<>uid://bxqq4ca1r60h6<>uid://c44omi75aesja<>uid://nh4cllk35cwh<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
-SelectDifficultyUI.gd::GDScript::-1::1682568951::0::1::::<>Control<>::
-SelectDifficultyUI.tscn::PackedScene::1129541483014402558::1683076581::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/SelectDifficultyUI.gd<>uid://clofufr88ce56<>uid://s0hfsvhtj6ak<>uid://bsscadtuad5ct<>uid://dti2o2yurwx1y<>uid://bxg7nt2soadqq<>uid://qhqh1exolyx
-SettingsUI.gd::GDScript::-1::1683076149::0::1::::<>Control<>::
-SettingsUI.tscn::PackedScene::1777586634295072729::1683076582::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/SettingsUI.gd
-ShopUI.gd::GDScript::-1::1683076149::0::1::::<>Node2D<>::
-ShopUI.tscn::PackedScene::5888477686578649303::1683076582::0::1::::<><>::res://scenes/ShopUI.gd<>uid://iyt7tyukw8le<>uid://gi0ie37uqh6n<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
-::res://scenes/Play Area/::1683125438
-Character.tscn::PackedScene::3698098013644597885::1683076149::0::1::::<><>::res://scenes/Play Area/CharacterController.gd<>uid://cl5q4lnhc70l7
-CharacterController.gd::GDScript::-1::1682568951::0::1::::<>Area2D<>::
-Coin.tscn::PackedScene::3657540999955579754::1682555942::0::1::::<><>::res://scenes/Play Area/Object.gd<>uid://b8syqtl76xiig
-Food.tscn::PackedScene::1028970579982328793::1682555942::0::1::::<><>::uid://d4f1dmlwvrg3y<>res://scenes/Play Area/Object.gd
-HUD.tscn::PackedScene::1864587895805781229::1682568951::0::1::::<><>::res://scenes/Play Area/HUDController.gd
-HUDController.gd::GDScript::-1::1682568951::0::1::::<>CanvasLayer<>::
-Object.gd::GDScript::-1::1682555942::0::1::::<>RigidBody2D<>::
-PauseUI.gd::GDScript::-1::1682568951::0::1::::<>Control<>::
-PauseUI.tscn::PackedScene::8185596884227693417::1682555942::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/Play Area/PauseUI.gd
-PlayArea.gd::GDScript::-1::1683076149::0::1::::<>Node2D<>::
-PlayArea.tscn::PackedScene::2323735942758420875::1683125438::0::1::::<><>::res://scenes/Play Area/PlayArea.gd<>uid://bsxnes5gdw4sf<>uid://owo83md1lye0<>uid://du7ydb14agavx<>uid://bsd0fv1mt4gji<>uid://dmilnjo245o02<>uid://b7p5utapk3ilp<>uid://1thqwx1jkmgr<>uid://dovft48d5oin6
-Projectile.tscn::PackedScene::8630561671184102321::1682555942::0::1::::<><>::res://scenes/Play Area/ProjectileController.gd<>uid://478sljt0n7g5
-ProjectileController.gd::GDScript::-1::1682568951::0::1::::<>RigidBody2D<>::
-Requirements.tscn::PackedScene::8018734794613484229::1682555942::0::1::::<><>::uid://mhsfyjtxsnxh<>res://scenes/Play Area/Object.gd
+::res://::1683495449
+default_env.tres::Environment::8059040173883003983::1682602060::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1682519818::0::1::::<><>::
+PauseButton.tscn::PackedScene::-1::1678853215::0::1::::<><>::res://scenes/PauseButton.gd<>res://assets/art/pauseBtn.png
+README.md::TextFile::-1::1678853073::0::1::::<><>::
+SingletonScript.gd::GDScript::-1::1682581492::0::1::::<>Node<>::
+::res://assets/::1678853073
+::res://assets/art/::1683494938
+BossSpriteAsset.png::CompressedTexture2D::5780437204848236796::1682581651::1683494938::1::::<><>::
+CoinSpriteAsset.png::CompressedTexture2D::4741298120282893982::1679581935::1679581935::1::::<><>::
+EnemySprites.png::CompressedTexture2D::2947076413239556554::1679581935::1679581935::1::::<><>::
+FoodPackAsset.png::CompressedTexture2D::9206645052847552704::1679581935::1679581935::1::::<><>::
+GrassAsset.png::CompressedTexture2D::4665287570721783429::1679581935::1679581935::1::::<><>::
+icon.png::CompressedTexture2D::4548281217840500132::1678853073::1678853215::1::::<><>::
+MainMenuUISprites.png::CompressedTexture2D::1545598800024934204::1683494938::1682519812::1::::<><>::
+pauseBtn.png::CompressedTexture2D::7392185813532842641::1678853073::1678853215::1::::<><>::
+ProjectileSpriteAsset.png::CompressedTexture2D::2103572951241754370::1683494938::1682519818::1::::<><>::
+RequirementsSpriteAsset.png::CompressedTexture2D::857819878132503145::1679581935::1682519818::1::::<><>::
+ShopBackgroundAsset.png::CompressedTexture2D::612267619411146958::1682519489::1682519818::1::::<><>::
+ShopItemsAssets.png::CompressedTexture2D::439180549860295815::1682519489::1682519818::1::::<><>::
+::res://assets/art/playerCharacter/::1679581935
+PlayerCharacterAsset.png::CompressedTexture2D::5607873838095173690::1679578919::1679578919::1::::<><>::
+::res://assets/art/UI/::1683494938
+Easy_Hover.png::CompressedTexture2D::1315443555459990302::1683494938::1683494938::1::::<><>::
+Easy_Idle.png::CompressedTexture2D::5574159527225303595::1683494938::1683494938::1::::<><>::
+Exit_Hover.png::CompressedTexture2D::1857009280291594724::1683494938::1683494938::1::::<><>::
+Exit_Idle.png::CompressedTexture2D::96123573353391983::1683494938::1683494938::1::::<><>::
+GoToMainMenu_Hover.png::CompressedTexture2D::8917894190834609099::1683494938::1683494938::1::::<><>::
+GoToMainMenu_Idle.png::CompressedTexture2D::8561974330397088560::1683494938::1683494938::1::::<><>::
+Hard_Hover.png::CompressedTexture2D::33484043758207059::1683494938::1683494938::1::::<><>::
+Hard_Idle.png::CompressedTexture2D::4015117553471417372::1683494938::1683494938::1::::<><>::
+HowToPlay_Hover.png::CompressedTexture2D::8196655854425582106::1683494938::1683494938::1::::<><>::
+HowToPlay_Idle.png::CompressedTexture2D::4978500242992793332::1683494938::1683494938::1::::<><>::
+Normal_Hover.png::CompressedTexture2D::8511030918291837992::1683494938::1683494938::1::::<><>::
+Normal_Idle.png::CompressedTexture2D::3687100290566488359::1683494938::1683494938::1::::<><>::
+PlayAgain_Hover.png::CompressedTexture2D::3405662888345984949::1683494938::1683494938::1::::<><>::
+PlayAgain_Idle.png::CompressedTexture2D::8946567914157710087::1683494938::1683494938::1::::<><>::
+Play_Hover.png::CompressedTexture2D::1246406935422386067::1683494938::1683494938::1::::<><>::
+Play_Idle.png::CompressedTexture2D::6734326354993252094::1683494938::1683494938::1::::<><>::
+Resume_Hover.png::CompressedTexture2D::4034817497592294329::1683494938::1683494938::1::::<><>::
+Resume_Idle.png::CompressedTexture2D::8570815889888058788::1683494938::1683494938::1::::<><>::
+Settings_Hover.png::CompressedTexture2D::928670571193530667::1683494938::1683494938::1::::<><>::
+Settings_Idle.png::CompressedTexture2D::6869056726166247514::1683494938::1683494938::1::::<><>::
+Shop_Hover.png::CompressedTexture2D::504624978087662786::1683494938::1683494938::1::::<><>::
+Shop_Idle.png::CompressedTexture2D::6661142175278970792::1683494938::1683494938::1::::<><>::
+::res://assets/text/::1678853215
+Minecraft.ttf::FontFile::1180218432079130511::1678853073::1678853215::1::::<><>::
+::res://scenes/::1683494938
+Area2D.gd::GDScript::-1::1678853073::0::1::::<>Area2D<>::
+GameOverUI.gd::GDScript::-1::1682519818::0::1::::<>Control<>::
+GameOverUI.tscn::PackedScene::3369238800677675756::1683494938::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/GameOverUI.gd<>uid://d0p1wwnu0o7f4<>uid://bory1gl3vhkyv<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
+HowToPlayUI.gd::GDScript::-1::1678853215::0::1::::<>Control<>::
+HowToPlayUI.tscn::PackedScene::7673110795211990635::1683494938::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/HowToPlayUI.gd<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
+MainMenuUI.gd::GDScript::-1::1682581572::0::1::::<>Control<>::
+MainMenuUI.tscn::PackedScene::7455491975241138684::1683494938::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/MainMenuUI.gd<>uid://c27fmvco7td2e<>uid://r01e08o3y7pv<>uid://c15ybkoeop1dc<>uid://hgpdnheswtsc<>uid://c44omi75aesja<>uid://nh4cllk35cwh<>uid://cc6vf3n53h6s3<>uid://do1ryvm4x4ndi<>uid://bmte2idcpb40<>uid://1psw3j782mpo
+OpenSessionUI.gd::GDScript::-1::1678853215::0::1::::<>Control<>::
+OpenSessionUI.tscn::PackedScene::6589769524455630649::1682519812::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/OpenSessionUI.gd
+PauseUI.tscn::PackedScene::4048651427254984853::1683494938::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/PauseUI.gd<>uid://dud1c53jqv7gq<>uid://bxqq4ca1r60h6<>uid://c44omi75aesja<>uid://nh4cllk35cwh<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
+SelectDifficultyUI.gd::GDScript::-1::1682519818::0::1::::<>Control<>::
+SelectDifficultyUI.tscn::PackedScene::1129541483014402558::1683494938::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/SelectDifficultyUI.gd<>uid://clofufr88ce56<>uid://s0hfsvhtj6ak<>uid://bsscadtuad5ct<>uid://dti2o2yurwx1y<>uid://bxg7nt2soadqq<>uid://qhqh1exolyx
+SettingsUI.gd::GDScript::-1::1682581545::0::1::::<>Control<>::
+SettingsUI.tscn::PackedScene::1777586634295072729::1682602060::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/SettingsUI.gd
+ShopUI.gd::GDScript::-1::1682580814::0::1::::<>Node2D<>::
+ShopUI.tscn::PackedScene::5888477686578649303::1683494938::0::1::::<><>::res://scenes/ShopUI.gd<>uid://iyt7tyukw8le<>uid://gi0ie37uqh6n<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
+::res://scenes/Play Area/::1683494945
+Character.tscn::PackedScene::3698098013644597885::1683494945::0::1::::<><>::res://scenes/Play Area/CharacterController.gd<>uid://cl5q4lnhc70l7
+CharacterController.gd::GDScript::-1::1682526810::0::1::::<>Area2D<>::
+Coin.tscn::PackedScene::3657540999955579754::1682602060::0::1::::<><>::res://scenes/Play Area/Object.gd<>uid://b8syqtl76xiig
+Food.tscn::PackedScene::1028970579982328793::1682602060::0::1::::<><>::uid://d4f1dmlwvrg3y<>res://scenes/Play Area/Object.gd
+HUD.tscn::PackedScene::1864587895805781229::1682602060::0::1::::<><>::res://scenes/Play Area/HUDController.gd
+HUDController.gd::GDScript::-1::1682519818::0::1::::<>CanvasLayer<>::
+Object.gd::GDScript::-1::1679581935::0::1::::<>RigidBody2D<>::
+PauseUI.gd::GDScript::-1::1682519818::0::1::::<>Control<>::
+PauseUI.tscn::PackedScene::8185596884227693417::1682602059::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/Play Area/PauseUI.gd
+PlayArea.gd::GDScript::-1::1682602135::0::1::::<>Node2D<>::
+PlayArea.tscn::PackedScene::2323735942758420875::1683494945::0::1::::<><>::res://scenes/Play Area/PlayArea.gd<>uid://bsxnes5gdw4sf<>uid://owo83md1lye0<>uid://du7ydb14agavx<>uid://bsd0fv1mt4gji<>uid://dmilnjo245o02<>uid://b7p5utapk3ilp<>uid://1thqwx1jkmgr<>uid://dovft48d5oin6
+Projectile.tscn::PackedScene::8630561671184102321::1682602060::0::1::::<><>::res://scenes/Play Area/ProjectileController.gd<>uid://478sljt0n7g5
+ProjectileController.gd::GDScript::-1::1682519818::0::1::::<>RigidBody2D<>::
+Requirements.tscn::PackedScene::8018734794613484229::1682602135::0::1::::<><>::uid://mhsfyjtxsnxh<>res://scenes/Play Area/Object.gd

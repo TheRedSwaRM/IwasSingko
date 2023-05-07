@@ -209,7 +209,11 @@ func _on_toyo_button_pressed():
 
 func _on_purchase_button_pressed():
 	if shopItem != "":
-		PurchaseItem(shopItem, itemCost)
+		if SingletonScript.playerData["player"]["playerCoins"] < itemCost:
+			$"Purchase Button".disabled = true
+			$"Purchase Button".text = "Not Enough Coins"
+		else:
+			PurchaseItem(shopItem, itemCost)
 
 
 func _on_reset_data_button_pressed():
