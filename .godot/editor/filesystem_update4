@@ -17,3 +17,5 @@ res://scenes/Play Area/PlayArea.gd
 res://scenes/Play Area/Food.tscn
 res://scenes/Play Area/Projectile.tscn
 res://scenes/Play Area/Requirements.tscn
+res://scenes/MainMenuUI.gd
+res://scenes/OpenSessionUI.gd
