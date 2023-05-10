@@ -2,10 +2,11 @@ extends Control
 
 var masterVolumeBus = AudioServer.get_bus_index("Master")
 
-
+var escapeEvent
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_process_input(false)
+	escapeEvent = InputMap.action_get_events("pause")[0]
+	InputMap.action_erase_events("pause")
 	AudioServer.set_bus_volume_db(masterVolumeBus, SingletonScript.playerData["controls"]["playerVolume"])
 	$volumeSlider.value = SingletonScript.playerData["controls"]["playerVolume"]
 	if SingletonScript.playerData["controls"]["playerWalkUp"] is String:
@@ -23,6 +24,7 @@ func _ready():
 	$ControlNap.select(SingletonScript.playerData["controls"]["playerNap"])
 
 func _on_Button_button_down():
+	InputMap.action_add_event("pause", escapeEvent)
 	queue_free()
 	pass # Replace with function body.
 

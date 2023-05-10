@@ -12,8 +12,6 @@ var reqScore = 20 # how much points the player gets when collecting
 var projMinSpeed = 400.0 # minimum projectile speed
 var projMaxSpeed = 700.0 # maximum projectile speed
 
-@onready var character = get_tree().get_first_node_in_group("character")
-
 var score
 var coins
 var rng
@@ -42,7 +40,7 @@ func _process(delta):
 func pauseGame():
 	emit_signal("pause")
 	$ScoreTimer.stop()
-	$ProjectileTimer.stop()
+	$EnemyTimer.stop()
 	$CoinTimer.stop()
 	$FoodTimer.stop()
 	$ReqTimer.stop()
@@ -53,7 +51,7 @@ func pauseGame():
 func resumeGame():
 	emit_signal("pause")
 	$ScoreTimer.start()
-	$ProjectileTimer.start()
+	$EnemyTimer.start()
 	$CoinTimer.start()
 	$FoodTimer.start()
 	$ReqTimer.start()
@@ -79,7 +77,7 @@ func newGame():
 # called when start timer timeouts
 # starts other timers
 func _on_start_timer_timeout():
-	$ProjectileTimer.start()
+	$EnemyTimer.start()
 	$CoinTimer.start()
 	$FoodTimer.start()
 	$ReqTimer.start()
@@ -91,37 +89,14 @@ func _on_score_timer_timeout():
 	$HUD.updateScore(score)
 	SingletonScript.SetPlayAreaScore(score)
 
-# spawns a projectile for every timeout
-func _on_projectile_timer_timeout():
-	# spawns projectile
-	var spawnedProjectile = projectile.instantiate()
-	spawnedProjectile.hide()
-	# sets random position for the projectile
-	spawnedProjectile.position = getRandomPosition()
-	
-	# points projectile towards character
-	var direction = spawnedProjectile.global_position.direction_to(character.global_position)
-	
-	# slightly varies rotation of projectile
-	var randomRotation = randf_range(-PI/4, PI/4)
-	spawnedProjectile.rotation = direction.rotated(randomRotation).angle()
-	# randomly sets projectile velocity
-	var velocity = Vector2(randf_range(projMinSpeed, projMaxSpeed), 0.0)
-	# launches projectile at the direction
-	spawnedProjectile.linear_velocity = velocity.rotated(direction.rotated(randomRotation).angle())
-	
-	# adds projectile to scene
-	spawnedProjectile.show()
-	add_child(spawnedProjectile)
-
 # selectsts a random position offscreen to spawn
 func getRandomPosition():
 	# used to get random distance away from screen
-	var vpr = get_viewport_rect().size * randf_range(2.1, 2.4)
+	var vpr = get_viewport_rect().size * randf_range(1.3, 1.7)
 	# left or right side spawn with slight variance
-	var x_choices = [(character.global_position.x - vpr.x/2) * randf_range(2.1, 2.4),  (character.global_position.x + vpr.x/2) * randf_range(2.1, 2.4)]
+	var x_choices = [($Character.global_position.x - vpr.x/2) * randf_range(1.3, 1.7),  ($Character.global_position.x + vpr.x/2) * randf_range(1.3, 1.7)]
 	# up or down side spawn with slight variance
-	var y_choices = [(character.global_position.y - vpr.y/2) * randf_range(2.1, 2.4),  (character.global_position.y + vpr.y/2) * randf_range(2.1, 2.4)]
+	var y_choices = [($Character.global_position.y - vpr.y/2) * randf_range(1.3, 1.7),  ($Character.global_position.y + vpr.y/2) * randf_range(1.3, 1.7)]
 	
 	# randomly chooses which combination of sides
 	var x_spawn = x_choices[randi_range(-1,1)]
@@ -160,22 +135,22 @@ func playAreaSetDifficulty(diff):
 		surviveScore = 5
 		coinValue = 5
 		reqScore = 20 + SingletonScript.playerData["player"]["playerScoreInc"]
-		SingletonScript.SetPlayAreaProjMinSpeed(400.0)
-		SingletonScript.SetPlayAreaProjMaxSpeed(700.0)
-		SingletonScript.SetPlayAreaProjWaitTime(2)
+		SingletonScript.SetPlayAreaProjMinSpeed(200.0)
+		SingletonScript.SetPlayAreaProjMaxSpeed(500.0)
+		SingletonScript.SetPlayAreaProjWaitTime(6)
 	elif diff == "Normal":
 		surviveScore = 10
 		coinValue = 10
 		reqScore = 30 + SingletonScript.playerData["player"]["playerScoreInc"]
-		SingletonScript.SetPlayAreaProjMinSpeed(600.0)
-		SingletonScript.SetPlayAreaProjMaxSpeed(900.0)
-		SingletonScript.SetPlayAreaProjWaitTime(2)
+		SingletonScript.SetPlayAreaProjMinSpeed(500.0)
+		SingletonScript.SetPlayAreaProjMaxSpeed(700.0)
+		SingletonScript.SetPlayAreaProjWaitTime(4)
 	elif diff == "Hard":
 		surviveScore = 15
 		coinValue = 15
 		reqScore = 40 + SingletonScript.playerData["player"]["playerScoreInc"]
-		SingletonScript.SetPlayAreaProjMinSpeed(800.0)
-		SingletonScript.SetPlayAreaProjMaxSpeed(1100.0)
+		SingletonScript.SetPlayAreaProjMinSpeed(700.0)
+		SingletonScript.SetPlayAreaProjMaxSpeed(1000.0)
 		SingletonScript.SetPlayAreaProjWaitTime(2)
 
 
@@ -184,7 +159,7 @@ func _on_coin_timer_timeout():
 	var spawnedCoin = coin.instantiate()
 	
 	#sets random position for object to spawn
-	spawnedCoin.position = getRandomPosition()
+	spawnedCoin.global_position = getRandomPosition()
 	
 	# adds object to scene
 	add_child(spawnedCoin)
@@ -194,7 +169,7 @@ func _on_food_timer_timeout():
 	var spawnedFood = food.instantiate()
 	
 	#sets random position for object to spawn
-	spawnedFood.position = getRandomPosition()
+	spawnedFood.global_position = getRandomPosition()
 	spawnedFood.get_node("Sprite2D").set_frame(rng.randi_range(0, 15.0))
 	
 	# adds object to scene
@@ -205,8 +180,31 @@ func _on_req_timer_timeout():
 	var spawnedReq = req.instantiate()
 	
 	#sets random position for object to spawn
-	spawnedReq.position = getRandomPosition()
+	spawnedReq.global_position = getRandomPosition()
 	spawnedReq.get_node("Sprite2D").set_frame(rng.randi_range(0, 11.0))
 	
 	# adds object to scene
 	add_child(spawnedReq)
+
+
+func _on_enemy_timer_timeout():
+	# spawns projectile
+	var spawnedProjectile = projectile.instantiate()
+	spawnedProjectile.hide()
+	# sets random position for the projectile
+	spawnedProjectile.global_position = getRandomPosition()
+	
+	# points projectile towards character
+	var direction = spawnedProjectile.global_position.direction_to($Character.global_position)
+	
+	# slightly varies rotation of projectile
+	var randomRotation = randf_range(-PI/4, PI/4)
+	spawnedProjectile.rotation = direction.rotated(randomRotation).angle()
+	# randomly sets projectile velocity
+	var velocity = Vector2(randf_range(projMinSpeed, projMaxSpeed), 0.0)
+	# launches projectile at the direction
+	spawnedProjectile.linear_velocity = velocity.rotated(direction.rotated(randomRotation).angle())
+	
+	# adds projectile to scene
+	spawnedProjectile.show()
+	add_child(spawnedProjectile)

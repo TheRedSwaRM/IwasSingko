@@ -296,16 +296,16 @@ visible = false
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -513.0
-offset_top = -300.0
-offset_right = -513.0
-offset_bottom = -300.0
+offset_left = -511.0
+offset_top = -301.0
+offset_right = -511.0
+offset_bottom = -301.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="ProjectileTimer" type="Timer" parent="."]
+[node name="EnemyTimer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 0.252
+wait_time = 5.0
 
 [node name="CoinTimer" type="Timer" parent="."]
 process_callback = 0
@@ -334,7 +334,7 @@ process_callback = 0
 [connection signal="obj" from="Character" to="." method="_on_character_obj"]
 [connection signal="staminaChanged" from="Character" to="." method="_on_character_stamina_changed"]
 [connection signal="button_down" from="Character/PauseScene/resume" to="." method="_on_resume_button_down"]
-[connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="CoinTimer" to="." method="_on_coin_timer_timeout"]
 [connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]
 [connection signal="timeout" from="ReqTimer" to="." method="_on_req_timer_timeout"]

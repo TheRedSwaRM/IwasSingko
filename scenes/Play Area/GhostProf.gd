@@ -3,10 +3,11 @@ extends RigidBody2D
 @export var projectile: PackedScene
 var rng
 var curPos
+var prevPause
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng = RandomNumberGenerator.new()
-
+	$ProjectileTimer.wait_time = SingletonScript.playAreaProjWaitTime
 
 func _process(delta):
 	if get_tree().paused == true:
@@ -14,7 +15,11 @@ func _process(delta):
 		hide()
 	else:
 		show()
-		
+	
+	if get_tree().paused == false and prevPause != get_tree().paused:
+		$ProjectileTimer.start()
+	prevPause = get_tree().paused
+	
 func _on_projectile_timer_timeout():
 	var spawnedProjectile = projectile.instantiate()
 	spawnedProjectile.hide()
