@@ -1,11 +1,12 @@
+Timer
+CollisionShape2D
 Sprite2D
+RigidBody2D
 Node2D
 TileMap
 TextureButton
 Button
 Label
-CollisionShape2D
-Timer
 Area2D
 RichTextLabel
 CanvasLayer
@@ -13,5 +14,4 @@ TextEdit
 PathFollow2D
 Path2D
 Marker2D
-RigidBody2D
 VideoStreamPlayer

@@ -23,5 +23,3 @@ region_rect = Rect2(0, 0, 64, 15)
 process_mode = 1
 position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_so0r4")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

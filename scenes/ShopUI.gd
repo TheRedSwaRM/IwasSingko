@@ -16,8 +16,11 @@ func _ready():
 	$ItemLabel.text = ""
 	$ItemStatsLabel.text = ""
 	$ItemCostLabel.text = ""
+	$"Purchase Button".disabled = true
+	$"Purchase Button".hide()
 	
 func ChangeItemDesc(item, cost):
+	$"Purchase Button".show()
 	$ItemLabel.text = item
 	$ItemCostLabel.text = "Cost: " + str(cost)
 	if item == "Gatorade":

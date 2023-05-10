@@ -31,6 +31,10 @@ var playAreaDifficulty
 var playAreaScore
 var playAreaCoins
 
+var playAreaProjMinSpeed
+var playAreaProjMaxSpeed
+var playAreaProjWaitTime
+
 func _ready():
 	LoadPlayerData()
 
@@ -95,6 +99,15 @@ func SetPlayAreaScore(score):
 # sets play area coins from play area scene
 func SetPlayAreaCoins(coins):
 	playAreaCoins = coins
+	
+func SetPlayAreaProjMinSpeed(val):
+	playAreaProjMinSpeed = val
+
+func SetPlayAreaProjMaxSpeed(val):
+	playAreaProjMaxSpeed = val
+
+func SetPlayAreaProjWaitTime(val):
+	playAreaProjWaitTime = val
 	
 # set player coins
 func SetPlayerCoins(coins):

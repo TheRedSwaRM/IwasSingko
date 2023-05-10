@@ -96,7 +96,6 @@ func _on_projectile_timer_timeout():
 	# spawns projectile
 	var spawnedProjectile = projectile.instantiate()
 	spawnedProjectile.hide()
-	spawnedProjectile.get_node("Sprite2D").set_frame(rng.randi_range(0, 15.0))
 	# sets random position for the projectile
 	spawnedProjectile.position = getRandomPosition()
 	
@@ -118,11 +117,11 @@ func _on_projectile_timer_timeout():
 # selectsts a random position offscreen to spawn
 func getRandomPosition():
 	# used to get random distance away from screen
-	var vpr = get_viewport_rect().size * randf_range(1.1, 1.4)
+	var vpr = get_viewport_rect().size * randf_range(2.1, 2.4)
 	# left or right side spawn with slight variance
-	var x_choices = [(character.global_position.x - vpr.x/2) * randf_range(1.1, 1.4),  (character.global_position.x + vpr.x/2) * randf_range(1.1, 1.4)]
+	var x_choices = [(character.global_position.x - vpr.x/2) * randf_range(2.1, 2.4),  (character.global_position.x + vpr.x/2) * randf_range(2.1, 2.4)]
 	# up or down side spawn with slight variance
-	var y_choices = [(character.global_position.y - vpr.y/2) * randf_range(1.1, 1.4),  (character.global_position.y + vpr.y/2) * randf_range(1.1, 1.4)]
+	var y_choices = [(character.global_position.y - vpr.y/2) * randf_range(2.1, 2.4),  (character.global_position.y + vpr.y/2) * randf_range(2.1, 2.4)]
 	
 	# randomly chooses which combination of sides
 	var x_spawn = x_choices[randi_range(-1,1)]
@@ -161,23 +160,23 @@ func playAreaSetDifficulty(diff):
 		surviveScore = 5
 		coinValue = 5
 		reqScore = 20 + SingletonScript.playerData["player"]["playerScoreInc"]
-		projMinSpeed = 400.0
-		projMaxSpeed = 700.0
-		$ProjectileTimer.wait_time = 0.250
+		SingletonScript.SetPlayAreaProjMinSpeed(400.0)
+		SingletonScript.SetPlayAreaProjMaxSpeed(700.0)
+		SingletonScript.SetPlayAreaProjWaitTime(2)
 	elif diff == "Normal":
 		surviveScore = 10
 		coinValue = 10
 		reqScore = 30 + SingletonScript.playerData["player"]["playerScoreInc"]
-		projMinSpeed = 600.0
-		projMaxSpeed = 900.0
-		$ProjectileTimer.wait_time = 0.200
+		SingletonScript.SetPlayAreaProjMinSpeed(600.0)
+		SingletonScript.SetPlayAreaProjMaxSpeed(900.0)
+		SingletonScript.SetPlayAreaProjWaitTime(2)
 	elif diff == "Hard":
 		surviveScore = 15
 		coinValue = 15
 		reqScore = 40 + SingletonScript.playerData["player"]["playerScoreInc"]
-		projMinSpeed = 800.0
-		projMaxSpeed = 1100.0
-		$ProjectileTimer.wait_time = 0.150
+		SingletonScript.SetPlayAreaProjMinSpeed(800.0)
+		SingletonScript.SetPlayAreaProjMaxSpeed(1100.0)
+		SingletonScript.SetPlayAreaProjWaitTime(2)
 
 
 func _on_coin_timer_timeout():

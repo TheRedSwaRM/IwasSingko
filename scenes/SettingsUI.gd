@@ -5,6 +5,7 @@ var masterVolumeBus = AudioServer.get_bus_index("Master")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_process_input(false)
 	AudioServer.set_bus_volume_db(masterVolumeBus, SingletonScript.playerData["controls"]["playerVolume"])
 	$volumeSlider.value = SingletonScript.playerData["controls"]["playerVolume"]
 	if SingletonScript.playerData["controls"]["playerWalkUp"] is String:

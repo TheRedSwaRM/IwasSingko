@@ -17,7 +17,7 @@ func _ready():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t574h"]
-size = Vector2(26.5, 28.5)
+size = Vector2(39, 59)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ge2i"]
 radius = 81.0987
@@ -246,7 +246,7 @@ transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_yo5vl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rq10n"]
-radius = 878.028
+radius = 1236.71
 
 [node name="Character" type="Area2D"]
 process_mode = 1
@@ -274,8 +274,7 @@ position = Vector2(1, -1)
 script = SubResource("GDScript_sm6bh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(1, 2)
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_t574h")
 
 [node name="CollisionTimer" type="Timer" parent="."]
@@ -305,7 +304,6 @@ parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="BulletDestroyer" type="Area2D" parent="."]
-visible = false
 collision_mask = 2
 
 [node name="BulletDestroyerCollision" type="CollisionShape2D" parent="BulletDestroyer"]

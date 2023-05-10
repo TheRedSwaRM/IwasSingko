@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6bn62es36i5q"]
+[gd_scene load_steps=9 format=3 uid="uid://bhjomnh56v1v4"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/PauseUI.gd" id="2"]

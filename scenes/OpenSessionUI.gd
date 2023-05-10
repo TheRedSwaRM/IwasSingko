@@ -15,7 +15,7 @@ func _input(event):
 	
 func SetHotkeys():
 	if SingletonScript.playerData["controls"]["playerWalkUp"] is String:
-		SingletonScript.NewPlayerData()
+		SingletonScript.ResetPlayerData()
 	
 	var event
 	event = InputMap.action_get_events("move_up")[0]

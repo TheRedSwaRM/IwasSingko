@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://8dvud0lsy2ex"]
 
 [ext_resource type="Script" path="res://scenes/Play Area/PlayArea.gd" id="1_rtorh"]
+[ext_resource type="PackedScene" uid="uid://lea8yuu266h3" path="res://scenes/Play Area/GhostProf.tscn" id="2_xesq7"]
 [ext_resource type="PackedScene" uid="uid://bsxnes5gdw4sf" path="res://scenes/Play Area/Character.tscn" id="3_1g7we"]
 [ext_resource type="PackedScene" uid="uid://owo83md1lye0" path="res://scenes/Play Area/Food.tscn" id="3_cstpc"]
-[ext_resource type="PackedScene" uid="uid://du7ydb14agavx" path="res://scenes/Play Area/Projectile.tscn" id="3_gyf7h"]
 [ext_resource type="PackedScene" uid="uid://bsd0fv1mt4gji" path="res://scenes/Play Area/Coin.tscn" id="4_iqtkc"]
 [ext_resource type="PackedScene" uid="uid://dmilnjo245o02" path="res://scenes/Play Area/Requirements.tscn" id="5_74cgh"]
 [ext_resource type="Texture2D" uid="uid://b7p5utapk3ilp" path="res://assets/art/GrassAsset.png" id="6_tu7en"]
@@ -265,7 +265,7 @@ sources/0 = SubResource("TileSetAtlasSource_k62xe")
 [node name="Node2D" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_rtorh")
-projectile = ExtResource("3_gyf7h")
+projectile = ExtResource("2_xesq7")
 food = ExtResource("3_cstpc")
 coin = ExtResource("4_iqtkc")
 req = ExtResource("5_74cgh")
@@ -304,22 +304,28 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ProjectileTimer" type="Timer" parent="."]
+process_callback = 0
 wait_time = 0.252
 
 [node name="CoinTimer" type="Timer" parent="."]
+process_callback = 0
 wait_time = 8.0
 
 [node name="FoodTimer" type="Timer" parent="."]
+process_callback = 0
 wait_time = 10.0
 
 [node name="ReqTimer" type="Timer" parent="."]
+process_callback = 0
 wait_time = 10.0
 
 [node name="StartTimer" type="Timer" parent="."]
+process_callback = 0
 wait_time = 2.0
 one_shot = true
 
 [node name="ScoreTimer" type="Timer" parent="."]
+process_callback = 0
 
 [node name="HUD" parent="." instance=ExtResource("7_2662b")]
 

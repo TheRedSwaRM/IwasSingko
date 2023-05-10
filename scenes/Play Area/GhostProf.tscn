@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://lea8yuu266h3"]
+
+[ext_resource type="Script" path="res://scenes/Play Area/GhostProf.gd" id="1_u7kn7"]
+[ext_resource type="PackedScene" uid="uid://du7ydb14agavx" path="res://scenes/Play Area/Projectile.tscn" id="2_7ewgr"]
+[ext_resource type="Texture2D" uid="uid://bh8t6hfhm2ufy" path="res://assets/art/EnemySprites.png" id="2_v6pwd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxjhb"]
+radius = 29.0
+
+[node name="GhostProf" type="RigidBody2D" groups=["enemy"]]
+collision_layer = 2
+gravity_scale = 0.0
+script = ExtResource("1_u7kn7")
+projectile = ExtResource("2_7ewgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_v6pwd")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gxjhb")
+
+[node name="ProjectileTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
