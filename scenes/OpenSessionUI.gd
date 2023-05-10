@@ -49,7 +49,7 @@ func SetHotkeys():
 		event.set_keycode(KEY_J)
 	
 	event = InputMap.action_get_events("nap")[0]
-	if SingletonScript.playerData["controls"]["playerSprint"] == 0:
+	if SingletonScript.playerData["controls"]["playerNap"] == 0:
 		event.set_keycode(KEY_X)
 	else:
 		event.set_keycode(KEY_K)

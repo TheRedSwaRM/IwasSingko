@@ -16,8 +16,8 @@ func _ready():
 		SingletonScript.SetControlsPlayerNap(0)
 	$ControlUP.select(SingletonScript.playerData["controls"]["playerWalkUp"])
 	$ControlDown.select(SingletonScript.playerData["controls"]["playerWalkDown"])
-	$ControlLeft.select(SingletonScript.playerData["controls"]["playerWalkRight"])
-	$ControlRight.select(SingletonScript.playerData["controls"]["playerWalkLeft"])
+	$ControlLeft.select(SingletonScript.playerData["controls"]["playerWalkLeft"])
+	$ControlRight.select(SingletonScript.playerData["controls"]["playerWalkRight"])
 	$ControlSprint.select(SingletonScript.playerData["controls"]["playerSprint"])
 	$ControlNap.select(SingletonScript.playerData["controls"]["playerNap"])
 

@@ -10,3 +10,4 @@ res://scenes/Play Area/Projectile.tscn
 res://scenes/Play Area/Requirements.tscn
 res://scenes/ShopUI.tscn
 res://scenes/OpenSessionUI.gd
+res://scenes/SettingsUI.gd
