@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://0lcuesgkda0p"]
+[gd_scene load_steps=7 format=3 uid="uid://0lcuesgkda0p"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/SettingsUI.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dlat75atro504" path="res://assets/art/SettingsBackgroundAsset.png" id="2_j7pfb"]
 
 [sub_resource type="Theme" id="Theme_qyhnn"]
 default_font = ExtResource("1")
@@ -29,6 +30,11 @@ layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 600.0
 color = Color(0.65098, 0.654902, 0.658824, 1)
+
+[node name="SettingsBackgroundAsset" type="Sprite2D" parent="."]
+position = Vector2(423, 336)
+scale = Vector2(0.732793, 0.732794)
+texture = ExtResource("2_j7pfb")
 
 [node name="BlackBar1" type="ColorRect" parent="."]
 layout_mode = 0

@@ -75,6 +75,7 @@ func _process(delta):
 		if Input.is_action_pressed("nap"):
 			# sets character to unable to move
 			movementSpeed = 0
+			$AnimationTree.get("parameters/playback").travel("nap")
 			# checks if napping was set to true already so that nap timer does not constantly restart itself
 			if napping == false:
 				napping = true

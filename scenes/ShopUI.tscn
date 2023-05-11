@@ -1,10 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp5omqpwv7i4n"]
+[gd_scene load_steps=15 format=3 uid="uid://cp5omqpwv7i4n"]
 
 [ext_resource type="Script" path="res://scenes/ShopUI.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://iyt7tyukw8le" path="res://assets/art/ShopBackgroundAsset.png" id="2_fmsuw"]
 [ext_resource type="Texture2D" uid="uid://gi0ie37uqh6n" path="res://assets/art/ShopItemsAssets.png" id="3_1ehxy"]
 [ext_resource type="Texture2D" uid="uid://dt8qp4brr7vdg" path="res://assets/art/UI/GoToMainMenu_Idle.png" id="3_bvos8"]
 [ext_resource type="Texture2D" uid="uid://d0b5odbw3xqat" path="res://assets/art/UI/GoToMainMenu_Hover.png" id="4_gcfcd"]
+[ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="5_u8hgp"]
+
+[sub_resource type="Theme" id="Theme_xri66"]
+default_font = ExtResource("5_u8hgp")
+
+[sub_resource type="Theme" id="Theme_vqp7t"]
+default_font = ExtResource("5_u8hgp")
+
+[sub_resource type="Theme" id="Theme_qoxnu"]
+default_font = ExtResource("5_u8hgp")
+
+[sub_resource type="Theme" id="Theme_s0s7j"]
+default_font = ExtResource("5_u8hgp")
+
+[sub_resource type="Theme" id="Theme_yg3dq"]
+default_font = ExtResource("5_u8hgp")
+
+[sub_resource type="Theme" id="Theme_1ixxv"]
+default_font = ExtResource("5_u8hgp")
+
+[sub_resource type="Theme" id="Theme_nptdc"]
+default_font = ExtResource("5_u8hgp")
+
+[sub_resource type="Theme" id="Theme_depdr"]
+default_font = ExtResource("5_u8hgp")
 
 [node name="ShopUI" type="Node2D"]
 script = ExtResource("2")
@@ -55,6 +80,7 @@ offset_left = 18.0
 offset_top = 13.0
 offset_right = 767.0
 offset_bottom = 50.0
+theme = SubResource("Theme_xri66")
 text = "Coins: 1000000000000"
 
 [node name="Gatorade Button" type="Button" parent="."]
@@ -193,10 +219,11 @@ text = "Purchase"
 
 [node name="PlayerStatsLabel" type="Label" parent="."]
 offset_left = 770.0
-offset_top = 48.0
+offset_top = 56.0
 offset_right = 1005.0
-offset_bottom = 76.0
+offset_bottom = 84.0
 pivot_offset = Vector2(90, 41)
+theme = SubResource("Theme_vqp7t")
 text = "Player Stats"
 
 [node name="EnergyConLabel" type="Label" parent="PlayerStatsLabel"]
@@ -204,6 +231,7 @@ layout_mode = 0
 offset_top = 24.0
 offset_right = 255.0
 offset_bottom = 50.0
+theme = SubResource("Theme_qoxnu")
 text = "Energy Consumption:"
 
 [node name="SpeedLabel" type="Label" parent="PlayerStatsLabel"]
@@ -211,6 +239,7 @@ layout_mode = 0
 offset_top = 50.0
 offset_right = 255.0
 offset_bottom = 76.0
+theme = SubResource("Theme_s0s7j")
 text = "Speed:"
 
 [node name="MaxEnergyLabel" type="Label" parent="PlayerStatsLabel"]
@@ -266,6 +295,7 @@ offset_left = 773.0
 offset_top = 324.0
 offset_right = 1007.0
 offset_bottom = 350.0
+theme = SubResource("Theme_yg3dq")
 text = "Selected Item Description"
 
 [node name="ItemCostLabel" type="Label" parent="."]
@@ -274,6 +304,7 @@ offset_top = 342.0
 offset_right = 1007.0
 offset_bottom = 368.0
 pivot_offset = Vector2(86, -63)
+theme = SubResource("Theme_1ixxv")
 text = "Item Cost"
 
 [node name="ItemStatsLabel" type="Label" parent="."]
@@ -281,6 +312,7 @@ offset_left = 774.0
 offset_top = 359.0
 offset_right = 1008.0
 offset_bottom = 467.0
+theme = SubResource("Theme_nptdc")
 text = "Item Stats"
 
 [node name="Reset Data Button" type="Button" parent="."]
@@ -288,6 +320,7 @@ offset_left = 398.0
 offset_top = 3.0
 offset_right = 516.0
 offset_bottom = 48.0
+theme = SubResource("Theme_depdr")
 text = "Reset Stats"
 
 [connection signal="button_down" from="Control/goToMainMenu" to="." method="_on_goToMainMenu_button_down"]

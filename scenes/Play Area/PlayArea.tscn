@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8dvud0lsy2ex"]
+[gd_scene load_steps=16 format=3 uid="uid://8dvud0lsy2ex"]
 
 [ext_resource type="Script" path="res://scenes/Play Area/PlayArea.gd" id="1_rtorh"]
 [ext_resource type="PackedScene" uid="uid://lea8yuu266h3" path="res://scenes/Play Area/GhostProf.tscn" id="2_xesq7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b7p5utapk3ilp" path="res://assets/art/GrassAsset.png" id="6_tu7en"]
 [ext_resource type="PackedScene" uid="uid://1thqwx1jkmgr" path="res://scenes/Play Area/HUD.tscn" id="7_2662b"]
 [ext_resource type="PackedScene" uid="uid://dovft48d5oin6" path="res://scenes/Play Area/PauseUI.tscn" id="8_jdfys"]
+[ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="9_c7bk8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8vdo"]
 texture = ExtResource("6_tu7en")
@@ -262,6 +263,9 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_k62xe")
 
+[sub_resource type="Theme" id="Theme_nniad"]
+default_font = ExtResource("9_c7bk8")
+
 [node name="Node2D" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_rtorh")
@@ -302,6 +306,7 @@ offset_right = -511.0
 offset_bottom = -301.0
 grow_horizontal = 1
 grow_vertical = 1
+theme = SubResource("Theme_nniad")
 
 [node name="EnemyTimer" type="Timer" parent="."]
 process_callback = 0

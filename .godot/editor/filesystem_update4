@@ -1,23 +1,16 @@
 res://default_env.tres
-res://scenes/MainMenuUI.tscn
-res://scenes/SelectDifficultyUI.tscn
 res://scenes/Play Area/PlayArea.tscn
-res://scenes/HowToPlayUI.tscn
-res://scenes/OpenSessionUI.tscn
-res://scenes/SettingsUI.tscn
 res://scenes/Play Area/Food.tscn
 res://scenes/Play Area/Projectile.tscn
 res://scenes/Play Area/Requirements.tscn
-res://scenes/ShopUI.tscn
-res://scenes/OpenSessionUI.gd
-res://scenes/SettingsUI.gd
-res://scenes/ShopUI.gd
-res://scenes/Play Area/GhostProf.gd
-res://scenes/SelectDifficultyUI.gd
-res://SingletonScript.gd
 res://scenes/Play Area/GhostProf.tscn
-res://scenes/Play Area/PlayArea.gd
 res://scenes/Play Area/Character.tscn
+res://scenes/SettingsUI.tscn
 res://scenes/Play Area/PauseUI.tscn
-res://scenes/Play Area/PauseUI.gd
-res://scenes/PauseUI.tscn
+res://scenes/OpenSessionUI.tscn
+res://scenes/ShopUI.tscn
+res://scenes/Play Area/Coin.tscn
+res://scenes/MainMenuUI.tscn
+res://scenes/SelectDifficultyUI.tscn
+res://scenes/Play Area/HUD.tscn
+res://scenes/HowToPlayUI.tscn

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://qdfna8gf7j5o"]
+[gd_scene load_steps=11 format=3 uid="uid://qdfna8gf7j5o"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/SelectDifficultyUI.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://clofufr88ce56" path="res://assets/art/UI/Easy_Idle.png" id="2_ihv0u"]
+[ext_resource type="Texture2D" uid="uid://ccl7us1nhf727" path="res://assets/art/DifficultyBackgroundAsset.png" id="2_oa4im"]
 [ext_resource type="Texture2D" uid="uid://s0hfsvhtj6ak" path="res://assets/art/UI/Easy_Hover.png" id="3_5my5q"]
 [ext_resource type="Texture2D" uid="uid://bsscadtuad5ct" path="res://assets/art/UI/Normal_Idle.png" id="4_cqqt4"]
 [ext_resource type="Texture2D" uid="uid://dti2o2yurwx1y" path="res://assets/art/UI/Normal_Hover.png" id="5_hdm5t"]
@@ -27,6 +28,12 @@ layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 600.0
 color = Color(0.65098, 0.654902, 0.658824, 1)
+
+[node name="DifficultyBackgroundAsset" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(528, 440)
+scale = Vector2(1.001, 1)
+texture = ExtResource("2_oa4im")
 
 [node name="BlackBar1" type="ColorRect" parent="."]
 layout_mode = 0

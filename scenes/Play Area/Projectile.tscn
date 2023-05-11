@@ -7,6 +7,7 @@
 size = Vector2(97, 17)
 
 [node name="Projectile" type="RigidBody2D" groups=["enemy"]]
+texture_filter = 1
 collision_layer = 2
 gravity_scale = 0.0
 script = ExtResource("1_sv1vh")

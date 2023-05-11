@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dehq4mj2kfvb5"]
+[gd_scene load_steps=15 format=3 uid="uid://dehq4mj2kfvb5"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/MainMenuUI.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://c27fmvco7td2e" path="res://assets/art/UI/Play_Idle.png" id="2_ulyc7"]
+[ext_resource type="Texture2D" uid="uid://2yvvje8ppyis" path="res://assets/art/MainMenuBackgroundAsset.png" id="2_xmw7x"]
 [ext_resource type="Texture2D" uid="uid://r01e08o3y7pv" path="res://assets/art/UI/Play_Hover.png" id="3_t8j2j"]
 [ext_resource type="Texture2D" uid="uid://c15ybkoeop1dc" path="res://assets/art/UI/Shop_Idle.png" id="4_p428d"]
 [ext_resource type="Texture2D" uid="uid://hgpdnheswtsc" path="res://assets/art/UI/Shop_Hover.png" id="5_k30su"]
@@ -26,9 +27,15 @@ grow_vertical = 2
 script = ExtResource("2")
 
 [node name="background" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 600.0
+
+[node name="MainMenuBackgroundAsset" type="Sprite2D" parent="."]
+position = Vector2(511.629, 300.5)
+scale = Vector2(0.601315, 0.605315)
+texture = ExtResource("2_xmw7x")
 
 [node name="goToPlay" type="TextureButton" parent="."]
 texture_filter = 1

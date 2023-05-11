@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bsxnes5gdw4sf"]
+[gd_scene load_steps=37 format=3 uid="uid://bsxnes5gdw4sf"]
 
 [ext_resource type="Script" path="res://scenes/Play Area/CharacterController.gd" id="1_lochm"]
 [ext_resource type="Texture2D" uid="uid://cl5q4lnhc70l7" path="res://assets/art/playerCharacter/PlayerCharacterAsset.png" id="2_xkh2t"]
@@ -173,6 +173,23 @@ tracks/0/keys = {
 "values": [9, 10, 11]
 }
 
+[sub_resource type="Animation" id="Animation_6oact"]
+resource_name = "nap"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [12, 13, 14]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dehol"]
 _data = {
 "RESET": SubResource("Animation_sdj3d"),
@@ -183,7 +200,8 @@ _data = {
 "move_down": SubResource("Animation_3suh6"),
 "move_left": SubResource("Animation_i40wk"),
 "move_right": SubResource("Animation_a656g"),
-"move_up": SubResource("Animation_ua6cd")
+"move_up": SubResource("Animation_ua6cd"),
+"nap": SubResource("Animation_6oact")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6wss0"]
@@ -208,6 +226,9 @@ blend_point_2/pos = Vector2(-1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_0c02d")
 blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0tkb8"]
+animation = &"nap"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sg5rs"]
 animation = &"move_left"
@@ -236,12 +257,22 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g0waa"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1ipey"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_71wcw"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_onlrq"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ivqxy"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rykp7"]
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_e2mhu")
 states/idle/position = Vector2(345.333, 100.37)
+states/nap/node = SubResource("AnimationNodeAnimation_0tkb8")
+states/nap/position = Vector2(425.333, 203.333)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_1xam6")
-states/walk/position = Vector2(509.333, 103.333)
-transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_i56fm"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_g0waa")]
+states/walk/position = Vector2(542.666, 101.407)
+transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_i56fm"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_g0waa"), "walk", "nap", SubResource("AnimationNodeStateMachineTransition_1ipey"), "nap", "walk", SubResource("AnimationNodeStateMachineTransition_71wcw"), "idle", "nap", SubResource("AnimationNodeStateMachineTransition_onlrq"), "nap", "idle", SubResource("AnimationNodeStateMachineTransition_ivqxy")]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_yo5vl"]
 
