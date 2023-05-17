@@ -1,8 +1,11 @@
 VisibleOnScreenNotifier2D
+RigidBody2D
+PathFollow2D
+Path2D
+AnimationPlayer
 Timer
 CollisionShape2D
 Sprite2D
-RigidBody2D
 TextureButton
 Node2D
 TileMap
@@ -12,7 +15,5 @@ Area2D
 RichTextLabel
 CanvasLayer
 TextEdit
-PathFollow2D
-Path2D
 Marker2D
 VideoStreamPlayer

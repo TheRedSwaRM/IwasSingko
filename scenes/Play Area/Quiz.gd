@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var projectile: PackedScene
-@export var speed = 100.0
+@export var speed = 200.0
 var rng
 var curPos
 var prevPause

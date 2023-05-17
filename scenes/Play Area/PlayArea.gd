@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var projectile: PackedScene
+@export var enemies: Array[PackedScene]
 @export var food: PackedScene
 @export var coin: PackedScene
 @export var req: PackedScene
@@ -90,19 +90,41 @@ func _on_score_timer_timeout():
 	SingletonScript.SetPlayAreaScore(score)
 
 # selectsts a random position offscreen to spawn
-func getRandomPosition():
+func getRandomPosition(up = true, down = true, left = true, right = true):
 	# used to get random distance away from screen
-	var vpr = get_viewport_rect().size * randf_range(1.2, 1.5)
-	# left or right side spawn with slight variance
-	var x_choices = [($Character.global_position.x - vpr.x/2) * randf_range(1.2, 1.5),  ($Character.global_position.x + vpr.x/2) * randf_range(1.2, 1.5)]
-	# up or down side spawn with slight variance
-	var y_choices = [($Character.global_position.y - vpr.y/2) * randf_range(1.2, 1.5),  ($Character.global_position.y + vpr.y/2) * randf_range(1.2, 1.5)]
+	var vpr = get_viewport_rect().size * randf_range(1.1, 1.4)
+	var top_left = Vector2($Character.global_position.x - vpr.x/2, $Character.global_position.y - vpr.y/2)
+	var bottom_right = Vector2($Character.global_position.x + vpr.x/2, $Character.global_position.y + vpr.y/2)
+	var pos_side = []
+	if up:
+		pos_side.append("up")
+	if down:
+		pos_side.append("down")
+	if right:
+		pos_side.append("right")
+	if left:
+		pos_side.append("left")
 	
-	# randomly chooses which combination of sides
-	var x_spawn = x_choices[randi_range(-1,1)]
-	var y_spawn = y_choices[randi_range(-1,1)]
+	var get_rand = randi() % pos_side.size()
+	var spawn_pos1 = Vector2.ZERO
+	var spawn_pos2 = Vector2.ZERO
 	
-	# returns coordinates
+	match pos_side[get_rand]:
+		"up":
+			spawn_pos1 = top_left
+			spawn_pos2 = Vector2(bottom_right.x, top_left.y)
+		"down":
+			spawn_pos1 = Vector2(top_left.x, bottom_right.y)
+			spawn_pos2 = bottom_right
+		"right":
+			spawn_pos1 = Vector2(bottom_right.x, top_left.y)
+			spawn_pos2 = bottom_right
+		"left":
+			spawn_pos1 = top_left
+			spawn_pos2 = Vector2(top_left.x, bottom_right.y)
+	
+	var x_spawn = randf_range(spawn_pos1.x, spawn_pos2.x)
+	var y_spawn = randf_range(spawn_pos2.y, spawn_pos2.y)
 	return Vector2(x_spawn,y_spawn)
 
 # signal reciever for object from character; used to modify score and coins
@@ -189,22 +211,22 @@ func _on_req_timer_timeout():
 
 func _on_enemy_timer_timeout():
 	# spawns projectile
-	var spawnedProjectile = projectile.instantiate()
-	spawnedProjectile.hide()
+	var spawnedEnemy = enemies[randi() % enemies.size()].instantiate()
+	spawnedEnemy.hide()
 	# sets random position for the projectile
-	spawnedProjectile.global_position = getRandomPosition()
+	spawnedEnemy.global_position = getRandomPosition()
 	
 	# points projectile towards character
-	var direction = spawnedProjectile.global_position.direction_to($Character.global_position)
+	var direction = spawnedEnemy.global_position.direction_to($Character.global_position)
 	
 	# slightly varies rotation of projectile
-	var randomRotation = randf_range(-PI/4, PI/4)
-	spawnedProjectile.rotation = direction.rotated(randomRotation).angle()
+	var randomRotation = randf_range(-PI/8, PI/8)
+	spawnedEnemy.rotation = direction.rotated(randomRotation).angle()
 	# randomly sets projectile velocity
 	var velocity = Vector2(randf_range(projMinSpeed, projMaxSpeed), 0.0)
 	# launches projectile at the direction
-	spawnedProjectile.linear_velocity = velocity.rotated(direction.rotated(randomRotation).angle())
+	spawnedEnemy.linear_velocity = velocity.rotated(direction.rotated(randomRotation).angle())
 	
 	# adds projectile to scene
-	spawnedProjectile.show()
-	add_child(spawnedProjectile)
+	spawnedEnemy.show()
+	add_child(spawnedEnemy)

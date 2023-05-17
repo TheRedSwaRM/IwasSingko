@@ -4,6 +4,8 @@ extends RigidBody2D
 var rng
 var curPos
 var prevPause
+
+@onready var char = get_tree().get_first_node_in_group("Character")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng = RandomNumberGenerator.new()
@@ -26,12 +28,13 @@ func _on_projectile_timer_timeout():
 	spawnedProjectile.get_node("Sprite2D").set_frame(rng.randi_range(0, 15.0))
 	
 	# slightly varies rotation of projectile
-	var randomRotation = randf_range(0, 2*PI)
-	spawnedProjectile.rotation = randomRotation
+	
+	var direction = self.global_position.direction_to(char.global_position)
+	spawnedProjectile.rotation = direction.angle()
 	# randomly sets projectile velocity
 	var velocity = Vector2(randf_range(SingletonScript.playAreaProjMinSpeed, SingletonScript.playAreaProjMaxSpeed), 0.0)
 	# launches projectile at the direction
-	spawnedProjectile.linear_velocity = velocity.rotated(randomRotation)
+	spawnedProjectile.linear_velocity = velocity.rotated(direction.angle())
 	# adds projectile to scene
 	spawnedProjectile.show()
 	add_child(spawnedProjectile)
