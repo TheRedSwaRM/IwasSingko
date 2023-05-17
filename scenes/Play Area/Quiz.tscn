@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c37f4de15xe11"]
+
+[ext_resource type="Script" path="res://scenes/Play Area/Quiz.gd" id="1_7bohv"]
+[ext_resource type="Texture2D" uid="uid://bh8t6hfhm2ufy" path="res://assets/art/EnemySprites.png" id="2_hvte5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ferx7"]
+radius = 25.0
+
+[node name="Quiz" type="RigidBody2D" groups=["enemy"]]
+collision_layer = 2
+gravity_scale = 0.0
+script = ExtResource("1_7bohv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_hvte5")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ferx7")
+
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="timeout" from="StopTimer" to="." method="_on_stop_timer_timeout"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

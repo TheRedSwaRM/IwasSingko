@@ -92,11 +92,11 @@ func _on_score_timer_timeout():
 # selectsts a random position offscreen to spawn
 func getRandomPosition():
 	# used to get random distance away from screen
-	var vpr = get_viewport_rect().size * randf_range(1.3, 1.7)
+	var vpr = get_viewport_rect().size * randf_range(1.2, 1.5)
 	# left or right side spawn with slight variance
-	var x_choices = [($Character.global_position.x - vpr.x/2) * randf_range(1.3, 1.7),  ($Character.global_position.x + vpr.x/2) * randf_range(1.3, 1.7)]
+	var x_choices = [($Character.global_position.x - vpr.x/2) * randf_range(1.2, 1.5),  ($Character.global_position.x + vpr.x/2) * randf_range(1.2, 1.5)]
 	# up or down side spawn with slight variance
-	var y_choices = [($Character.global_position.y - vpr.y/2) * randf_range(1.3, 1.7),  ($Character.global_position.y + vpr.y/2) * randf_range(1.3, 1.7)]
+	var y_choices = [($Character.global_position.y - vpr.y/2) * randf_range(1.2, 1.5),  ($Character.global_position.y + vpr.y/2) * randf_range(1.2, 1.5)]
 	
 	# randomly chooses which combination of sides
 	var x_spawn = x_choices[randi_range(-1,1)]
@@ -137,21 +137,21 @@ func playAreaSetDifficulty(diff):
 		reqScore = 20 + SingletonScript.playerData["player"]["playerScoreInc"]
 		SingletonScript.SetPlayAreaProjMinSpeed(200.0)
 		SingletonScript.SetPlayAreaProjMaxSpeed(500.0)
-		SingletonScript.SetPlayAreaProjWaitTime(6)
+		SingletonScript.SetPlayAreaProjWaitTime(3)
 	elif diff == "Normal":
 		surviveScore = 10
 		coinValue = 10
 		reqScore = 30 + SingletonScript.playerData["player"]["playerScoreInc"]
 		SingletonScript.SetPlayAreaProjMinSpeed(500.0)
 		SingletonScript.SetPlayAreaProjMaxSpeed(700.0)
-		SingletonScript.SetPlayAreaProjWaitTime(4)
+		SingletonScript.SetPlayAreaProjWaitTime(2)
 	elif diff == "Hard":
 		surviveScore = 15
 		coinValue = 15
 		reqScore = 40 + SingletonScript.playerData["player"]["playerScoreInc"]
 		SingletonScript.SetPlayAreaProjMinSpeed(700.0)
 		SingletonScript.SetPlayAreaProjMaxSpeed(1000.0)
-		SingletonScript.SetPlayAreaProjWaitTime(2)
+		SingletonScript.SetPlayAreaProjWaitTime(1)
 
 
 func _on_coin_timer_timeout():
