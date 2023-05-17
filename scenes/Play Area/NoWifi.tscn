@@ -7,7 +7,7 @@
 radius = 20.0
 height = 50.0
 
-[node name="NoWifi" type="RigidBody2D"]
+[node name="NoWifi" type="RigidBody2D" groups=["enemy"]]
 collision_layer = 2
 gravity_scale = 0.0
 script = ExtResource("1_khll5")

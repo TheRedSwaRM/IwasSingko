@@ -91,7 +91,6 @@ func _on_score_timer_timeout():
 
 # selectsts a random position offscreen to spawn
 func getRandomPosition(up = true, down = true, left = true, right = true):
-	# used to get random distance away from screen
 	var vpr = get_viewport_rect().size * randf_range(1.1, 1.4)
 	var top_left = Vector2($Character.global_position.x - vpr.x/2, $Character.global_position.y - vpr.y/2)
 	var bottom_right = Vector2($Character.global_position.x + vpr.x/2, $Character.global_position.y + vpr.y/2)

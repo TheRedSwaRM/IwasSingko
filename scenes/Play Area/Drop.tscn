@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0jl8rxweopcm"]
+
+[ext_resource type="Script" path="res://scenes/Play Area/Drop.gd" id="1_8mf7v"]
+[ext_resource type="Texture2D" uid="uid://bh8t6hfhm2ufy" path="res://assets/art/EnemySprites.png" id="2_nesuc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m1f7p"]
+radius = 40.0
+
+[node name="Drop" type="RigidBody2D" groups=["enemy"]]
+collision_layer = 66
+collision_mask = 17
+gravity_scale = 0.0
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_8mf7v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_nesuc")
+hframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m1f7p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

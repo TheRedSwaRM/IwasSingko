@@ -93,6 +93,7 @@ func _process(delta):
 	
 # if projectile hit character checker
 func _on_body_entered(body):
+	print("in")
 	if body.is_in_group("enemy"):
 		# since character is hit, rest is broken
 		napping = false
