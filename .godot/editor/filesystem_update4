@@ -1,4 +1,5 @@
 res://default_env.tres
+res://scenes/ShopUI.tscn
 res://scenes/Play Area/PlayArea.tscn
 res://scenes/Play Area/GhostProf.tscn
 res://scenes/Play Area/Quiz.tscn
@@ -7,8 +8,6 @@ res://scenes/Play Area/Requirements.tscn
 res://scenes/Play Area/NoWifi.tscn
 res://scenes/Play Area/Drop.tscn
 res://scenes/SettingsUI.tscn
-res://scenes/ShopUI.tscn
-res://scenes/ShopUI.gd
 res://scenes/Play Area/GhostProf.gd
 res://scenes/Play Area/Quiz.gd
 res://scenes/Play Area/NoWifi.gd
