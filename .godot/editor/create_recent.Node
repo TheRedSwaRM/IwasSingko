@@ -1,3 +1,4 @@
+Label
 TextureButton
 Line2D
 Sprite2D
@@ -11,7 +12,6 @@ Timer
 Node2D
 TileMap
 Button
-Label
 Area2D
 RichTextLabel
 CanvasLayer
