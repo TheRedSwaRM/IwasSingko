@@ -8,3 +8,5 @@ res://scenes/Play Area/PlayArea.tscn
 res://scenes/Play Area/GhostProf.tscn
 res://scenes/Play Area/Character.tscn
 res://scenes/Play Area/Requirements.tscn
+res://scenes/ShopUI.tscn
+res://scenes/SettingsUI.tscn

@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://0lcuesgkda0p"]
+[gd_scene load_steps=9 format=3 uid="uid://0lcuesgkda0p"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/SettingsUI.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dlat75atro504" path="res://assets/art/SettingsBackgroundAsset.png" id="2_j7pfb"]
+[ext_resource type="Texture2D" uid="uid://jj2wmni2yxwe" path="res://assets/art/UI/Back_Idle.png" id="4_omwsh"]
+[ext_resource type="Texture2D" uid="uid://c53khl2kupshn" path="res://assets/art/UI/Back_Hover.png" id="5_3nogm"]
 
 [sub_resource type="Theme" id="Theme_qyhnn"]
 default_font = ExtResource("1")
@@ -219,15 +221,17 @@ theme = SubResource("Theme_qyhnn")
 theme_override_font_sizes/font_size = 24
 text = "Nap"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 896.0
+offset_left = 855.0
 offset_top = 560.0
-offset_right = 1016.0
-offset_bottom = 592.0
+offset_right = 935.0
+offset_bottom = 576.0
+scale = Vector2(2, 2)
 theme = SubResource("Theme_qamov")
-theme_override_font_sizes/font_size = 20
-text = "Back"
+texture_normal = ExtResource("4_omwsh")
+texture_hover = ExtResource("5_3nogm")
 
 [connection signal="item_selected" from="ControlUP" to="." method="_on_control_up_item_selected"]
 [connection signal="item_selected" from="ControlDown" to="." method="_on_control_down_item_selected"]
