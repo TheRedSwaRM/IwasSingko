@@ -12,6 +12,7 @@ gravity_scale = 0.0
 script = ExtResource("1_7bohv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("2_hvte5")
 hframes = 4

@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c05esny44f6mn"]
+[gd_scene load_steps=7 format=3 uid="uid://c05esny44f6mn"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/OpenSessionUI.gd" id="2"]
-
-[sub_resource type="Theme" id="Theme_cmay8"]
-default_font = ExtResource("1")
+[ext_resource type="Texture2D" uid="uid://dua5aslnh3d20" path="res://assets/art/introductionScene/1.png" id="2_i3tck"]
+[ext_resource type="Texture2D" uid="uid://cdds6yvtn8nn4" path="res://assets/art/introductionScene/2.png" id="3_81p44"]
+[ext_resource type="Texture2D" uid="uid://dn5866rhtngma" path="res://assets/art/introductionScene/3.png" id="4_do114"]
+[ext_resource type="Texture2D" uid="uid://nmqp6qkqys57" path="res://assets/art/introductionScene/4.png" id="5_dqndm"]
 
 [node name="OpenSessionUI" type="Control"]
 layout_mode = 3
@@ -21,23 +22,35 @@ offset_right = 1024.0
 offset_bottom = 600.0
 color = Color(0.117647, 0.121569, 0.12549, 1)
 
-[node name="Cutscene" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 600.0
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(256, 152)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_i3tck")
 
-[node name="CutscenePlaceholder" type="Label" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = 1401.0
-offset_top = 265.0
-offset_right = 1564.0
-offset_bottom = 284.0
-rotation = -6.3372
-scale = Vector2(5, 5)
-pivot_offset = Vector2(326, 32)
-theme = SubResource("Theme_cmay8")
-text = "Insert cutscene here"
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(768, 152)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_81p44")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(256, 448)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_do114")
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(768, 448)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dqndm")
+
+[node name="LineSegment" type="Line2D" parent="."]
+position = Vector2(0, 241)
+points = PackedVector2Array(0, 64, 512, 64, 1024, 64)
+width = 5.0
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, 238)
+points = PackedVector2Array(512, -238, 512, 243.972, 512, 362)
+width = 5.0
 
 [node name="MainMenuPrompt" type="Label" parent="."]
 layout_mode = 0

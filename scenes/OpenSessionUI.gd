@@ -1,17 +1,28 @@
 extends Control
+var time_start = 0
+var time_now = 0
 
 var masterVolumeBus = AudioServer.get_bus_index("Master")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	time_start = Time.get_unix_time_from_system()
 	AudioServer.set_bus_volume_db(masterVolumeBus, SingletonScript.playerData["controls"]["playerVolume"])
 	SetHotkeys()
+
+func _physics_process(delta):
+	time_now = Time.get_unix_time_from_system()
+	if time_now - time_start >= 10:
+		get_tree().change_scene_to_file("res://scenes/MainMenuUI.tscn")
+		pass
 
 func _input(event):
 	#print(event.as_text())
 	if event.is_pressed():
 		get_tree().change_scene_to_file("res://scenes/MainMenuUI.tscn")
 		pass
+		
+	
 	
 func SetHotkeys():
 	if SingletonScript.playerData["controls"]["playerWalkUp"] is String:

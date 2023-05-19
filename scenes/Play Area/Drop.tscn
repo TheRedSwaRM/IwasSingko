@@ -15,6 +15,7 @@ contact_monitor = true
 script = ExtResource("1_8mf7v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("2_nesuc")
 hframes = 4
