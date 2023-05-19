@@ -8,6 +8,8 @@ var prevPause
 
 var stop = false
 
+var removeObj = false
+
 @onready var char = get_tree().get_first_node_in_group("Character")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,5 +33,8 @@ func _on_stop_timer_timeout():
 	stop = true
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	if stop == true:
+	if stop == true and removeObj == true:
 		queue_free()
+
+func _on_existence_timer_timeout():
+	removeObj = true

@@ -9,3 +9,9 @@ res://scenes/Play Area/Drop.tscn
 res://scenes/SettingsUI.tscn
 res://scenes/ShopUI.tscn
 res://scenes/ShopUI.gd
+res://scenes/Play Area/GhostProf.gd
+res://scenes/Play Area/Quiz.gd
+res://scenes/Play Area/NoWifi.gd
+res://scenes/Play Area/Drop.gd
+res://SingletonScript.gd
+res://scenes/Play Area/Boss.tscn

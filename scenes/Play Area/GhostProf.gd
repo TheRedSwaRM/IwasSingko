@@ -6,7 +6,9 @@ var curPos
 var prevPause
 
 @onready var char = get_tree().get_first_node_in_group("Character")
-# Called when the node enters the scene tree for the first time.
+
+var removeObject = false
+
 func _ready():
 	rng = RandomNumberGenerator.new()
 	$ProjectileTimer.wait_time = SingletonScript.playAreaProjWaitTime
@@ -38,3 +40,11 @@ func _on_projectile_timer_timeout():
 	# adds projectile to scene
 	spawnedProjectile.show()
 	add_child(spawnedProjectile)
+
+
+func _on_existence_timer_timeout():
+	removeObject = true
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	if removeObject == true:
+		queue_free()

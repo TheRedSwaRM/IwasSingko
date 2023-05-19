@@ -30,6 +30,11 @@ autostart = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[node name="ExistenceTimer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
 [connection signal="timeout" from="DirectionsTimer" to="." method="_on_directions_timer_timeout"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="ExistenceTimer" to="." method="_on_existence_timer_timeout"]

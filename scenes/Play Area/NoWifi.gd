@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var rng
+var removeObj
 
 func _ready():
 	rng = RandomNumberGenerator.new()
@@ -31,3 +32,9 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	self.linear_velocity = self.linear_velocity * 2
+	if removeObj == true:
+		queue_free()
+
+
+func _on_existence_timer_timeout():
+	removeObj = true
