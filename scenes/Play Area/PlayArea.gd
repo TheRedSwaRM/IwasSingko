@@ -5,6 +5,7 @@ extends Node2D
 @export var food: PackedScene
 @export var coin: PackedScene
 @export var req: PackedScene
+@export var boss: PackedScene
 
 var surviveScore = 5 # passive score increase the player gets through surviving
 var coinValue = 5 # how much coins the player gets when collecting
@@ -20,12 +21,15 @@ var paused
 
 signal pause
 
+var bossDiff
+
 # Called when the node enters the scene tree for the first time.
 # calls new game function to start the timers for the game
 func _ready():
 	rng = RandomNumberGenerator.new()
 	newGame()
 	paused = false
+	bossDiff = 0
 
 func _process(delta):
 	if Input.is_action_just_released("pause"):
@@ -229,3 +233,18 @@ func _on_enemy_timer_timeout():
 	# adds projectile to scene
 	spawnedEnemy.show()
 	add_child(spawnedEnemy)
+
+
+func _on_boss_timer_timeout():
+	if bossDiff < 3:
+		var spawnedBoss = boss.instantiate()
+		spawnedBoss.hide()
+		# sets random position for the projectile
+		spawnedBoss.global_position = getRandomPosition()
+		spawnedBoss.SetBossDifficulty(bossDiff)
+		bossDiff += 1
+		# adds projectile to scene
+		spawnedBoss.show()
+		add_child(spawnedBoss)
+	else:
+		print("game cleared")

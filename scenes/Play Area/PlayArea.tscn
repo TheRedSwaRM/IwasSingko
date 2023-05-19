@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://8dvud0lsy2ex"]
+[gd_scene load_steps=20 format=3 uid="uid://8dvud0lsy2ex"]
 
 [ext_resource type="Script" path="res://scenes/Play Area/PlayArea.gd" id="1_rtorh"]
 [ext_resource type="PackedScene" uid="uid://c37f4de15xe11" path="res://scenes/Play Area/Quiz.tscn" id="2_cggyc"]
@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="9_c7bk8"]
 [ext_resource type="PackedScene" uid="uid://cpmgvlpbanclr" path="res://scenes/Play Area/NoWifi.tscn" id="12_imw4f"]
 [ext_resource type="PackedScene" uid="uid://b0jl8rxweopcm" path="res://scenes/Play Area/Drop.tscn" id="13_oiuea"]
+[ext_resource type="PackedScene" uid="uid://ra7eepk3vpov" path="res://scenes/Play Area/Boss.tscn" id="14_v3kkm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8vdo"]
 texture = ExtResource("6_tu7en")
@@ -276,6 +277,7 @@ enemies = Array[PackedScene]([ExtResource("2_xesq7"), ExtResource("2_cggyc"), Ex
 food = ExtResource("3_cstpc")
 coin = ExtResource("4_iqtkc")
 req = ExtResource("5_74cgh")
+boss = ExtResource("14_v3kkm")
 
 [node name="background" type="ColorRect" parent="."]
 visible = false
@@ -338,8 +340,9 @@ process_callback = 0
 
 [node name="HUD" parent="." instance=ExtResource("7_2662b")]
 
-[node name="Drop" parent="." instance=ExtResource("13_oiuea")]
-position = Vector2(296, 304)
+[node name="BossTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
 [connection signal="pause" from="." to="Character" method="_on_node_2d_pause"]
 [connection signal="gameOver" from="Character" to="." method="_on_character_game_over"]
@@ -352,5 +355,6 @@ position = Vector2(296, 304)
 [connection signal="timeout" from="ReqTimer" to="." method="_on_req_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="BossTimer" to="." method="_on_boss_timer_timeout"]
 
 [editable path="Character/PauseScene"]

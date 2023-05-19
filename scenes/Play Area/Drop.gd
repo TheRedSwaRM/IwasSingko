@@ -11,19 +11,15 @@ func _process(delta):
 		hide()
 	else:
 		show()
-	
-	var req = get_tree().get_first_node_in_group("req")
-	if req != null:
-		self.look_at(req.global_position)
-		self.global_position = self.global_position.move_toward(req.global_position, speed*delta)
-	else:
-		self.linear_velocity = Vector2(0.0, 0.0)
-
+		var req = get_tree().get_first_node_in_group("req")
+		if req != null:
+			self.look_at(req.global_position)
+			self.global_position = self.global_position.move_toward(req.global_position, speed*delta)
+		else:
+			self.linear_velocity = Vector2(0.0, 0.0)
 
 func _on_body_entered(body):
-	body.queue_free()
 	if body.is_in_group("req"):
-		print("yep")
 		body.queue_free()
 
 

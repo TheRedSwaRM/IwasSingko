@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ra7eepk3vpov"]
+[gd_scene load_steps=5 format=3 uid="uid://ra7eepk3vpov"]
 
+[ext_resource type="Script" path="res://scenes/Play Area/Boss.gd" id="1_e7ir2"]
 [ext_resource type="Texture2D" uid="uid://comc7rnypl68w" path="res://assets/art/BossSpriteAsset.png" id="1_frxek"]
+[ext_resource type="PackedScene" uid="uid://du7ydb14agavx" path="res://scenes/Play Area/Projectile.tscn" id="2_5i0is"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_em2jq"]
 size = Vector2(128, 192)
 
 [node name="Boss" type="RigidBody2D"]
+collision_layer = 128
+collision_mask = 5
+gravity_scale = 0.0
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_e7ir2")
+projectile = ExtResource("2_5i0is")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -15,3 +24,19 @@ hframes = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_em2jq")
+
+[node name="ProjectileTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="ExistenceTimer" type="Timer" parent="."]
+wait_time = 60.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

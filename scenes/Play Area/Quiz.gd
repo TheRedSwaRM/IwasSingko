@@ -24,10 +24,11 @@ func _process(delta):
 	prevPause = get_tree().paused
 	
 	self.look_at(char.global_position)
-	if stop == false:
-		self.global_position = self.global_position.move_toward(char.global_position, speed*delta)
-	else:
-		self.linear_velocity = Vector2(0.0, 0.0)
+	if prevPause == false:
+		if stop == false:
+			self.global_position = self.global_position.move_toward(char.global_position, speed*delta)
+		else:
+			self.linear_velocity = Vector2(0.0, 0.0)
 
 func _on_stop_timer_timeout():
 	stop = true

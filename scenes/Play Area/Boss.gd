@@ -1,33 +1,55 @@
 extends RigidBody2D
 
 @export var projectile: PackedScene
-var rng
-var curPos
-var prevPause
 
 @onready var char = get_tree().get_first_node_in_group("Character")
 
-var removeObject = false
+var rng
+var prevPause
+
+var projectileNum
+var projectiles
+
+var speed
 
 func _ready():
 	rng = RandomNumberGenerator.new()
-	$ProjectileTimer.wait_time = SingletonScript.playAreaProjWaitTime
+	projectiles = 0
 
 func _process(delta):
 	if get_tree().paused == true:
-		$ProjectileTimer.stop()
 		hide()
 	else:
 		show()
+		
+		if char.global_position.x - self.global_position.x < 0:
+			$Sprite2D.set_flip_h(true)
+		else:
+			$Sprite2D.set_flip_h(false)
+			
+		self.global_position = self.global_position.move_toward(char.global_position, speed*delta)
 	
 	if get_tree().paused == false and prevPause != get_tree().paused:
 		$ProjectileTimer.start()
 	prevPause = get_tree().paused
+
+func SetBossDifficulty(num):
 	
+	$Sprite2D.set_frame(num)
+	if num == 0:
+		projectileNum = 1
+		speed = 100.0
+	elif num == 1:
+		projectileNum = 2
+		speed = 150.0
+	else:
+		projectileNum = 3
+		speed = 200.0
+
 func _on_projectile_timer_timeout():
 	var spawnedProjectile = projectile.instantiate()
 	spawnedProjectile.hide()
-	spawnedProjectile.get_node("Sprite2D").set_frame(rng.randi_range(0, 15))
+	spawnedProjectile.get_node("Sprite2D").set_frame(rng.randi_range(0, 15.0))
 	
 	# slightly varies rotation of projectile
 	
@@ -41,11 +63,19 @@ func _on_projectile_timer_timeout():
 	spawnedProjectile.show()
 	get_parent().add_child(spawnedProjectile)
 	spawnedProjectile.global_position = self.global_position
+	
+	projectiles += 1
+	if projectiles < projectileNum:
+		$ProjectileTimer.start()
+	else:
+		$CooldownTimer.start()
+		projectiles = 0
 
 
-func _on_existence_timer_timeout():
-	removeObject = true
+func _on_cooldown_timer_timeout():
+	$ProjectileTimer.start()
 
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	if removeObject == true:
-		queue_free()
+
+func _on_body_entered(body):
+	if body.is_in_group("food"):
+		body.queue_free()

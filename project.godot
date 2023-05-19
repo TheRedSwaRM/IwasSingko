@@ -76,6 +76,7 @@ pause={
 2d_physics/layer_5="Req"
 2d_physics/layer_6="ObjectCollect"
 2d_physics/layer_7="Drop"
+2d_physics/layer_8="Boss"
 
 [physics]
 

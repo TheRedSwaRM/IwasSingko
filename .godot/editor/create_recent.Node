@@ -1,8 +1,8 @@
+Timer
 CollisionShape2D
 Sprite2D
 RigidBody2D
 VisibleOnScreenNotifier2D
-Timer
 Label
 TextureButton
 Line2D
