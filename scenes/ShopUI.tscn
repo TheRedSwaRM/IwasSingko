@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cp5omqpwv7i4n"]
+[gd_scene load_steps=17 format=3 uid="uid://cp5omqpwv7i4n"]
 
 [ext_resource type="Script" path="res://scenes/ShopUI.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://iyt7tyukw8le" path="res://assets/art/ShopBackgroundAsset.png" id="2_fmsuw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d0b5odbw3xqat" path="res://assets/art/UI/GoToMainMenu_Hover.png" id="4_gcfcd"]
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="5_u8hgp"]
 [ext_resource type="Texture2D" uid="uid://daj05rfboepjo" path="res://assets/art/UI/Purchase_Idle.png" id="7_1517u"]
+[ext_resource type="Texture2D" uid="uid://c873bggjrfxvl" path="res://assets/art/UI/Purchase_Hover.png" id="8_1v2j8"]
 
 [sub_resource type="Theme" id="Theme_xri66"]
 default_font = ExtResource("5_u8hgp")
@@ -212,18 +213,23 @@ frame = 14
 metadata/_edit_lock_ = true
 
 [node name="Purchase Button" type="TextureButton" parent="."]
+texture_filter = 1
 offset_left = 776.0
 offset_top = 496.0
 offset_right = 1016.0
 offset_bottom = 544.0
 texture_normal = ExtResource("7_1517u")
+texture_hover = ExtResource("8_1v2j8")
 stretch_mode = 0
 
 [node name="PurchaseLabel" type="Label" parent="Purchase Button"]
-layout_mode = 0
+texture_filter = 1
 offset_right = 240.0
 offset_bottom = 48.0
-text = "Purchas"
+theme_override_fonts/font = ExtResource("5_u8hgp")
+text = "Purchase"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerStatsLabel" type="Label" parent="."]
 offset_left = 770.0
