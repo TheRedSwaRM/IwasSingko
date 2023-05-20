@@ -1,44 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://1thqwx1jkmgr"]
+[gd_scene load_steps=4 format=3 uid="uid://1thqwx1jkmgr"]
 
 [ext_resource type="Script" path="res://scenes/Play Area/HUDController.gd" id="1_n1377"]
+[ext_resource type="Theme" uid="uid://co85kndrw8lyg" path="res://assets/lifebartheme.tres" id="2_b6mvu"]
+[ext_resource type="Theme" uid="uid://b6qpuxa20si50" path="res://assets/energybartheme.tres" id="3_wxh5k"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_n1377")
+metadata/_edit_vertical_guides_ = [510.0]
 
 [node name="ScoreLabel" type="Label" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_left = 15.0
+offset_top = 7.0
+offset_right = -14.0
+offset_bottom = 30.0
 grow_horizontal = 2
+theme = ExtResource("3_wxh5k")
 text = "Score: 10000000000"
-horizontal_alignment = 1
 
 [node name="CoinsLabel" type="Label" parent="."]
 anchors_preset = -1
 anchor_top = 0.04
 anchor_right = 1.003
 anchor_bottom = 0.083
-offset_left = 3.0
-offset_right = -0.0720215
-offset_bottom = 0.199997
+offset_left = 18.0
+offset_top = 3.0
+offset_right = -20.072
+offset_bottom = 3.2
 grow_horizontal = 2
+theme = ExtResource("3_wxh5k")
 text = "Coins: 10000000"
-horizontal_alignment = 1
-
-[node name="StaminaLabel" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -47.0
-offset_top = -60.0
-offset_right = 54.0
-offset_bottom = -28.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Stamina: 100"
-horizontal_alignment = 1
 
 [node name="DiffLabel" type="Label" parent="."]
 anchors_preset = -1
@@ -46,7 +38,27 @@ anchor_left = 0.03
 anchor_top = 0.025
 anchor_right = 0.088
 anchor_bottom = 0.068
-offset_left = 0.279999
-offset_right = -0.112007
-offset_bottom = 0.199997
+offset_left = 918.28
+offset_top = -7.0
+offset_right = 917.888
+offset_bottom = -6.8
+theme = ExtResource("3_wxh5k")
 text = "Normal"
+
+[node name="StaminaProgressBar" type="ProgressBar" parent="."]
+offset_left = 455.0
+offset_top = 225.0
+offset_right = 565.0
+offset_bottom = 243.0
+theme = ExtResource("2_b6mvu")
+value = 50.0
+show_percentage = false
+
+[node name="EnergyProgressBar" type="ProgressBar" parent="."]
+offset_left = 455.0
+offset_top = 245.0
+offset_right = 565.0
+offset_bottom = 256.0
+theme = ExtResource("3_wxh5k")
+value = 50.0
+show_percentage = false

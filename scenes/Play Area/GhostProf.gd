@@ -41,6 +41,8 @@ func _on_projectile_timer_timeout():
 	spawnedProjectile.show()
 	get_parent().add_child(spawnedProjectile)
 	spawnedProjectile.global_position = self.global_position
+	if char.global_position.x - self.global_position.x < 0:
+		spawnedProjectile.get_node("Sprite2D").set_flip_h(true)
 
 
 func _on_existence_timer_timeout():

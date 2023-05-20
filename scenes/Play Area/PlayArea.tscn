@@ -341,10 +341,11 @@ process_callback = 0
 [node name="HUD" parent="." instance=ExtResource("7_2662b")]
 
 [node name="BossTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 600.0
 autostart = true
 
 [connection signal="pause" from="." to="Character" method="_on_node_2d_pause"]
+[connection signal="energyChanged" from="Character" to="." method="_on_character_energy_changed"]
 [connection signal="gameOver" from="Character" to="." method="_on_character_game_over"]
 [connection signal="obj" from="Character" to="." method="_on_character_obj"]
 [connection signal="staminaChanged" from="Character" to="." method="_on_character_stamina_changed"]

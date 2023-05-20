@@ -76,7 +76,8 @@ func newGame():
 	$HUD.updateDiff(SingletonScript.playAreaDifficulty)
 	playAreaSetDifficulty(SingletonScript.playAreaDifficulty)
 	$StartTimer.start()
-
+	$HUD.updateEnergy(SingletonScript.playerData["character"]["charEnergyConsumption"])
+	$HUD.updateStamina(SingletonScript.playerData["player"]["playerMaxEnergy"])
 
 # called when start timer timeouts
 # starts other timers
@@ -150,7 +151,6 @@ func _on_character_stamina_changed(stamina):
 	if stamina <= 0:
 		_on_character_game_over()
 	$HUD.updateStamina(stamina)
-
 
 func _on_resume_button_down():
 	resumeGame()
@@ -229,6 +229,8 @@ func _on_enemy_timer_timeout():
 	var velocity = Vector2(randf_range(projMinSpeed, projMaxSpeed), 0.0)
 	# launches projectile at the direction
 	spawnedEnemy.linear_velocity = velocity.rotated(direction.rotated(randomRotation).angle())
+	if get_tree().get_first_node_in_group("Character").global_position.x - spawnedEnemy.global_position.x < 0:
+		spawnedEnemy.get_node("Sprite2D").set_flip_h(true)
 	
 	# adds projectile to scene
 	spawnedEnemy.show()
@@ -248,3 +250,7 @@ func _on_boss_timer_timeout():
 		add_child(spawnedBoss)
 	else:
 		print("game cleared")
+
+
+func _on_character_energy_changed(energy):
+	$HUD.updateEnergy(energy)

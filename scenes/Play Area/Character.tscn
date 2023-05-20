@@ -342,7 +342,7 @@ visible = false
 shape = SubResource("CircleShape2D_rq10n")
 
 [node name="PositionChecker" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 
 [node name="NapTimer" type="Timer" parent="."]

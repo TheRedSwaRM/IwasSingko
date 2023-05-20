@@ -5,7 +5,7 @@ extends Area2D
 
 # tired values that can be easily changed
 @export var baseTired = 50 # tired counter to count the distance from previous position to current
-@export var tiredMultiplier = 0.2 # modifies distance to make it more reasonable
+@export var tiredMultiplier = 0.1 # modifies distance to make it more reasonable
 @export var tiredDec = 1 # stamina decreased when tired distance is filled
 
 # nap increment to determine 
@@ -26,6 +26,7 @@ var napping
 var paused
 
 signal staminaChanged(stamina)
+signal energyChanged(energy)
 signal obj(type)
 signal gameOver
 
@@ -152,14 +153,16 @@ func _on_bullet_destroyer_body_exited(body):
 func _on_position_checker_timeout():
 	tired -= abs(position - prevPosition).length() * tiredMultiplier
 	prevPosition = position
-	if tired <= 0:
+	if tired <= 1:
 		tired = baseTired
 		stamina -= tiredDec
 		emit_signal("staminaChanged", stamina)
-
+	emit_signal("energyChanged", round(tired))
 # nap timer that regains stamina if player has pressed nap button long enough
 func _on_nap_timer_timeout():
 	if napping:
+		tired = baseTired
+		emit_signal("energyChanged", round(tired))
 		stamina += napInc
 		# stamina limited to base
 		if stamina > baseStamina:

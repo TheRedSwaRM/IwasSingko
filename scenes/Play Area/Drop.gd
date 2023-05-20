@@ -15,6 +15,10 @@ func _process(delta):
 		if req != null:
 			self.look_at(req.global_position)
 			self.global_position = self.global_position.move_toward(req.global_position, speed*delta)
+			if req.global_position.x - self.global_position.x < 0:
+				$Sprite2D.set_flip_h(true)
+			else:
+				$Sprite2D.set_flip_h(false)
 		else:
 			self.linear_velocity = Vector2(0.0, 0.0)
 
