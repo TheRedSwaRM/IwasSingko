@@ -224,6 +224,7 @@ stretch_mode = 0
 
 [node name="PurchaseLabel" type="Label" parent="Purchase Button"]
 texture_filter = 1
+layout_mode = 0
 offset_right = 240.0
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("5_u8hgp")

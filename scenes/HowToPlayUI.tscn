@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhk6ap5dor5fb"]
+[gd_scene load_steps=7 format=3 uid="uid://dhk6ap5dor5fb"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/HowToPlayUI.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://t50omo40otok" path="res://assets/art/GuideImageAsset.png" id="2_kqbc5"]
 [ext_resource type="Texture2D" uid="uid://dt8qp4brr7vdg" path="res://assets/art/UI/GoToMainMenu_Idle.png" id="3_idbfi"]
 [ext_resource type="Texture2D" uid="uid://d0b5odbw3xqat" path="res://assets/art/UI/GoToMainMenu_Hover.png" id="4_8i5vu"]
 
@@ -24,13 +25,10 @@ offset_right = 1024.0
 offset_bottom = 600.0
 color = Color(0.117647, 0.121569, 0.12549, 1)
 
-[node name="LineSeparator" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 512.0
-offset_top = 40.0
-offset_right = 513.0
-offset_bottom = 560.0
-color = Color(0.815686, 0.815686, 0.815686, 1)
+[node name="GuideImageAsset" type="Sprite2D" parent="."]
+position = Vector2(509.58, 352)
+scale = Vector2(0.7812, 0.780303)
+texture = ExtResource("2_kqbc5")
 
 [node name="BlackBar1" type="ColorRect" parent="."]
 layout_mode = 0
@@ -45,26 +43,6 @@ offset_right = 1024.0
 offset_bottom = 600.0
 color = Color(0, 0, 0, 1)
 
-[node name="CutscenePlaceholder" type="Label" parent="."]
-layout_mode = 0
-offset_left = 163.0
-offset_top = 276.0
-offset_right = 623.0
-offset_bottom = 407.0
-rotation = -6.34917
-pivot_offset = Vector2(326, 32)
-text = "Insert guide here"
-
-[node name="CutscenePlaceholder2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 684.0
-offset_top = 252.0
-offset_right = 1144.0
-offset_bottom = 383.0
-rotation = -6.47694
-pivot_offset = Vector2(326, 32)
-text = "Insert guide here"
-
 [node name="goToMainMenu" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 856.0
@@ -75,6 +53,9 @@ scale = Vector2(2, 2)
 theme = SubResource("Theme_ujoew")
 texture_normal = ExtResource("3_idbfi")
 texture_hover = ExtResource("4_8i5vu")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
 
 [connection signal="button_down" from="goToMainMenu" to="." method="_on_goToMainMenu_button_down"]
 [connection signal="mouse_entered" from="goToMainMenu" to="." method="_on_goToMainMenu_mouse_entered"]
