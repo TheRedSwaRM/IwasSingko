@@ -35,20 +35,12 @@ wait_time = 60.0
 autostart = true
 
 [node name="OffscreenMarker" type="Node2D" parent="."]
+rotation = 0.00174533
 
 [node name="Indicator" type="Sprite2D" parent="OffscreenMarker"]
-position = Vector2(0, -36)
-scale = Vector2(0.205357, 0.205357)
+rotation = 1.5708
+scale = Vector2(0.159483, 0.159483)
 texture = ExtResource("3_jawrr")
-
-[node name="OffscreenIcon" type="Sprite2D" parent="OffscreenMarker"]
-texture_filter = 1
-position = Vector2(0, -46)
-scale = Vector2(1.17292, 1.17292)
-texture = ExtResource("1_2g8ri")
-hframes = 4
-vframes = 3
-region_rect = Rect2(0, -1, 15, 17)
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

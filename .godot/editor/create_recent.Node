@@ -1,7 +1,7 @@
 Sprite2D
+Node2D
 Timer
 Label
-Node2D
 VisibleOnScreenNotifier2D
 ProgressBar
 TextureProgressBar

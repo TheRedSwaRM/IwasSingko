@@ -3,6 +3,8 @@ res://scenes/Play Area/Requirements.tscn
 res://assets/lifebartheme.tres
 res://assets/energybartheme.tres
 res://scenes/Play Area/Requirements.gd
+res://scenes/Play Area/HUD.tscn
+res://scenes/Play Area/HUDController.gd
 res://scenes/Play Area/PlayArea.tscn
 res://scenes/Play Area/GhostProf.tscn
 res://scenes/Play Area/Quiz.tscn
@@ -13,4 +15,4 @@ res://scenes/ShopUI.tscn
 res://scenes/Play Area/Boss.tscn
 res://scenes/Play Area/Character.tscn
 res://scenes/Play Area/Food.tscn
-res://scenes/Play Area/HUD.tscn
+res://scenes/Play Area/PlayArea.gd
