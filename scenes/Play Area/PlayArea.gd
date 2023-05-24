@@ -30,7 +30,6 @@ func _ready():
 	newGame()
 	paused = false
 	bossDiff = 0
-	$ReqTimer.wait_time = SingletonScript.playerData["player"]["playerRateReq"]
 
 func _process(delta):
 	if Input.is_action_just_released("pause"):
