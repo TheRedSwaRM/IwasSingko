@@ -328,7 +328,7 @@ wait_time = 10.0
 
 [node name="ReqTimer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 10.0
+wait_time = 3.0
 
 [node name="StartTimer" type="Timer" parent="."]
 process_callback = 0

@@ -1,14 +1,14 @@
 2a60927148abd1d33b818b535e306557
-::res://::1684568802
-default_env.tres::Environment::8059040173883003983::1684568802::0::1::::<><>::
+::res://::1684897903
+default_env.tres::Environment::8059040173883003983::1684724456::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1682519818::0::1::::<><>::
 PauseButton.tscn::PackedScene::-1::1678853215::0::1::::<><>::res://scenes/PauseButton.gd<>res://assets/art/pauseBtn.png
 README.md::TextFile::-1::1678853073::0::1::::<><>::
 SingletonScript.gd::GDScript::-1::1684492522::0::1::::<>Node<>::
-::res://assets/::1684568811
-energybartheme.tres::Theme::4596252560604592181::1684568648::0::1::::<><>::uid://q2ya4cjgw8r0
-lifebartheme.tres::Theme::5825449700165748266::1684568819::0::1::::<><>::uid://q2ya4cjgw8r0
-::res://assets/art/::1684567334
+::res://assets/::1684722904
+energybartheme.tres::Theme::4596252560604592181::1684722904::0::1::::<><>::uid://q2ya4cjgw8r0
+lifebartheme.tres::Theme::5825449700165748266::1684722904::0::1::::<><>::uid://q2ya4cjgw8r0
+::res://assets/art/::1684645758
 BossSpriteAsset.png::CompressedTexture2D::5780437204848236796::1682581651::1683494938::1::::<><>::
 CoinSpriteAsset.png::CompressedTexture2D::4741298120282893982::1679581935::1679581935::1::::<><>::
 DifficultyBackgroundAsset.png::CompressedTexture2D::4937906855789015918::1684294427::1684294427::1::::<><>::
@@ -17,6 +17,7 @@ FoodPackAsset.png::CompressedTexture2D::9206645052847552704::1679581935::1679581
 GameOverBackgroundAsset.png::CompressedTexture2D::8274696356785044963::1684294427::1684294427::1::::<><>::
 GrassAsset.png::CompressedTexture2D::4665287570721783429::1679581935::1679581935::1::::<><>::
 icon.png::CompressedTexture2D::4548281217840500132::1678853073::1678853215::1::::<><>::
+indicatorpointer.png::CompressedTexture2D::8248416318734081410::1684645757::1684645758::1::::<><>::
 MainMenuBackgroundAsset.png::CompressedTexture2D::1945956883253808138::1684294427::1684294427::1::::<><>::
 MainMenuUISprites.png::CompressedTexture2D::1545598800024934204::1683494938::1682519812::1::::<><>::
 PauseBackgroundAsset.png::CompressedTexture2D::1511775546137224386::1684294427::1684294427::1::::<><>::
@@ -62,7 +63,7 @@ Shop_Hover.png::CompressedTexture2D::504624978087662786::1683494938::1683494938:
 Shop_Idle.png::CompressedTexture2D::6661142175278970792::1683494938::1683494938::1::::<><>::
 ::res://assets/text/::1678853215
 Minecraft.ttf::FontFile::1180218432079130511::1678853073::1678853215::1::::<><>::
-::res://scenes/::1684568801
+::res://scenes/::1684722992
 Area2D.gd::GDScript::-1::1678853073::0::1::::<>Area2D<>::
 GameOverUI.gd::GDScript::-1::1682519818::0::1::::<>Control<>::
 GameOverUI.tscn::PackedScene::3369238800677675756::1683499389::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/GameOverUI.gd<>uid://d0p1wwnu0o7f4<>uid://bory1gl3vhkyv<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
@@ -76,31 +77,32 @@ PauseUI.tscn::PackedScene::2897194151393983079::1683697466::0::1::::<><>::uid://
 SelectDifficultyUI.gd::GDScript::-1::1683693425::0::1::::<>Control<>::
 SelectDifficultyUI.tscn::PackedScene::1129541483014402558::1684294765::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/SelectDifficultyUI.gd<>uid://clofufr88ce56<>uid://ccl7us1nhf727<>uid://s0hfsvhtj6ak<>uid://bsscadtuad5ct<>uid://dti2o2yurwx1y<>uid://bxg7nt2soadqq<>uid://qhqh1exolyx
 SettingsUI.gd::GDScript::-1::1683702322::0::1::::<>Control<>::
-SettingsUI.tscn::PackedScene::1777586634295072729::1684568801::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/SettingsUI.gd<>uid://dlat75atro504<>uid://jj2wmni2yxwe<>uid://c53khl2kupshn
+SettingsUI.tscn::PackedScene::1777586634295072729::1684722992::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/SettingsUI.gd<>uid://dlat75atro504<>uid://jj2wmni2yxwe<>uid://c53khl2kupshn
 ShopUI.gd::GDScript::-1::1684491718::0::1::::<>Node2D<>::
-ShopUI.tscn::PackedScene::5888477686578649303::1684568801::0::1::::<><>::res://scenes/ShopUI.gd<>uid://iyt7tyukw8le<>uid://gi0ie37uqh6n<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat<>uid://q2ya4cjgw8r0<>uid://daj05rfboepjo<>uid://c873bggjrfxvl
-::res://scenes/Play Area/::1684568802
+ShopUI.tscn::PackedScene::5888477686578649303::1684722992::0::1::::<><>::res://scenes/ShopUI.gd<>uid://iyt7tyukw8le<>uid://gi0ie37uqh6n<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat<>uid://q2ya4cjgw8r0<>uid://daj05rfboepjo<>uid://c873bggjrfxvl
+::res://scenes/Play Area/::1684724456
 Boss.gd::GDScript::-1::1684510608::0::1::::<>RigidBody2D<>::
-Boss.tscn::PackedScene::1195160662548778645::1684568801::0::1::::<><>::res://scenes/Play Area/Boss.gd<>uid://comc7rnypl68w<>uid://du7ydb14agavx
-Character.tscn::PackedScene::3698098013644597885::1684568801::0::1::::<><>::res://scenes/Play Area/CharacterController.gd<>uid://cl5q4lnhc70l7
+Boss.tscn::PackedScene::1195160662548778645::1684722992::0::1::::<><>::res://scenes/Play Area/Boss.gd<>uid://comc7rnypl68w<>uid://du7ydb14agavx
+Character.tscn::PackedScene::3698098013644597885::1684722992::0::1::::<><>::res://scenes/Play Area/CharacterController.gd<>uid://cl5q4lnhc70l7
 CharacterController.gd::GDScript::-1::1684566709::0::1::::<>Area2D<>::
 Coin.tscn::PackedScene::3657540999955579754::1684294765::0::1::::<><>::res://scenes/Play Area/Object.gd<>uid://b8syqtl76xiig
-Drop.gd::GDScript::-1::1684494625::0::1::::<>RigidBody2D<>::
-Drop.tscn::PackedScene::4160448921982687676::1684568801::0::1::::<><>::res://scenes/Play Area/Drop.gd<>uid://bh8t6hfhm2ufy
-Food.tscn::PackedScene::1028970579982328793::1684568801::0::1::::<><>::uid://d4f1dmlwvrg3y<>res://scenes/Play Area/Object.gd
-GhostProf.gd::GDScript::-1::1684495819::0::1::::<>RigidBody2D<>::
-GhostProf.tscn::PackedScene::780395014635992750::1684568801::0::1::::<><>::res://scenes/Play Area/GhostProf.gd<>uid://du7ydb14agavx<>uid://bh8t6hfhm2ufy
-HUD.tscn::PackedScene::1864587895805781229::1684568802::0::1::::<><>::res://scenes/Play Area/HUDController.gd<>uid://b6qpuxa20si50
+Drop.gd::GDScript::-1::1684569594::0::1::::<>RigidBody2D<>::
+Drop.tscn::PackedScene::4160448921982687676::1684722992::0::1::::<><>::res://scenes/Play Area/Drop.gd<>uid://bh8t6hfhm2ufy
+Food.tscn::PackedScene::1028970579982328793::1684722992::0::1::::<><>::uid://d4f1dmlwvrg3y<>res://scenes/Play Area/Object.gd
+GhostProf.gd::GDScript::-1::1684569446::0::1::::<>RigidBody2D<>::
+GhostProf.tscn::PackedScene::780395014635992750::1684722992::0::1::::<><>::res://scenes/Play Area/GhostProf.gd<>uid://du7ydb14agavx<>uid://bh8t6hfhm2ufy
+HUD.tscn::PackedScene::1864587895805781229::1684722992::0::1::::<><>::res://scenes/Play Area/HUDController.gd<>uid://co85kndrw8lyg<>uid://b6qpuxa20si50
 HUDController.gd::GDScript::-1::1684568416::0::1::::<>CanvasLayer<>::
 NoWifi.gd::GDScript::-1::1684492280::0::1::::<>RigidBody2D<>::
-NoWifi.tscn::PackedScene::5850848959608873687::1684568801::0::1::::<><>::res://scenes/Play Area/NoWifi.gd<>uid://bh8t6hfhm2ufy
+NoWifi.tscn::PackedScene::5850848959608873687::1684722992::0::1::::<><>::res://scenes/Play Area/NoWifi.gd<>uid://bh8t6hfhm2ufy
 Object.gd::GDScript::-1::1679581935::0::1::::<>RigidBody2D<>::
 PauseUI.gd::GDScript::-1::1683701411::0::1::::<>Control<>::
 PauseUI.tscn::PackedScene::8185596884227693417::1684294765::0::1::::<><>::uid://q2ya4cjgw8r0<>res://scenes/Play Area/PauseUI.gd<>uid://dud1c53jqv7gq<>uid://bxqq4ca1r60h6<>uid://c44omi75aesja<>uid://nh4cllk35cwh<>uid://dt8qp4brr7vdg<>uid://d0b5odbw3xqat
-PlayArea.gd::GDScript::-1::1684566327::0::1::::<>Node2D<>::
-PlayArea.tscn::PackedScene::2323735942758420875::1684568801::0::1::::<><>::res://scenes/Play Area/PlayArea.gd<>uid://c37f4de15xe11<>uid://lea8yuu266h3<>uid://bsxnes5gdw4sf<>uid://owo83md1lye0<>uid://bsd0fv1mt4gji<>uid://dmilnjo245o02<>uid://b7p5utapk3ilp<>uid://1thqwx1jkmgr<>uid://dovft48d5oin6<>uid://q2ya4cjgw8r0<>uid://cpmgvlpbanclr<>uid://b0jl8rxweopcm<>uid://ra7eepk3vpov
+PlayArea.gd::GDScript::-1::1684569515::0::1::::<>Node2D<>::
+PlayArea.tscn::PackedScene::2323735942758420875::1684722992::0::1::::<><>::res://scenes/Play Area/PlayArea.gd<>uid://c37f4de15xe11<>uid://lea8yuu266h3<>uid://bsxnes5gdw4sf<>uid://owo83md1lye0<>uid://bsd0fv1mt4gji<>uid://dmilnjo245o02<>uid://b7p5utapk3ilp<>uid://1thqwx1jkmgr<>uid://dovft48d5oin6<>uid://q2ya4cjgw8r0<>uid://cpmgvlpbanclr<>uid://b0jl8rxweopcm<>uid://ra7eepk3vpov
 Projectile.tscn::PackedScene::8630561671184102321::1684495450::0::1::::<><>::res://scenes/Play Area/ProjectileController.gd<>uid://478sljt0n7g5
-ProjectileController.gd::GDScript::-1::1682519818::0::1::::<>RigidBody2D<>::
+ProjectileController.gd::GDScript::-1::1684569373::0::1::::<>RigidBody2D<>::
 Quiz.gd::GDScript::-1::1684493756::0::1::::<>RigidBody2D<>::
-Quiz.tscn::PackedScene::6804544615339684726::1684568801::0::1::::<><>::res://scenes/Play Area/Quiz.gd<>uid://bh8t6hfhm2ufy
-Requirements.tscn::PackedScene::8018734794613484229::1684493692::0::1::::<><>::uid://mhsfyjtxsnxh<>res://scenes/Play Area/Object.gd
+Quiz.tscn::PackedScene::6804544615339684726::1684722992::0::1::::<><>::res://scenes/Play Area/Quiz.gd<>uid://bh8t6hfhm2ufy
+Requirements.gd::GDScript::-1::1684722991::0::1::::<>RigidBody2D<>::
+Requirements.tscn::PackedScene::8018734794613484229::1684724456::0::1::::<><>::uid://mhsfyjtxsnxh<>res://scenes/Play Area/Requirements.gd<>uid://dpruhgxeag3mk
