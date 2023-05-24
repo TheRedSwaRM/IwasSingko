@@ -91,7 +91,8 @@ func _process(delta):
 		if velocity.length() > 0:
 			velocity = velocity.normalized() * movementSpeed
 		position += velocity * delta
-	
+		global_position.x = clampf(global_position.x, -6000, 7000)
+		global_position.y = clampf(global_position.y, -3500, 4300)
 # if projectile hit character checker
 func _on_body_entered(body):
 	if body.is_in_group("enemy"):

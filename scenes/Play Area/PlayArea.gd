@@ -30,6 +30,7 @@ func _ready():
 	newGame()
 	paused = false
 	bossDiff = 0
+	$FoodTimer.wait_time = SingletonScript.playerData["player"]["playerRateFood"]
 
 func _process(delta):
 	if Input.is_action_just_released("pause"):
@@ -154,7 +155,8 @@ func _on_character_stamina_changed(stamina):
 
 func _on_resume_button_down():
 	resumeGame()
-	
+
+# function that sets the values of the play area depending on the difficulty set
 func playAreaSetDifficulty(diff):
 	if diff == "Easy":
 		surviveScore = 5
@@ -171,8 +173,8 @@ func playAreaSetDifficulty(diff):
 		SingletonScript.SetPlayAreaProjMaxSpeed(700.0)
 		SingletonScript.SetPlayAreaProjWaitTime(2)
 	elif diff == "Hard":
-		surviveScore = 15
-		coinValue = 15
+		surviveScore = 20
+		coinValue = 20
 		reqScore = 40 + SingletonScript.playerData["player"]["playerScoreInc"]
 		SingletonScript.SetPlayAreaProjMinSpeed(700.0)
 		SingletonScript.SetPlayAreaProjMaxSpeed(1000.0)

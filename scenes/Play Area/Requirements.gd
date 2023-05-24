@@ -10,6 +10,7 @@ var margin
 func _ready():
 	offscreenMarker = $OffscreenMarker
 	indicator = $OffscreenMarker/Indicator
+	$ExistenceTimer.wait_time = SingletonScript.playerData["player"]["playerRateReq"]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if get_tree().paused == true:

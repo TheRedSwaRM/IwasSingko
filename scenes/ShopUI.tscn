@@ -209,7 +209,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("3_1ehxy")
 hframes = 2
 vframes = 8
-frame = 14
+frame = 15
 metadata/_edit_lock_ = true
 
 [node name="Purchase Button" type="TextureButton" parent="."]
@@ -243,65 +243,65 @@ text = "Player Stats"
 
 [node name="EnergyConLabel" type="Label" parent="PlayerStatsLabel"]
 layout_mode = 0
-offset_top = 24.0
+offset_top = 74.0
 offset_right = 255.0
-offset_bottom = 50.0
+offset_bottom = 100.0
 theme = SubResource("Theme_qoxnu")
-text = "Energy Consumption:"
+text = "Max Energy:"
 
 [node name="SpeedLabel" type="Label" parent="PlayerStatsLabel"]
 layout_mode = 0
-offset_top = 50.0
+offset_top = 99.0
 offset_right = 255.0
-offset_bottom = 76.0
+offset_bottom = 125.0
 theme = SubResource("Theme_s0s7j")
 text = "Speed:"
 
 [node name="MaxEnergyLabel" type="Label" parent="PlayerStatsLabel"]
 layout_mode = 0
-offset_top = 76.0
+offset_top = 24.0
 offset_right = 255.0
-offset_bottom = 102.0
+offset_bottom = 50.0
 pivot_offset = Vector2(-727, 119)
-text = "Max Energy:"
+text = "Max Stamina:"
 
 [node name="FoodRateLabel" type="Label" parent="PlayerStatsLabel"]
 layout_mode = 0
-offset_top = 102.0
+offset_top = 125.0
 offset_right = 255.0
-offset_bottom = 128.0
+offset_bottom = 151.0
 pivot_offset = Vector2(-727, 119)
 text = "Food Spawn Rate:"
 
 [node name="ReqTimerLabel" type="Label" parent="PlayerStatsLabel"]
 layout_mode = 0
-offset_top = 128.0
+offset_top = 177.0
 offset_right = 255.0
-offset_bottom = 154.0
+offset_bottom = 203.0
 pivot_offset = Vector2(-840, 23)
 text = "Requirement Timer:"
 
 [node name="NapEnergyLabel" type="Label" parent="PlayerStatsLabel"]
 layout_mode = 0
-offset_top = 154.0
+offset_top = 50.0
 offset_right = 255.0
-offset_bottom = 180.0
+offset_bottom = 76.0
 pivot_offset = Vector2(-840, 23)
-text = "Nap Energy Increase:"
+text = "Nap Stamina Increase:"
 
 [node name="ReqScoreLabel" type="Label" parent="PlayerStatsLabel"]
 layout_mode = 0
-offset_top = 180.0
+offset_top = 203.0
 offset_right = 255.0
-offset_bottom = 206.0
+offset_bottom = 229.0
 pivot_offset = Vector2(-1009, -16)
 text = "Requirement Score Increase:"
 
 [node name="FoodStamLabel" type="Label" parent="PlayerStatsLabel"]
 layout_mode = 0
-offset_top = 206.0
+offset_top = 151.0
 offset_right = 255.0
-offset_bottom = 232.0
+offset_bottom = 177.0
 pivot_offset = Vector2(-1009, -16)
 text = "Food Stamina Increase:"
 
