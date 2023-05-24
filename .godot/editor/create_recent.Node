@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+TileMap
+Label
+TextureButton
+Line2D
+>>>>>>> 7d265f6dfe15831ff2e72913092a81feedb1029c
 Sprite2D
 Node2D
 Timer
@@ -12,7 +19,12 @@ Line2D
 PathFollow2D
 Path2D
 AnimationPlayer
+<<<<<<< HEAD
 TileMap
+=======
+Timer
+Node2D
+>>>>>>> 7d265f6dfe15831ff2e72913092a81feedb1029c
 Button
 Area2D
 RichTextLabel
