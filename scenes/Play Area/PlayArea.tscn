@@ -34,6 +34,9 @@ show_behind_parent = false
 position = Vector2(11984, 208)
 script = null
 
+[node name="MoveTileMap" parent="TileMapBackground2" index="2"]
+position = Vector2(0, 32)
+
 [node name="TileMapBackground1" parent="." instance=ExtResource("10_b0v6h")]
 show_behind_parent = false
 script = null

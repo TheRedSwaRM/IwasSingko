@@ -167,7 +167,7 @@ func playAreaSetDifficulty(diff):
 		coinValue = 5
 		reqScore = 20 + SingletonScript.playerData["player"]["playerScoreInc"]
 		SingletonScript.SetPlayAreaProjMinSpeed(200.0)
-		SingletonScript.SetPlayAreaProjMaxSpeed(500.0)
+		SingletonScript.SetPlayAreaProjMaxSpeed(300.0)
 		SingletonScript.SetPlayAreaProjWaitTime(3)
 	elif diff == "Normal":
 		surviveScore = 10
