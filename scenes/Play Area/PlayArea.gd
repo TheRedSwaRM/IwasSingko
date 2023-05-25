@@ -6,6 +6,7 @@ extends Node2D
 @export var coin: PackedScene
 @export var req: PackedScene
 @export var boss: PackedScene
+@export var tilemapbg: PackedScene
 
 var surviveScore = 5 # passive score increase the player gets through surviving
 var coinValue = 5 # how much coins the player gets when collecting
@@ -31,6 +32,7 @@ func _ready():
 	paused = false
 	bossDiff = 0
 	$FoodTimer.wait_time = SingletonScript.playerData["player"]["playerRateFood"]
+	SpawnNewTileMap()
 
 func _process(delta):
 	if Input.is_action_just_released("pause"):
@@ -40,7 +42,9 @@ func _process(delta):
 		else:
 			paused = false
 			resumeGame()
-			
+	var req = get_tree().get_first_node_in_group("req")
+	if req == null:
+		spawnReq()
 
 func pauseGame():
 	emit_signal("pause")
@@ -48,7 +52,6 @@ func pauseGame():
 	$EnemyTimer.stop()
 	$CoinTimer.stop()
 	$FoodTimer.stop()
-	$ReqTimer.stop()
 	get_tree().paused = true
 	$Character/PauseScene.show()
 	$HUD.hide()
@@ -59,7 +62,6 @@ func resumeGame():
 	$EnemyTimer.start()
 	$CoinTimer.start()
 	$FoodTimer.start()
-	$ReqTimer.start()
 	get_tree().paused = false
 	$Character/PauseScene.hide()
 	$HUD.show()
@@ -86,7 +88,6 @@ func _on_start_timer_timeout():
 	$EnemyTimer.start()
 	$CoinTimer.start()
 	$FoodTimer.start()
-	$ReqTimer.start()
 	$ScoreTimer.start()
 
 # score is increased based on how long the player has survived
@@ -128,8 +129,8 @@ func getRandomPosition(up = true, down = true, left = true, right = true):
 			spawn_pos1 = top_left
 			spawn_pos2 = Vector2(top_left.x, bottom_right.y)
 	
-	var x_spawn = randf_range(spawn_pos1.x, spawn_pos2.x)
-	var y_spawn = randf_range(spawn_pos2.y, spawn_pos2.y)
+	var x_spawn = clampf(randf_range(spawn_pos1.x, spawn_pos2.x), -6000.0, 7000.0)
+	var y_spawn = clampf(randf_range(spawn_pos2.y, spawn_pos2.y), -3500.0, 4300.0)
 	return Vector2(x_spawn,y_spawn)
 
 # signal reciever for object from character; used to modify score and coins
@@ -203,7 +204,7 @@ func _on_food_timer_timeout():
 	add_child(spawnedFood)
 
 
-func _on_req_timer_timeout():
+func spawnReq():
 	var spawnedReq = req.instantiate()
 	
 	#sets random position for object to spawn
@@ -231,8 +232,10 @@ func _on_enemy_timer_timeout():
 	var velocity = Vector2(randf_range(projMinSpeed, projMaxSpeed), 0.0)
 	# launches projectile at the direction
 	spawnedEnemy.linear_velocity = velocity.rotated(direction.rotated(randomRotation).angle())
-	if get_tree().get_first_node_in_group("Character").global_position.x - spawnedEnemy.global_position.x < 0:
+	if $Character.global_position.x - spawnedEnemy.global_position.x < 0:
 		spawnedEnemy.get_node("Sprite2D").set_flip_h(true)
+	if $Character.global_position.y - spawnedEnemy.global_position.y < 0:
+		spawnedEnemy.get_node("Sprite2D").set_flip_v(true)
 	
 	# adds projectile to scene
 	spawnedEnemy.show()
@@ -256,3 +259,12 @@ func _on_boss_timer_timeout():
 
 func _on_character_energy_changed(energy):
 	$HUD.updateEnergy(energy)
+
+func SpawnNewTileMap():
+	var spawnedTileMap = tilemapbg.instantiate()
+	spawnedTileMap.global_position = $Character.global_position
+	add_child(spawnedTileMap)
+
+
+func _on_tile_map_background_create_new_tile_map():
+	SpawnNewTileMap()

@@ -18,3 +18,6 @@ res://scenes/ShopUI.gd
 res://SingletonScript.gd
 res://scenes/Play Area/Requirements.gd
 res://scenes/Play Area/CharacterController.gd
+res://scenes/Play Area/GhostProf.gd
+res://scenes/Play Area/TileMapBackground.gd
+res://scenes/Play Area/TileMapBackground.tscn
