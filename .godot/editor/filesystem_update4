@@ -13,6 +13,7 @@ res://scenes/Play Area/Character.tscn
 res://scenes/Play Area/Food.tscn
 res://scenes/Play Area/HUD.tscn
 res://scenes/Play Area/Requirements.tscn
+<<<<<<< HEAD
 res://scenes/Play Area/PlayArea.gd
 res://scenes/ShopUI.gd
 res://SingletonScript.gd
@@ -21,3 +22,6 @@ res://scenes/Play Area/CharacterController.gd
 res://scenes/Play Area/GhostProf.gd
 res://scenes/Play Area/TileMapBackground.gd
 res://scenes/Play Area/TileMapBackground.tscn
+=======
+res://scenes/HowToPlayUI.tscn
+>>>>>>> c69088272bcf46bc7389d905ac4d90755873917f

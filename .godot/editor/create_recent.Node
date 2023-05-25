@@ -1,14 +1,11 @@
-CollisionShape2D
-Area2D
-VisibleOnScreenNotifier2D
-Node2D
 TileMap
-Label
+Sprite2D
+Node2D
 TextureButton
 Line2D
 Sprite2D
+Node2D
 Timer
-Label
 ProgressBar
 TextureProgressBar
 RigidBody2D
