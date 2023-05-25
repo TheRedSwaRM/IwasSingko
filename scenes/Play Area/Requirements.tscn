@@ -36,7 +36,6 @@ wait_time = 60.0
 autostart = true
 
 [node name="OffscreenMarker" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="Indicator" type="Sprite2D" parent="OffscreenMarker"]
 texture_filter = 1
