@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-=======
-TileMap
 Label
-TextureButton
-Line2D
->>>>>>> 7d265f6dfe15831ff2e72913092a81feedb1029c
+TileMap
 Sprite2D
 Node2D
+TextureButton
+Line2D
 Timer
-Label
 VisibleOnScreenNotifier2D
 ProgressBar
 TextureProgressBar
@@ -19,12 +15,7 @@ Line2D
 PathFollow2D
 Path2D
 AnimationPlayer
-<<<<<<< HEAD
-TileMap
-=======
 Timer
-Node2D
->>>>>>> 7d265f6dfe15831ff2e72913092a81feedb1029c
 Button
 Area2D
 RichTextLabel

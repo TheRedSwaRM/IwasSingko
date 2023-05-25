@@ -1,10 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhk6ap5dor5fb"]
+[gd_scene load_steps=16 format=3 uid="uid://dhk6ap5dor5fb"]
 
 [ext_resource type="FontFile" uid="uid://q2ya4cjgw8r0" path="res://assets/text/Minecraft.ttf" id="1"]
 [ext_resource type="Script" path="res://scenes/HowToPlayUI.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://t50omo40otok" path="res://assets/art/GuideImageAsset.png" id="2_kqbc5"]
+[ext_resource type="Texture2D" uid="uid://b7p5utapk3ilp" path="res://assets/art/GrassAsset.png" id="3_7fs8x"]
 [ext_resource type="Texture2D" uid="uid://dt8qp4brr7vdg" path="res://assets/art/UI/GoToMainMenu_Idle.png" id="3_idbfi"]
 [ext_resource type="Texture2D" uid="uid://d0b5odbw3xqat" path="res://assets/art/UI/GoToMainMenu_Hover.png" id="4_8i5vu"]
+[ext_resource type="Texture2D" uid="uid://cl5q4lnhc70l7" path="res://assets/art/playerCharacter/PlayerCharacterAsset.png" id="4_b6e35"]
+[ext_resource type="Texture2D" uid="uid://cwruepxrclrf2" path="res://assets/art/UI/GuideArrow.png" id="5_m74yb"]
+[ext_resource type="Texture2D" uid="uid://b8syqtl76xiig" path="res://assets/art/CoinSpriteAsset.png" id="7_eq22e"]
+[ext_resource type="Texture2D" uid="uid://mhsfyjtxsnxh" path="res://assets/art/RequirementsSpriteAsset.png" id="9_c515i"]
+[ext_resource type="Texture2D" uid="uid://d4f1dmlwvrg3y" path="res://assets/art/FoodPackAsset.png" id="10_xlpwv"]
+[ext_resource type="Texture2D" uid="uid://478sljt0n7g5" path="res://assets/art/ProjectileSpriteAsset.png" id="11_lawcd"]
+[ext_resource type="Texture2D" uid="uid://bh8t6hfhm2ufy" path="res://assets/art/EnemySprites.png" id="12_ll4kw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2n67"]
+texture = ExtResource("3_7fs8x")
+texture_region_size = Vector2i(48, 48)
+use_texture_padding = false
+0:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5q0wm"]
+tile_size = Vector2i(48, 48)
+sources/0 = SubResource("TileSetAtlasSource_f2n67")
 
 [sub_resource type="Theme" id="Theme_ujoew"]
 default_font = ExtResource("1")
@@ -25,10 +42,203 @@ offset_right = 1024.0
 offset_bottom = 600.0
 color = Color(0.117647, 0.121569, 0.12549, 1)
 
-[node name="GuideImageAsset" type="Sprite2D" parent="."]
+[node name="GuideScreen" type="Node2D" parent="."]
 position = Vector2(509.58, 352)
 scale = Vector2(0.7812, 0.780303)
-texture = ExtResource("2_kqbc5")
+
+[node name="TileMap" type="TileMap" parent="GuideScreen"]
+scale = Vector2(1, 1)
+tile_set = SubResource("TileSet_5q0wm")
+cell_quadrant_size = 48
+collision_animatable = true
+format = 2
+layer_0/tile_data = PackedInt32Array(-589838, 0, 7, -524302, 0, 7, -524301, 0, 7, -589837, 0, 7, -589836, 0, 7, -524300, 0, 7, -458765, 0, 7, -393229, 0, 7, -393230, 0, 7, -458766, 0, 7, -524299, 0, 7, -524298, 0, 7, -524297, 0, 7, -524296, 0, 7, -458762, 0, 7, -458763, 0, 7, -458764, 0, 7, -327694, 0, 7, -327693, 0, 7, -327692, 0, 7, -393228, 0, 7, -393227, 0, 7, -262157, 0, 7, -196621, 0, 7, -196620, 0, 7, -131084, 0, 7, -131083, 0, 7, -196619, 0, 7, -196618, 0, 7, -262154, 0, 7, -327690, 0, 7, -393226, 0, 7, -196622, 0, 7, -131087, 0, 7, -65551, 0, 7, -65550, 0, 7, -131086, 0, 7, -262158, 0, 7, -262156, 0, 7, -262155, 0, 7, -131085, 0, 7, -327691, 0, 7, -458761, 0, 7, -458760, 0, 7, -393224, 0, 7, -327688, 0, 7, -262152, 0, 7, -262153, 0, 7, -196617, 0, 7, -327687, 0, 7, -393222, 0, 7, -458758, 0, 7, -458757, 0, 7, -458756, 0, 7, -458759, 0, 7, -393225, 0, 7, -327689, 0, 7, -524295, 0, 7, -524294, 0, 7, -524293, 0, 7, -589828, 0, 7, -589827, 0, 7, -589826, 0, 7, -589825, 0, 7, -655360, 0, 7, -655359, 0, 7, -655358, 0, 7, -655357, 0, 7, -655356, 0, 7, -655355, 0, 7, -655354, 0, 7, -655353, 0, 7, -655352, 0, 7, -655351, 0, 7, -589815, 0, 7, -589816, 0, 7, -589817, 0, 7, -589818, 0, 7, -589819, 0, 7, -589820, 0, 7, -589821, 0, 7, -589822, 0, 7, -589823, 0, 7, -589824, 0, 7, -524289, 0, 7, -524290, 0, 7, -524291, 0, 7, -524292, 0, 7, -458755, 0, 7, -589814, 0, 7, -589813, 0, 7, -589812, 0, 7, -589811, 0, 7, -589810, 0, 7, -524275, 0, 7, -524276, 0, 7, -524277, 0, 7, -524278, 0, 7, -524279, 0, 7, -524280, 0, 7, -524281, 0, 7, -524282, 0, 7, -524283, 0, 7, -524284, 0, 7, -524285, 0, 7, -458750, 0, 7, -458751, 0, 7, -458752, 0, 7, -393217, 0, 7, -393218, 0, 7, -393219, 0, 7, -393220, 0, 7, -458754, 0, 7, -458753, 0, 7, -524288, 0, 7, -524287, 0, 7, -524286, 0, 7, -458740, 0, 7, -458739, 0, 7, -458738, 0, 7, -458741, 0, 7, -458742, 0, 7, -458743, 0, 7, -458744, 0, 7, -458745, 0, 7, -458746, 0, 7, -458747, 0, 7, -458748, 0, 7, -458749, 0, 7, -393221, 0, 7, -393223, 0, 7, -327686, 0, 7, -262149, 0, 7, -262148, 0, 7, -196611, 0, 7, -196610, 0, 7, -131073, 0, 7, -196608, 0, 7, -131071, 0, 7, -65534, 0, 7, -65533, 0, 7, 4, 0, 7, 5, 0, 7, 65542, 0, 7, 65543, 0, 7, 131080, 0, 7, 131081, 0, 7, 196618, 0, 7, 196619, 0, 7, 262156, 0, 7, 262157, 0, 7, 327694, 0, 7, 327695, 0, 7, 393232, 0, 7, -589839, 0, 7, -524303, 0, 7, -458767, 0, 7, -393231, 0, 7, -327695, 0, 7, -262159, 0, 7, -196623, 0, 7, -15, 0, 7, 65521, 0, 7, 131057, 0, 7, 196593, 0, 7, 262129, 0, 7, 327665, 0, 7, 393201, 0, 7, 458737, 0, 7, 524273, 0, 7, -14, 0, 7, 65522, 0, 7, 131058, 0, 7, 196594, 0, 7, 262130, 0, 7, 327666, 0, 7, 393202, 0, 7, 458738, 0, 7, 524274, 0, 7, -65549, 0, 7, -13, 0, 7, 65523, 0, 7, 131059, 0, 7, 196595, 0, 7, 262131, 0, 7, 327667, 0, 7, 393203, 0, 7, 458739, 0, 7, 524275, 0, 7, -65548, 0, 7, -12, 0, 7, 65524, 0, 7, 131060, 0, 7, 196596, 0, 7, 262132, 0, 7, 327668, 0, 7, 393204, 0, 7, 458740, 0, 7, 524276, 0, 7, -589835, 0, 7, -65547, 0, 7, -11, 0, 7, 65525, 0, 7, 131061, 0, 7, 196597, 0, 7, 262133, 0, 7, 327669, 0, 7, 393205, 0, 7, 458741, 0, 7, 524277, 0, 7, -589834, 0, 7, -131082, 0, 7, -65546, 0, 7, -10, 0, 7, 65526, 0, 7, 131062, 0, 7, 196598, 0, 7, 262134, 0, 7, 327670, 0, 7, 393206, 0, 7, 458742, 0, 7, 524278, 0, 7, -589833, 0, 7, -131081, 0, 7, -65545, 0, 7, -9, 0, 7, 65527, 0, 7, 131063, 0, 7, 196599, 0, 7, 262135, 0, 7, 327671, 0, 7, 393207, 0, 7, 458743, 0, 7, 524279, 0, 7, -589832, 0, 7, -196616, 0, 7, -131080, 0, 7, -65544, 0, 7, -8, 0, 7, 65528, 0, 7, 131064, 0, 7, 196600, 0, 7, 262136, 0, 7, 327672, 0, 7, 393208, 0, 7, 458744, 0, 7, 524280, 0, 7, -589831, 0, 7, -262151, 0, 7, -196615, 0, 7, -131079, 0, 7, -65543, 0, 7, -7, 0, 7, 65529, 0, 7, 131065, 0, 7, 196601, 0, 7, 262137, 0, 7, 327673, 0, 7, 393209, 0, 7, 458745, 0, 7, 524281, 0, 7, -589830, 0, 7, -262150, 0, 7, -196614, 0, 7, -131078, 0, 7, -65542, 0, 7, -6, 0, 7, 65530, 0, 7, 131066, 0, 7, 196602, 0, 7, 262138, 0, 7, 327674, 0, 7, 393210, 0, 7, 458746, 0, 7, 524282, 0, 7, -589829, 0, 7, -327685, 0, 7, -196613, 0, 7, -131077, 0, 7, -65541, 0, 7, -5, 0, 7, 65531, 0, 7, 131067, 0, 7, 196603, 0, 7, 262139, 0, 7, 327675, 0, 7, 393211, 0, 7, 458747, 0, 7, 524283, 0, 7, -327684, 0, 7, -196612, 0, 7, -131076, 0, 7, -65540, 0, 7, -4, 0, 7, 65532, 0, 7, 131068, 0, 7, 196604, 0, 7, 262140, 0, 7, 327676, 0, 7, 393212, 0, 7, 458748, 0, 7, 524284, 0, 7, -327683, 0, 7, -262147, 0, 7, -131075, 0, 7, -65539, 0, 7, -3, 0, 7, 65533, 0, 7, 131069, 0, 7, 196605, 0, 7, 262141, 0, 7, 327677, 0, 7, 393213, 0, 7, 458749, 0, 7, 524285, 0, 7, -327682, 0, 7, -262146, 0, 7, -131074, 0, 7, -65538, 0, 7, -2, 0, 7, 65534, 0, 7, 131070, 0, 7, 196606, 0, 7, 262142, 0, 7, 327678, 0, 7, 393214, 0, 7, 458750, 0, 7, 524286, 0, 7, -327681, 0, 7, -262145, 0, 7, -196609, 0, 7, -65537, 0, 7, -1, 0, 7, 65535, 0, 7, 131071, 0, 7, 196607, 0, 7, 262143, 0, 7, 327679, 0, 7, 393215, 0, 7, 458751, 0, 7, 524287, 0, 7, -393216, 0, 7, -327680, 0, 7, -262144, 0, 7, -131072, 0, 7, -65536, 0, 7, 0, 0, 7, 65536, 0, 7, 131072, 0, 7, 196608, 0, 7, 262144, 0, 7, 327680, 0, 7, 393216, 0, 7, 458752, 0, 7, -393215, 0, 7, -327679, 0, 7, -262143, 0, 7, -196607, 0, 7, -65535, 0, 7, 1, 0, 7, 65537, 0, 7, 131073, 0, 7, 196609, 0, 7, 262145, 0, 7, 327681, 0, 7, 393217, 0, 7, 458753, 0, 7, -393214, 0, 7, -327678, 0, 7, -262142, 0, 7, -196606, 0, 7, -131070, 0, 7, 2, 0, 7, 65538, 0, 7, 131074, 0, 7, 196610, 0, 7, 262146, 0, 7, 327682, 0, 7, 393218, 0, 7, 458754, 0, 7, -393213, 0, 7, -327677, 0, 7, -262141, 0, 7, -196605, 0, 7, -131069, 0, 7, 3, 0, 7, 65539, 0, 7, 131075, 0, 7, 196611, 0, 7, 262147, 0, 7, 327683, 0, 7, 393219, 0, 7, 458755, 0, 7, -393212, 0, 7, -327676, 0, 7, -262140, 0, 7, -196604, 0, 7, -131068, 0, 7, -65532, 0, 7, 65540, 0, 7, 131076, 0, 7, 196612, 0, 7, 262148, 0, 7, 327684, 0, 7, 393220, 0, 7, 458756, 0, 7, -393211, 0, 7, -327675, 0, 7, -262139, 0, 7, -196603, 0, 7, -131067, 0, 7, -65531, 0, 7, 65541, 0, 7, 131077, 0, 7, 196613, 0, 7, 262149, 0, 7, 327685, 0, 7, 393221, 0, 7, 458757, 0, 7, -393210, 0, 7, -327674, 0, 7, -262138, 0, 7, -196602, 0, 7, -131066, 0, 7, -65530, 0, 7, 6, 0, 7, 131078, 0, 7, 196614, 0, 7, 262150, 0, 7, 327686, 0, 7, 393222, 0, 7, 458758, 0, 7, -393209, 0, 7, -327673, 0, 7, -262137, 0, 7, -196601, 0, 7, -131065, 0, 7, -65529, 0, 7, 7, 0, 7, 131079, 0, 7, 196615, 0, 7, 262151, 0, 7, 327687, 0, 7, 393223, 0, 7, 458759, 0, 7, -393208, 0, 7, -327672, 0, 7, -262136, 0, 7, -196600, 0, 7, -131064, 0, 7, -65528, 0, 7, 8, 0, 7, 65544, 0, 7, 196616, 0, 7, 262152, 0, 7, 327688, 0, 7, 393224, 0, 7, 458760, 0, 7, -393207, 0, 7, -327671, 0, 7, -262135, 0, 7, -196599, 0, 7, -131063, 0, 7, -65527, 0, 7, 9, 0, 7, 65545, 0, 7, 196617, 0, 7, 262153, 0, 7, 327689, 0, 7, 393225, 0, 7, 458761, 0, 7, -655350, 0, 7, -393206, 0, 7, -327670, 0, 7, -262134, 0, 7, -196598, 0, 7, -131062, 0, 7, -65526, 0, 7, 10, 0, 7, 65546, 0, 7, 131082, 0, 7, 262154, 0, 7, 327690, 0, 7, 393226, 0, 7, 458762, 0, 7, -655349, 0, 7, -393205, 0, 7, -327669, 0, 7, -262133, 0, 7, -196597, 0, 7, -131061, 0, 7, -65525, 0, 7, 11, 0, 7, 65547, 0, 7, 131083, 0, 7, 262155, 0, 7, 327691, 0, 7, 393227, 0, 7, 458763, 0, 7, -655348, 0, 7, -393204, 0, 7, -327668, 0, 7, -262132, 0, 7, -196596, 0, 7, -131060, 0, 7, -65524, 0, 7, 12, 0, 7, 65548, 0, 7, 131084, 0, 7, 196620, 0, 7, 327692, 0, 7, 393228, 0, 7, 458764, 0, 7, -655347, 0, 7, -393203, 0, 7, -327667, 0, 7, -262131, 0, 7, -196595, 0, 7, -131059, 0, 7, -65523, 0, 7, 13, 0, 7, 65549, 0, 7, 131085, 0, 7, 196621, 0, 7, 327693, 0, 7, 393229, 0, 7, 458765, 0, 7, -655346, 0, 7, -524274, 0, 7, -393202, 0, 7, -327666, 0, 7, -262130, 0, 7, -196594, 0, 7, -131058, 0, 7, -65522, 0, 7, 14, 0, 7, 65550, 0, 7, 131086, 0, 7, 196622, 0, 7, 262158, 0, 7, 393230, 0, 7, 458766, 0, 7, -655345, 0, 7, -589809, 0, 7, -524273, 0, 7, -458737, 0, 7, -393201, 0, 7, -327665, 0, 7, -262129, 0, 7, -196593, 0, 7, -131057, 0, 7, -65521, 0, 7, 15, 0, 7, 65551, 0, 7, 131087, 0, 7, 196623, 0, 7, 262159, 0, 7, 393231, 0, 7, 458767, 0, 7, 393235, 0, 7)
+
+[node name="Sprite2D" type="Sprite2D" parent="GuideScreen"]
+position = Vector2(-283.546, -174.668)
+scale = Vector2(5.12032, 5.12621)
+texture = ExtResource("4_b6e35")
+hframes = 16
+
+[node name="Sprite2D2" type="Sprite2D" parent="GuideScreen"]
+position = Vector2(-447.491, 82.0194)
+scale = Vector2(5.12032, 5.12621)
+texture = ExtResource("4_b6e35")
+hframes = 16
+frame = 4
+
+[node name="Sprite2D3" type="Sprite2D" parent="GuideScreen"]
+position = Vector2(-119.79, 82.0194)
+scale = Vector2(5.12032, 5.12621)
+texture = ExtResource("4_b6e35")
+hframes = 16
+frame = 14
+
+[node name="GuideArrow" type="Sprite2D" parent="GuideScreen"]
+position = Vector2(-201.621, -174.668)
+scale = Vector2(5.12033, 5.12621)
+texture = ExtResource("5_m74yb")
+
+[node name="Label" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = -406.075
+offset_top = -348.583
+offset_right = -242.075
+offset_bottom = -310.583
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = " Up Arrow Key
+(or W) to move up"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = -160.753
+offset_top = -205.379
+offset_right = -4.75269
+offset_bottom = -167.379
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Right Arrow Key
+(or D) to move right"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = -406.075
+offset_top = -51.5826
+offset_right = -242.075
+offset_bottom = -13.5826
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Down Arrow Key
+(or S) to move down"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = -652.304
+offset_top = -205.379
+offset_right = -488.304
+offset_bottom = -167.379
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Left Arrow Key
+(or A) to move left"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = -570.379
+offset_top = 133.282
+offset_right = -406.379
+offset_bottom = 171.282
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Press Z (or J) 
+to run"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = -283.641
+offset_top = 133.282
+offset_right = -69.6406
+offset_bottom = 171.282
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Press X (or K) 
+to take a nap (gain energy)"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = 248.874
+offset_top = -317.825
+offset_right = 462.874
+offset_bottom = -279.825
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Collect items like these to:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label11" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = 248.873
+offset_top = 41.0097
+offset_right = 468.873
+offset_bottom = 79.0097
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Dodge distractions like these!
+(They'll drain your energy):"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label8" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = 125.986
+offset_top = -205.049
+offset_right = 339.986
+offset_bottom = -167.049
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Get coins!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label9" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = 248.874
+offset_top = -61.5146
+offset_right = 462.874
+offset_bottom = -23.5146
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Do requirements!"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="GuideScreen"]
+texture_filter = 1
+offset_left = 371.761
+offset_top = -205.049
+offset_right = 585.761
+offset_bottom = -167.049
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("1")
+text = "Regain energy!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GuideArrow2" type="Sprite2D" parent="GuideScreen"]
+position = Vector2(-283.452, -92.5424)
+rotation = 1.57079
+scale = Vector2(5.12033, 5.12621)
+texture = ExtResource("5_m74yb")
+
+[node name="GuideArrow3" type="Sprite2D" parent="GuideScreen"]
+position = Vector2(-365.566, -174.574)
+rotation = 3.14159
+scale = Vector2(5.12033, 5.12621)
+texture = ExtResource("5_m74yb")
+
+[node name="GuideArrow4" type="Sprite2D" parent="GuideScreen"]
+position = Vector2(-283.452, -256.581)
+rotation = 4.71238
+scale = Vector2(5.12033, 5.12621)
+texture = ExtResource("5_m74yb")
+
+[node name="CoinSpriteAsset" type="Sprite2D" parent="GuideScreen"]
+texture_filter = 1
+position = Vector2(289.836, -256.311)
+scale = Vector2(5.12033, 5.12621)
+texture = ExtResource("7_eq22e")
 
 [node name="BlackBar1" type="ColorRect" parent="."]
 layout_mode = 0
@@ -54,8 +264,56 @@ theme = SubResource("Theme_ujoew")
 texture_normal = ExtResource("3_idbfi")
 texture_hover = ExtResource("4_8i5vu")
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
+[node name="RequirementsSpriteAsset" type="Sprite2D" parent="."]
+position = Vector2(832, 264)
+scale = Vector2(4, 4)
+texture = ExtResource("9_c515i")
+hframes = 4
+vframes = 3
+
+[node name="FoodPackAsset" type="Sprite2D" parent="."]
+position = Vector2(928, 152)
+scale = Vector2(4, 4)
+texture = ExtResource("10_xlpwv")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="ProjectileSpriteAsset" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(640, 432)
+scale = Vector2(2, 2)
+texture = ExtResource("11_lawcd")
+hframes = 2
+vframes = 8
+frame = 14
+
+[node name="EnemySprites" type="Sprite2D" parent="."]
+position = Vector2(696, 480)
+scale = Vector2(4, 4)
+texture = ExtResource("12_ll4kw")
+hframes = 4
+
+[node name="EnemySprites2" type="Sprite2D" parent="."]
+position = Vector2(784, 480)
+scale = Vector2(4, 4)
+texture = ExtResource("12_ll4kw")
+hframes = 4
+frame = 1
+
+[node name="EnemySprites3" type="Sprite2D" parent="."]
+position = Vector2(872, 480)
+scale = Vector2(4, 4)
+texture = ExtResource("12_ll4kw")
+hframes = 4
+frame = 2
+
+[node name="EnemySprites4" type="Sprite2D" parent="."]
+position = Vector2(960, 480)
+scale = Vector2(4, 4)
+texture = ExtResource("12_ll4kw")
+hframes = 4
+frame = 3
 
 [connection signal="button_down" from="goToMainMenu" to="." method="_on_goToMainMenu_button_down"]
 [connection signal="mouse_entered" from="goToMainMenu" to="." method="_on_goToMainMenu_mouse_entered"]
