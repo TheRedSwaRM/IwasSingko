@@ -34,17 +34,20 @@ func _process(delta):
 	prevPause = get_tree().paused
 
 func SetBossDifficulty(num):
-	
-	$Sprite2D.set_frame(num)
-	if num == 0:
-		projectileNum = 1
-		speed = 100.0
-	elif num == 1:
-		projectileNum = 2
-		speed = 150.0
+	var numDiff = num % 3
+	$Sprite2D.set_frame(numDiff)
+	if numDiff == 0:
+		projectileNum = num + 1
+		speed = 100.0 + (num * 50)
+		$CooldownTimer.wait_time = 5 - (num * 0.25)
+	elif numDiff == 1:
+		projectileNum = num + 2
+		speed = 150.0 + (num * 50)
+		$CooldownTimer.wait_time = 4 - (num * 0.25)
 	else:
-		projectileNum = 3
-		speed = 200.0
+		projectileNum = num + 3
+		speed = 200.0 + (num * 50)
+		$CooldownTimer.wait_time = 3 - (num * 0.25)
 
 func _on_projectile_timer_timeout():
 	var spawnedProjectile = projectile.instantiate()
@@ -79,3 +82,4 @@ func _on_cooldown_timer_timeout():
 func _on_body_entered(body):
 	if body.is_in_group("food"):
 		body.queue_free()
+	print("ouch")

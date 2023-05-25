@@ -246,18 +246,15 @@ func _on_enemy_timer_timeout():
 
 
 func _on_boss_timer_timeout():
-	if bossDiff < 3:
-		var spawnedBoss = boss.instantiate()
-		spawnedBoss.hide()
-		# sets random position for the projectile
-		spawnedBoss.global_position = getRandomPosition()
-		spawnedBoss.SetBossDifficulty(bossDiff)
-		bossDiff += 1
-		# adds projectile to scene
-		spawnedBoss.show()
-		add_child(spawnedBoss)
-	else:
-		print("game cleared")
+	var spawnedBoss = boss.instantiate()
+	spawnedBoss.hide()
+	# sets random position for the projectile
+	spawnedBoss.global_position = getRandomPosition()
+	spawnedBoss.SetBossDifficulty(bossDiff)
+	bossDiff += 1
+	# adds projectile to scene
+	spawnedBoss.show()
+	add_child(spawnedBoss)
 
 
 func _on_character_energy_changed(energy):

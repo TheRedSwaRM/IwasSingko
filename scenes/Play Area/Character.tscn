@@ -281,7 +281,8 @@ radius = 1236.71
 
 [node name="Character" type="Area2D" groups=["Character"]]
 process_mode = 1
-collision_mask = 94
+collision_mask = 222
+input_pickable = false
 script = ExtResource("1_lochm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -47,7 +47,7 @@ func _process(delta):
 func NewPlayerData():
 	return {
 	"player" : {
-		"playerCoins" : 10000000,
+		"playerCoins" : 0,
 		"playerHighScore" : 0,
 		"playerMaxEnergy" : 100,
 		"playerMovementSpeed" : 400,

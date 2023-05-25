@@ -105,7 +105,8 @@ func _on_body_entered(body):
 		# removes the projectile since it collided
 		if body.is_in_group("boss") == false:
 			body.queue_free()
-		
+		else:
+			print("boss")
 		# stamina is reduced and emits signal to modify HUD
 		stamina -= hurtDamage
 		emit_signal("staminaChanged", stamina)
@@ -114,6 +115,8 @@ func _on_body_entered(body):
 		# emits signal gameOver if stamina is below 0
 		if stamina <= 0:
 			emit_signal("gameOver")
+	if body.is_in_group("boss"):
+		print("boss")
 		
 
 # collision timer has run out which means character can collide with bullets again

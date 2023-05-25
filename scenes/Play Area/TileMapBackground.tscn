@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxe8cddymp2jr"]
+[gd_scene load_steps=9 format=3 uid="uid://bxe8cddymp2jr"]
 
 [ext_resource type="Texture2D" uid="uid://b7p5utapk3ilp" path="res://assets/art/GrassAsset.png" id="1_b6o6m"]
 [ext_resource type="Script" path="res://scenes/Play Area/TileMapBackground.gd" id="1_ykjkl"]
@@ -255,12 +255,16 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_k62xe")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn61r"]
+size = Vector2(9757.5, 544)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drjly"]
-size = Vector2(11240, 5856)
+size = Vector2(844, 5856)
 
 [node name="TileMapBackground" type="Node2D"]
 show_behind_parent = true
 script = ExtResource("1_ykjkl")
+metadata/_edit_vertical_guides_ = []
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -275,6 +279,18 @@ layer_0/tile_data = PackedInt32Array(262148, 0, 5, 262149, 0, 3, 262150, 0, 3, 2
 
 [node name="MoveTileMap" type="Area2D" parent="."]
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MoveTileMap"]
+position = Vector2(522.5, 3120)
+shape = SubResource("RectangleShape2D_rn61r")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MoveTileMap"]
+position = Vector2(473.25, -2304)
+shape = SubResource("RectangleShape2D_rn61r")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MoveTileMap"]
-position = Vector2(452, 536)
+position = Vector2(-3928, 264)
+shape = SubResource("RectangleShape2D_drjly")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MoveTileMap"]
+position = Vector2(4936, 432)
 shape = SubResource("RectangleShape2D_drjly")
