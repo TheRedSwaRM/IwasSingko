@@ -6,7 +6,6 @@ extends Node2D
 @export var coin: PackedScene
 @export var req: PackedScene
 @export var boss: PackedScene
-@export var tilemapbg: PackedScene
 
 var surviveScore = 5 # passive score increase the player gets through surviving
 var coinValue = 5 # how much coins the player gets when collecting
@@ -24,6 +23,9 @@ signal pause
 
 var bossDiff
 
+var tilemap1
+var tilemap2
+
 # Called when the node enters the scene tree for the first time.
 # calls new game function to start the timers for the game
 func _ready():
@@ -32,7 +34,8 @@ func _ready():
 	paused = false
 	bossDiff = 0
 	$FoodTimer.wait_time = SingletonScript.playerData["player"]["playerRateFood"]
-	SpawnNewTileMap()
+	tilemap1 = $TileMapBackground1
+	tilemap2 = $TileMapBackground2
 
 func _process(delta):
 	if Input.is_action_just_released("pause"):
@@ -260,11 +263,16 @@ func _on_boss_timer_timeout():
 func _on_character_energy_changed(energy):
 	$HUD.updateEnergy(energy)
 
-func SpawnNewTileMap():
-	var spawnedTileMap = tilemapbg.instantiate()
-	spawnedTileMap.global_position = $Character.global_position
-	add_child(spawnedTileMap)
+
+func _on_move_tile_map_area_exited(area):
+	if area.is_in_group("Character"):
+		tilemap2.global_position = $Character.global_position
+		self.move_child(tilemap2, 0)
+		self.move_child(tilemap1, 1)
 
 
-func _on_tile_map_background_create_new_tile_map():
-	SpawnNewTileMap()
+func _on_move_tile_map2_area_exited(area):
+	if area.is_in_group("Character"):
+		tilemap1.global_position = $Character.global_position
+		self.move_child(tilemap1, 0)
+		self.move_child(tilemap2, 1)
