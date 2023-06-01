@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cp5omqpwv7i4n"]
+[gd_scene load_steps=16 format=3 uid="uid://cp5omqpwv7i4n"]
 
 [ext_resource type="Script" path="res://scenes/ShopUI.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://iyt7tyukw8le" path="res://assets/art/ShopBackgroundAsset.png" id="2_fmsuw"]
@@ -28,9 +28,6 @@ default_font = ExtResource("5_u8hgp")
 default_font = ExtResource("5_u8hgp")
 
 [sub_resource type="Theme" id="Theme_nptdc"]
-default_font = ExtResource("5_u8hgp")
-
-[sub_resource type="Theme" id="Theme_depdr"]
 default_font = ExtResource("5_u8hgp")
 
 [node name="ShopUI" type="Node2D"]
@@ -330,14 +327,6 @@ offset_bottom = 467.0
 theme = SubResource("Theme_nptdc")
 text = "Item Stats"
 
-[node name="Reset Data Button" type="Button" parent="."]
-offset_left = 398.0
-offset_top = 3.0
-offset_right = 516.0
-offset_bottom = 48.0
-theme = SubResource("Theme_depdr")
-text = "Reset Stats"
-
 [connection signal="button_down" from="Control/goToMainMenu" to="." method="_on_goToMainMenu_button_down"]
 [connection signal="pressed" from="Gatorade Button" to="." method="_on_gatorade_button_pressed"]
 [connection signal="pressed" from="Candy Button" to="." method="_on_candy_button_pressed"]
@@ -348,4 +337,3 @@ text = "Reset Stats"
 [connection signal="pressed" from="Sardinas Button" to="." method="_on_sardinas_button_pressed"]
 [connection signal="pressed" from="Toyo Button" to="." method="_on_toyo_button_pressed"]
 [connection signal="pressed" from="Purchase Button" to="." method="_on_purchase_button_pressed"]
-[connection signal="pressed" from="Reset Data Button" to="." method="_on_reset_data_button_pressed"]
