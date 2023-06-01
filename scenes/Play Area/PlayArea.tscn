@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8dvud0lsy2ex"]
+[gd_scene load_steps=18 format=3 uid="uid://8dvud0lsy2ex"]
 
 [ext_resource type="Script" path="res://scenes/Play Area/PlayArea.gd" id="1_rtorh"]
 [ext_resource type="PackedScene" uid="uid://c37f4de15xe11" path="res://scenes/Play Area/Quiz.tscn" id="2_cggyc"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cpmgvlpbanclr" path="res://scenes/Play Area/NoWifi.tscn" id="12_imw4f"]
 [ext_resource type="PackedScene" uid="uid://b0jl8rxweopcm" path="res://scenes/Play Area/Drop.tscn" id="13_oiuea"]
 [ext_resource type="PackedScene" uid="uid://ra7eepk3vpov" path="res://scenes/Play Area/Boss.tscn" id="14_v3kkm"]
+[ext_resource type="AudioStream" uid="uid://drp8sfk2r3o4q" path="res://assets/music/chillmood.mp3" id="15_p707m"]
+[ext_resource type="Script" path="res://scenes/Play Area/AudioStreamPlayer.gd" id="16_yh0pl"]
 
 [sub_resource type="Theme" id="Theme_nniad"]
 default_font = ExtResource("9_c7bk8")
@@ -90,6 +92,11 @@ process_callback = 0
 [node name="BossTimer" type="Timer" parent="."]
 wait_time = 300.0
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_p707m")
+autoplay = true
+script = ExtResource("16_yh0pl")
 
 [connection signal="pause" from="." to="Character" method="_on_node_2d_pause"]
 [connection signal="area_entered" from="TileMapBackground2/MoveTileMap" to="." method="_on_move_tile_map2_area_exited"]
