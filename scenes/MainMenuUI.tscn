@@ -106,6 +106,16 @@ text = "Iwas
 Singko!"
 horizontal_alignment = 1
 
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 688.0
+offset_top = 576.0
+offset_right = 1020.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("1")
+text = "Music in Play Area by https://zadmin.itch.io"
+
 [connection signal="button_down" from="goToPlay" to="." method="_on_goToPlay_button_down"]
 [connection signal="button_down" from="goToShop" to="." method="_on_goToShop_button_down"]
 [connection signal="button_down" from="goToSettings" to="." method="_on_goToSettings_button_down"]
