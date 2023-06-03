@@ -97,13 +97,25 @@ layout_mode = 0
 offset_left = -48.0
 offset_top = 104.0
 offset_right = 660.0
-offset_bottom = 470.0
+offset_bottom = 287.0
 rotation = -6.41369
 theme = SubResource("Theme_muspd")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 180
-text = "Iwas
-Singko!"
+text = "Iwas"
+horizontal_alignment = 1
+
+[node name="title2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 288.0
+offset_right = 684.0
+offset_bottom = 471.0
+rotation = -6.41369
+theme = SubResource("Theme_muspd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 180
+text = "Singko!"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="."]

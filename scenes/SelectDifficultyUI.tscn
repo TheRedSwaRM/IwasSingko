@@ -85,13 +85,25 @@ layout_mode = 0
 offset_left = 8.0
 offset_top = 144.0
 offset_right = 595.0
-offset_bottom = 427.0
+offset_bottom = 267.0
 rotation = -6.42249
 theme = SubResource("Theme_o7cc8")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
-text = "Select
-Difficulty"
+text = "Select"
+horizontal_alignment = 1
+
+[node name="title2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 256.0
+offset_right = 595.0
+offset_bottom = 379.0
+rotation = -6.42249
+theme = SubResource("Theme_o7cc8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Difficulty"
 horizontal_alignment = 1
 
 [connection signal="button_down" from="easy" to="." method="_on_easy_button_down"]
