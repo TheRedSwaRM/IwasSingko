@@ -13,7 +13,8 @@ config_version=5
 config/name="Iwas Singko!"
 run/main_scene="res://scenes/OpenSessionUI.tscn"
 config/features=PackedStringArray("4.0")
-config/icon="res://assets/art/icon.png"
+config/icon="res://assets/art/GameIcon.png"
+config/windows_native_icon="res://assets/art/icon.ico"
 
 [autoload]
 
