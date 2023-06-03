@@ -41,3 +41,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_existence_timer_timeout():
 	queue_free()
+	get_tree().change_scene_to_file("res://scenes/GameOverUI.tscn")
